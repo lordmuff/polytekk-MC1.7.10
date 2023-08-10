@@ -22,6 +22,7 @@ package com.mayon.polytekk;
 import com.mayon.polytekk.data.PT_ItemCont;
 import com.mayon.polytekk.items.PTParticleMultiItem;
 import com.mayon.polytekk.tileentity.multiblocks.MultiTileEntityParticleCollider;
+import gregapi.api.example.Example_Mod;
 import gregapi.data.*;
 import gregapi.recipes.Recipe;
 import gregapi.tileentity.multiblocks.MultiTileEntityMultiBlockPart;
@@ -47,7 +48,7 @@ import static gregapi.data.CS.*;
  *
  * uncomment the @cpw.mods.fml.common.Mod-Annotation for actual usage.
  */
-//@cpw.mods.fml.common.Mod(modid=Example_Mod.MOD_ID, name=Example_Mod.MOD_NAME, version=Example_Mod.VERSION, dependencies="required-after:gregapi_post")
+@cpw.mods.fml.common.Mod(modid= Example_Mod.MOD_ID, name=Example_Mod.MOD_NAME, version=Example_Mod.VERSION, dependencies="required-after:gregapi_post")
 public final class PolyTekk_Main extends gregapi.api.Abstract_Mod {
     /** Your Mod-ID has to be LOWERCASE and without Spaces. Uppercase Chars and Spaces can create problems with Resource Packs. This is a vanilla forge "Issue". */
     public static final String MOD_ID = "polytekk"; // <-- TODO: you need to change this to the ID of your own Mod, and then remove this Comment after you did that.
@@ -63,7 +64,7 @@ public final class PolyTekk_Main extends gregapi.api.Abstract_Mod {
 
     @Override public String getModID() {return MOD_ID;}
     @Override public String getModName() {return MOD_NAME;}
-    @Override public String getModNameForLog() {return "Example_Mod";}
+    @Override public String getModNameForLog() {return "PolyTekk";}
     @Override public gregapi.api.Abstract_Proxy getProxy() {return PROXY;}
 
     // Do not change these 7 Functions. Just keep them this way.
@@ -84,7 +85,6 @@ public final class PolyTekk_Main extends gregapi.api.Abstract_Mod {
 
     @Override
     public void onModInit2(cpw.mods.fml.common.event.FMLInitializationEvent aEvent) {
-
         gregapi.block.multitileentity.MultiTileEntityRegistry PolytekkMachineRegistry = gregapi.block.multitileentity.MultiTileEntityRegistry.getRegistry("polytekk.multitileentity");
         gregapi.block.multitileentity.MultiTileEntityBlock PolytekkMachineBlock = gregapi.block.multitileentity.MultiTileEntityBlock.getOrCreate(MOD_ID, "machine", gregapi.block.MaterialMachines.instance, net.minecraft.block.Block.soundTypeMetal, gregapi.data.CS.TOOL_wrench, 0, 0, 15, false, false);
 
