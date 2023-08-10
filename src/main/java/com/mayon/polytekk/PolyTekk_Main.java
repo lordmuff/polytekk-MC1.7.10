@@ -48,7 +48,7 @@ import static gregapi.data.CS.*;
  *
  * uncomment the @cpw.mods.fml.common.Mod-Annotation for actual usage.
  */
-@cpw.mods.fml.common.Mod(modid= Example_Mod.MOD_ID, name=Example_Mod.MOD_NAME, version=Example_Mod.VERSION, dependencies="required-after:gregapi_post")
+@cpw.mods.fml.common.Mod(modid= PolyTekk_Main.MOD_ID, name=PolyTekk_Main.MOD_NAME, version=PolyTekk_Main.VERSION, dependencies="required-after:gregapi_post")
 public final class PolyTekk_Main extends gregapi.api.Abstract_Mod {
     /** Your Mod-ID has to be LOWERCASE and without Spaces. Uppercase Chars and Spaces can create problems with Resource Packs. This is a vanilla forge "Issue". */
     public static final String MOD_ID = "polytekk"; // <-- TODO: you need to change this to the ID of your own Mod, and then remove this Comment after you did that.
