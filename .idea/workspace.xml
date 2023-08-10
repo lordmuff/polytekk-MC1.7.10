@@ -4,58 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="839aa97b-596c-44ec-9521-77247cf41d37" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mayon/polytekk/data/PT_ItemCont.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mayon/polytekk/items/PTParticleMultiItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/polytekk/textures/gui/Thumbs.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/polytekk/textures/items/poly.multiitem.particle/Thumbs.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="839aa97b-596c-44ec-9521-77247cf41d37" name="Changes" comment="dear god pls">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/dependencies/gregtech_1.7.10-6-20230729.183206-293.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/gregtech/textures/blocks/machines/basicmachines/particlecollider/colored/back.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/polytekk/textures/blocks/machines/basicmachines/particlecollider/colored/back.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/gregtech/textures/blocks/machines/basicmachines/particlecollider/colored/bottom.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/polytekk/textures/blocks/machines/basicmachines/particlecollider/colored/bottom.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/gregtech/textures/blocks/machines/basicmachines/particlecollider/colored/front.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/polytekk/textures/blocks/machines/basicmachines/particlecollider/colored/front.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/gregtech/textures/blocks/machines/basicmachines/particlecollider/colored/left.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/polytekk/textures/blocks/machines/basicmachines/particlecollider/colored/left.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/gregtech/textures/blocks/machines/basicmachines/particlecollider/colored/right.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/polytekk/textures/blocks/machines/basicmachines/particlecollider/colored/right.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/gregtech/textures/blocks/machines/basicmachines/particlecollider/colored/top.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/polytekk/textures/blocks/machines/basicmachines/particlecollider/colored/top.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/gregtech/textures/blocks/machines/basicmachines/particlecollider/overlay/back.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/polytekk/textures/blocks/machines/basicmachines/particlecollider/overlay/back.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/gregtech/textures/blocks/machines/basicmachines/particlecollider/overlay/bottom.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/polytekk/textures/blocks/machines/basicmachines/particlecollider/overlay/bottom.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/gregtech/textures/blocks/machines/basicmachines/particlecollider/overlay/front.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/polytekk/textures/blocks/machines/basicmachines/particlecollider/overlay/front.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/gregtech/textures/blocks/machines/basicmachines/particlecollider/overlay/left.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/polytekk/textures/blocks/machines/basicmachines/particlecollider/overlay/left.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/gregtech/textures/blocks/machines/basicmachines/particlecollider/overlay/right.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/polytekk/textures/blocks/machines/basicmachines/particlecollider/overlay/right.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/gregtech/textures/blocks/machines/basicmachines/particlecollider/overlay/top.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/polytekk/textures/blocks/machines/basicmachines/particlecollider/overlay/top.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/gregtech/textures/blocks/machines/basicmachines/particlecollider/overlay_active/back.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/polytekk/textures/blocks/machines/basicmachines/particlecollider/overlay_active/back.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/gregtech/textures/blocks/machines/basicmachines/particlecollider/overlay_active/bottom.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/polytekk/textures/blocks/machines/basicmachines/particlecollider/overlay_active/bottom.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/gregtech/textures/blocks/machines/basicmachines/particlecollider/overlay_active/front.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/polytekk/textures/blocks/machines/basicmachines/particlecollider/overlay_active/front.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/gregtech/textures/blocks/machines/basicmachines/particlecollider/overlay_active/left.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/polytekk/textures/blocks/machines/basicmachines/particlecollider/overlay_active/left.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/gregtech/textures/blocks/machines/basicmachines/particlecollider/overlay_active/right.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/polytekk/textures/blocks/machines/basicmachines/particlecollider/overlay_active/right.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/gregtech/textures/blocks/machines/basicmachines/particlecollider/overlay_active/top.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/polytekk/textures/blocks/machines/basicmachines/particlecollider/overlay_active/top.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/gregtech/textures/blocks/machines/basicmachines/particlecollider/overlay_running/back.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/polytekk/textures/blocks/machines/basicmachines/particlecollider/overlay_running/back.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/gregtech/textures/blocks/machines/basicmachines/particlecollider/overlay_running/bottom.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/polytekk/textures/blocks/machines/basicmachines/particlecollider/overlay_running/bottom.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/gregtech/textures/blocks/machines/basicmachines/particlecollider/overlay_running/front.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/polytekk/textures/blocks/machines/basicmachines/particlecollider/overlay_running/front.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/gregtech/textures/blocks/machines/basicmachines/particlecollider/overlay_running/left.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/polytekk/textures/blocks/machines/basicmachines/particlecollider/overlay_running/left.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/gregtech/textures/blocks/machines/basicmachines/particlecollider/overlay_running/right.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/polytekk/textures/blocks/machines/basicmachines/particlecollider/overlay_running/right.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/gregtech/textures/blocks/machines/basicmachines/particlecollider/overlay_running/top.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/polytekk/textures/blocks/machines/basicmachines/particlecollider/overlay_running/top.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/polytekk/textures/gui/machines/ParticleCollider.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/polytekk/textures/gui/machines/ParticleCollider.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/polytekk/textures/items/poly.multiitem.particle/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/polytekk/textures/items/poly.multiitem.particle/1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/polytekk/textures/items/poly.multiitem.particle/10.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/polytekk/textures/items/poly.multiitem.particle/10.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/polytekk/textures/items/poly.multiitem.particle/2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/polytekk/textures/items/poly.multiitem.particle/2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/polytekk/textures/items/poly.multiitem.particle/3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/polytekk/textures/items/poly.multiitem.particle/3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/polytekk/textures/items/poly.multiitem.particle/4.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/polytekk/textures/items/poly.multiitem.particle/4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/polytekk/textures/items/poly.multiitem.particle/5.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/polytekk/textures/items/poly.multiitem.particle/5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/polytekk/textures/items/poly.multiitem.particle/6.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/polytekk/textures/items/poly.multiitem.particle/6.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/polytekk/textures/items/poly.multiitem.particle/7.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/polytekk/textures/items/poly.multiitem.particle/7.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/polytekk/textures/items/poly.multiitem.particle/8.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/polytekk/textures/items/poly.multiitem.particle/8.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/polytekk/textures/items/poly.multiitem.particle/9.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/polytekk/textures/items/poly.multiitem.particle/9.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mayon/polytekk/data/PT_ItemContainer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mayon/polytekk/items/PTMultiRegistryAlpha.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mayon/polytekk/items/PTParticleRegistry.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mayon/polytekk/loaders/alpha/PTMultiRegistry.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mayon/polytekk/tileentity/multiblocks/MultiTileEntityParticleCollider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mayon/polytekk/tileentity/multiblocks/MultiTileEntityParticleCollider.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,18 +73,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/tranq/IdeaProjects/polytekk/src/main/resources/assets/polytekk",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/tranq/IdeaProjects/polytekk/src/main/resources/assets/polytekk&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\tranq\IdeaProjects\polytekk\src\main\resources\assets\polytekk" />
@@ -209,6 +159,14 @@
       <option name="presentableId" value="Default" />
       <updated>1661151321472</updated>
     </task>
+    <task id="LOCAL-00001" summary="dear god pls">
+      <created>1691638422642</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1691638422642</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -221,5 +179,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="dear god pls" />
+    <option name="LAST_COMMIT_MESSAGE" value="dear god pls" />
   </component>
 </project>
