@@ -16,18 +16,18 @@ import net.minecraft.nbt.NBTTagCompound;
 
 public enum PT_ItemCont implements IItemContainer {
 
+    Proton, Anti_Proton, Electron, Positron, Neutron, Anti_Neutron, Neutrino, Anti_Neutrino, Higgs_Boson,
 
-
-    Neutron, Anti_Neutron, Proton, Anti_Proton, Electron, Positron, Neutrino, Anti_Neutrino, Higgs_Boson, Photon,
+    Comb_Rad, Comb_Actinide, Comb_Schrabidium, Comb_Xen, Comb_Limpid,
 
     NULL;
 
-    public static PT_ItemCont[]
-    PARTICLES = {    Neutron, Anti_Neutron, Proton, Anti_Proton, Electron, Positron, Neutrino, Anti_Neutrino, Higgs_Boson, Photon,}
-    ;
+    public final static PT_ItemCont[]
+            PARTICLE = {Proton, Anti_Proton, Electron, Positron, Neutron, Anti_Neutron, Neutrino, Anti_Neutrino, Higgs_Boson}
+            , COMB = {Comb_Rad, Comb_Actinide, Comb_Schrabidium, Comb_Xen, Comb_Limpid}
+            ;
     private ItemStack mStack;
     private boolean mHasNotBeenSet = T;
-
 
     @Override
     public IItemContainer set(Item aItem) {
@@ -81,6 +81,7 @@ public enum PT_ItemCont implements IItemContainer {
             return this;
         }
         mStack = ST.amount(1, aStack);
+        if (ST.meta_(mStack) == W) ST.meta_(mStack, 0);
         if (aData != null && !OM.reg(aData.toString(), ST.amount(1, aStack))) OM.data(ST.amount(1, aStack), aData);
         for (Object tOreDict : aOreDict) OM.reg(tOreDict, ST.amount(1, aStack));
         return this;
@@ -88,8 +89,7 @@ public enum PT_ItemCont implements IItemContainer {
 
     @Override
     public Item item() {
-        if (mHasNotBeenSet && Abstract_Mod.sFinalized < Abstract_Mod.sModCountUsingGTAPI)
-            ERR.println("The Enum '" + name() + "' has not been set to an Item at this time!");
+        if (mHasNotBeenSet && Abstract_Mod.sFinalized < Abstract_Mod.sModCountUsingGTAPI) ERR.println("The Enum '" + name() + "' has not been set to an Item at this time!");
         if (ST.invalid(mStack)) return null;
         return mStack.getItem();
     }
@@ -116,13 +116,12 @@ public enum PT_ItemCont implements IItemContainer {
 
     @Override
     public boolean equal(Object aStack, boolean aWildcard, boolean aIgnoreNBT) {
-        return mStack != null && (aWildcard ? ST.item((ItemStack) aStack) == ST.item_(mStack) : ST.equal((ItemStack) aStack, mStack, aIgnoreNBT));
+        return mStack != null && (aWildcard ? ST.item((ItemStack)aStack) == ST.item_(mStack) : ST.equal((ItemStack)aStack, mStack, aIgnoreNBT));
     }
 
     @Override
     public ItemStack get(long aAmount, Object... aReplacements) {
-        if (mHasNotBeenSet && Abstract_Mod.sFinalized < Abstract_Mod.sModCountUsingGTAPI)
-            ERR.println("The Enum '" + name() + "' has not been set to an Item at this time!");
+        if (mHasNotBeenSet && Abstract_Mod.sFinalized < Abstract_Mod.sModCountUsingGTAPI) ERR.println("The Enum '" + name() + "' has not been set to an Item at this time!");
         if (ST.invalid(mStack)) return ST.copyFirst(aReplacements);
         return ST.amount(aAmount, OM.get_(mStack));
     }
@@ -130,34 +129,30 @@ public enum PT_ItemCont implements IItemContainer {
     @Override
     @SuppressWarnings("deprecation")
     public ItemStack getWildcard(long aAmount, Object... aReplacements) {
-        if (mHasNotBeenSet && Abstract_Mod.sFinalized < Abstract_Mod.sModCountUsingGTAPI)
-            ERR.println("The Enum '" + name() + "' has not been set to an Item at this time!");
+        if (mHasNotBeenSet && Abstract_Mod.sFinalized < Abstract_Mod.sModCountUsingGTAPI) ERR.println("The Enum '" + name() + "' has not been set to an Item at this time!");
         if (ST.invalid(mStack)) return ST.copyFirst(aReplacements);
         return ST.copyAmountAndMeta(aAmount, W, OM.get_(mStack));
     }
 
     @Override
     public ItemStack wild(long aAmount, Object... aReplacements) {
-        if (mHasNotBeenSet && Abstract_Mod.sFinalized < Abstract_Mod.sModCountUsingGTAPI)
-            ERR.println("The Enum '" + name() + "' has not been set to an Item at this time!");
+        if (mHasNotBeenSet && Abstract_Mod.sFinalized < Abstract_Mod.sModCountUsingGTAPI) ERR.println("The Enum '" + name() + "' has not been set to an Item at this time!");
         if (ST.invalid(mStack)) return ST.copyFirst(aReplacements);
         return ST.copyAmountAndMeta(aAmount, W, OM.get_(mStack));
     }
 
     @Override
     public ItemStack getUndamaged(long aAmount, Object... aReplacements) {
-        if (mHasNotBeenSet && Abstract_Mod.sFinalized < Abstract_Mod.sModCountUsingGTAPI)
-            ERR.println("The Enum '" + name() + "' has not been set to an Item at this time!");
+        if (mHasNotBeenSet && Abstract_Mod.sFinalized < Abstract_Mod.sModCountUsingGTAPI) ERR.println("The Enum '" + name() + "' has not been set to an Item at this time!");
         if (ST.invalid(mStack)) return ST.copyFirst(aReplacements);
         return ST.copyAmountAndMeta(aAmount, 0, OM.get_(mStack));
     }
 
     @Override
     public ItemStack getAlmostBroken(long aAmount, Object... aReplacements) {
-        if (mHasNotBeenSet && Abstract_Mod.sFinalized < Abstract_Mod.sModCountUsingGTAPI)
-            ERR.println("The Enum '" + name() + "' has not been set to an Item at this time!");
+        if (mHasNotBeenSet && Abstract_Mod.sFinalized < Abstract_Mod.sModCountUsingGTAPI) ERR.println("The Enum '" + name() + "' has not been set to an Item at this time!");
         if (ST.invalid(mStack)) return ST.copyFirst(aReplacements);
-        return ST.copyAmountAndMeta(aAmount, mStack.getMaxDamage() - 1, OM.get_(mStack));
+        return ST.copyAmountAndMeta(aAmount, mStack.getMaxDamage()-1, OM.get_(mStack));
     }
 
     @Override
@@ -181,32 +176,27 @@ public enum PT_ItemCont implements IItemContainer {
     public ItemStack getWithCharge(long aAmount, long aEnergy, Object... aReplacements) {
         ItemStack rStack = get(1, aReplacements);
         if (ST.invalid(rStack)) return null;
-        if (rStack.getItem() instanceof IItemEnergy)
-            for (TagData tEnergyType : ((IItemEnergy) rStack.getItem()).getEnergyTypes(rStack))
-                ((IItemEnergy) rStack.getItem()).setEnergyStored(tEnergyType, rStack, aEnergy);
+        if (rStack.getItem() instanceof IItemEnergy) for (TagData tEnergyType : ((IItemEnergy)rStack.getItem()).getEnergyTypes(rStack)) ((IItemEnergy)rStack.getItem()).setEnergyStored(tEnergyType, rStack, aEnergy);
         return ST.amount(aAmount, rStack);
     }
 
     @Override
     public ItemStack getWithMeta(long aAmount, long aMetaValue, Object... aReplacements) {
-        if (mHasNotBeenSet && Abstract_Mod.sFinalized < Abstract_Mod.sModCountUsingGTAPI)
-            ERR.println("The Enum '" + name() + "' has not been set to an Item at this time!");
+        if (mHasNotBeenSet && Abstract_Mod.sFinalized < Abstract_Mod.sModCountUsingGTAPI) ERR.println("The Enum '" + name() + "' has not been set to an Item at this time!");
         if (ST.invalid(mStack)) return ST.copyFirst(aReplacements);
         return ST.copyAmountAndMeta(aAmount, aMetaValue, OM.get_(mStack));
     }
 
     @Override
     public ItemStack getWithDamage(long aAmount, long aMetaValue, Object... aReplacements) {
-        if (mHasNotBeenSet && Abstract_Mod.sFinalized < Abstract_Mod.sModCountUsingGTAPI)
-            ERR.println("The Enum '" + name() + "' has not been set to an Item at this time!");
+        if (mHasNotBeenSet && Abstract_Mod.sFinalized < Abstract_Mod.sModCountUsingGTAPI) ERR.println("The Enum '" + name() + "' has not been set to an Item at this time!");
         if (ST.invalid(mStack)) return ST.copyFirst(aReplacements);
         return ST.copyAmountAndMeta(aAmount, aMetaValue, OM.get_(mStack));
     }
 
     @Override
     public ItemStack getWithNBT(long aAmount, NBTTagCompound aNBT, Object... aReplacements) {
-        if (mHasNotBeenSet && Abstract_Mod.sFinalized < Abstract_Mod.sModCountUsingGTAPI)
-            ERR.println("The Enum '" + name() + "' has not been set to an Item at this time!");
+        if (mHasNotBeenSet && Abstract_Mod.sFinalized < Abstract_Mod.sModCountUsingGTAPI) ERR.println("The Enum '" + name() + "' has not been set to an Item at this time!");
         if (ST.invalid(mStack)) return ST.copyFirst(aReplacements);
         ItemStack rStack = ST.amount(aAmount, OM.get_(mStack));
         UT.NBT.set(rStack, aNBT);
@@ -215,29 +205,18 @@ public enum PT_ItemCont implements IItemContainer {
 
     @Override
     public IItemContainer registerOre(Object... aOreNames) {
-        if (mHasNotBeenSet && Abstract_Mod.sFinalized < Abstract_Mod.sModCountUsingGTAPI)
-            ERR.println("The Enum '" + name() + "' has not been set to an Item at this time!");
+        if (mHasNotBeenSet && Abstract_Mod.sFinalized < Abstract_Mod.sModCountUsingGTAPI) ERR.println("The Enum '" + name() + "' has not been set to an Item at this time!");
         for (Object tOreName : aOreNames) OM.reg(tOreName, get(1));
         return this;
     }
 
     @Override
     public IItemContainer registerWildcardAsOre(Object... aOreNames) {
-        if (mHasNotBeenSet && Abstract_Mod.sFinalized < Abstract_Mod.sModCountUsingGTAPI)
-            ERR.println("The Enum '" + name() + "' has not been set to an Item at this time!");
+        if (mHasNotBeenSet && Abstract_Mod.sFinalized < Abstract_Mod.sModCountUsingGTAPI) ERR.println("The Enum '" + name() + "' has not been set to an Item at this time!");
         for (Object tOreName : aOreNames) OM.reg(tOreName, wild(1));
         return this;
     }
 
-    @SuppressWarnings("deprecation")
-    @Override
-    public Item getItem() {
-        return item();
-    }
-
-    @SuppressWarnings("deprecation")
-    @Override
-    public Block getBlock() {
-        return block();
-    }
+    @SuppressWarnings("deprecation") @Override public Item getItem() {return item();}
+    @SuppressWarnings("deprecation") @Override public Block getBlock() {return block();}
 }

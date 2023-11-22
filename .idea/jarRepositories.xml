@@ -46,5 +46,20 @@
       <option name="name" value="gtovermind" />
       <option name="url" value="http://gregtech.overminddl1.com/" />
     </remote-repository>
+    <remote-repository>
+      <option name="id" value="GTNH Maven" />
+      <option name="name" value="GTNH Maven" />
+      <option name="url" value="http://jenkins.usrv.eu:8081/nexus/content/groups/public/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="MavenLocal" />
+      <option name="name" value="MavenLocal" />
+      <option name="url" value="file:/$MAVEN_REPOSITORY$/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="maven" />
+      <option name="name" value="maven" />
+      <option name="url" value="https://cursemaven.com" />
+    </remote-repository>
   </component>
 </project>

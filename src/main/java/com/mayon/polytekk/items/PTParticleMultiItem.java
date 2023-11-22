@@ -31,8 +31,8 @@ import net.minecraftforge.fluids.FluidContainerRegistry.FluidContainerData;
 
 public class PTParticleMultiItem extends MultiItemRandom {
     public PTParticleMultiItem() {
-        super(MD.GT.mID, "polytekk.multiitem.physics");
-        setCreativeTab(new CreativeTab(getUnlocalizedName(), "GregTech: Physics", this, (short)1008));
+        super(MD.GT.mID, "polytekk.multiitem.alpha");
+        setCreativeTab(new CreativeTab(getUnlocalizedName(), "PolyTekk", this, (short)1008));
     }
     @Override
     public void addItems() {
@@ -41,9 +41,12 @@ public class PTParticleMultiItem extends MultiItemRandom {
         PT_ItemCont.Electron.set(addItem(3, "Electron", "A subatomic particle. Can be produced in particle collider."));
         PT_ItemCont.Positron.set(addItem(4, "Positron (Anti Electron)", "A subatomic particle. Can be produced in particle collider."));
         PT_ItemCont.Neutron.set(addItem(5, "Neutron", "A subatomic particle. Can be produced in particle collider."));
-        PT_ItemCont.Neutrino.set(addItem(6, "Neutrino", "A subatomic particle. Can be produced in particle collider."));
-        PT_ItemCont.Anti_Neutrino.set(addItem(7, "Anti Neutrino", "A subatomic particle. Can be produced in particle collider."));
-        PT_ItemCont.Higgs_Boson.set(addItem(8, "Higgs-Boson", "A Standard Model particle. Origin of mass. "));
-
-  }
+        PT_ItemCont.Anti_Neutron.set(addItem(6, "Anti-Neutron", "A subatomic particle. Can be produced in particle collider."));
+        PT_ItemCont.Neutrino.set(addItem(7, "Neutrino", "A subatomic particle. Can be produced in particle collider."));
+        PT_ItemCont.Anti_Neutrino.set(addItem(8, "Anti Neutrino", "A subatomic particle. Can be produced in particle collider."));
+        PT_ItemCont.Higgs_Boson.set(addItem(9, "Higgs-Boson", "A Standard Model particle. Origin of mass. "));
+        PT_ItemCont.Comb_Rad.set(addItem(10, "Rad Comb", "Better break out the Geiger Counter for this one..."));
+        PT_ItemCont.Comb_Actinide.set(addItem(11, "Actinide Comb", "Portable fission fragments in a convenient waxy container!"));
+        PT_ItemCont.Comb_Schrabidium.set(addItem(12, "Schrabidium Comb", "A marvel of modern nuclear science and bumble-ology!"));
+    }
 }

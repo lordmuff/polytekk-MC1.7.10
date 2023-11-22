@@ -4,8 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="839aa97b-596c-44ec-9521-77247cf41d37" name="Changes" comment="dear god pls">
+    <list default="true" id="839aa97b-596c-44ec-9521-77247cf41d37" name="Changes" comment="oops not an example no more">
+      <change afterPath="$PROJECT_DIR$/dependencies/HBM-NTM-[1.0.27_X4664-Ma100].jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mayon/polytekk/items/PT_Bumbles.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mayon/polytekk/items/PT_Combs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mayon/polytekk/PolyTekk_Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mayon/polytekk/PolyTekk_Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mayon/polytekk/data/PT_ItemCont.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mayon/polytekk/data/PT_ItemCont.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mayon/polytekk/items/PTParticleMultiItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mayon/polytekk/items/PTParticleMultiItem.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +54,12 @@
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="forgegradle" type="c8890929:TasksNode$1" />
               </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="polytekk" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="other" type="c8890929:TasksNode$1" />
+              </path>
             </expand>
             <select />
           </tree_state>
@@ -67,6 +80,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectId" id="2DhVUJniDje5xtKUT24LIXt1xOS" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -78,7 +94,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/tranq/IdeaProjects/polytekk/src/main/resources/assets/polytekk&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/tranq/IdeaProjects/polytekk/dependencies&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
@@ -87,6 +103,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\tranq\IdeaProjects\polytekk\dependencies" />
       <recent name="C:\Users\tranq\IdeaProjects\polytekk\src\main\resources\assets\polytekk" />
       <recent name="C:\Users\tranq\IdeaProjects\polytekk\libs\dependencies" />
       <recent name="C:\Users\tranq\IdeaProjects\polytekk\libs" />
@@ -100,7 +117,7 @@
       <recent name="C:\Users\tranq\IdeaProjects\polytekk\libs\dependencies" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.polytekk [runClient]">
+  <component name="RunManager" selected="Gradle.polytekk [build]">
     <configuration name="polytekk [buildNeeded]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -113,6 +130,27 @@
         <option name="taskNames">
           <list>
             <option value="buildNeeded" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="polytekk [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -143,10 +181,33 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="polytekk [setupDecompWorkspace]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="setupDecompWorkspace" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.polytekk [build]" />
         <item itemvalue="Gradle.polytekk [runClient]" />
         <item itemvalue="Gradle.polytekk [buildNeeded]" />
+        <item itemvalue="Gradle.polytekk [setupDecompWorkspace]" />
       </list>
     </recent_temporary>
   </component>
@@ -166,7 +227,35 @@
       <option name="project" value="LOCAL" />
       <updated>1691638422642</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="dear god pls">
+      <created>1691688656233</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1691688656233</updated>
+    </task>
+    <task id="LOCAL-00003" summary="oh gee i forgot to commit the MAIN FILE ecks dee">
+      <created>1691688727402</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1691688727402</updated>
+    </task>
+    <task id="LOCAL-00004" summary="oh gee i forgot to commit the MAIN FILE ecks dee">
+      <created>1691691405875</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1691691405875</updated>
+    </task>
+    <task id="LOCAL-00005" summary="oops not an example no more">
+      <created>1691691708040</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1691691708040</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -182,6 +271,18 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="dear god pls" />
-    <option name="LAST_COMMIT_MESSAGE" value="dear god pls" />
+    <MESSAGE value="oh gee i forgot to commit the MAIN FILE ecks dee" />
+    <MESSAGE value="oops not an example no more" />
+    <option name="LAST_COMMIT_MESSAGE" value="oops not an example no more" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
