@@ -19,6 +19,8 @@
 
 package com.mayon.polytekk;
 
+import com.hbm.items.special.ItemWasteLong;
+import com.hbm.items.special.ItemWasteShort;
 import Reika.ChromatiCraft.ModInterface.ItemColoredModInteract;
 import Reika.ChromatiCraft.Registry.CrystalElement;
 import com.hbm.items.ModItems;
@@ -119,6 +121,9 @@ public final class PolyTekk_Main extends gregapi.api.Abstract_Mod {
         RM.Centrifuge.addRecipe1(T, 16, 64, new long[]{10000, 1000}, PT_ItemCont.Comb_Schrabidium.get(1), NF, null, ST.make(ModItems.ingot_schraranium, 1, 0), ST.make(ModItems.nugget_schrabidium, 1, 0));
         RM.Centrifuge.addRecipe1(T, 16, 64, new long[]{10000, 1000, 1000}, PT_ItemCont.Comb_Xen.get(1), NF, null, OM.crushed(MT.Nq, 1), OM.crushedTiny(MT.Nq_528, 3), OM.crushedTiny(MT.Nq_522, 1));
         RM.Centrifuge.addRecipe1(T, 16, 64, new long[]{5000, 5000}, PT_ItemCont.Comb_Limpid.get(1), NF, FL.XP.make(   L), ST.make(ItemColoredModInteract.ColoredModItems.COMB.getItem(CrystalElement.WHITE).getItem(), 1, 15), ST.make(ItemColoredModInteract.ColoredModItems.COMB.getItem(CrystalElement.BLACK).getItem(), 1, 0));
+        RM.Centrifuge.addRecipe1(T, 16, 64, new long[]{10000, 1000, 1000}, PT_ItemCont.Comb_Actinide.get(1), NF, null, ST.make(ModItems.nugget_pu_mix, 2, 0), ST.make(ModItems.nugget_am_mix, 1, 0), ST.make(ModItems.nugget_cm_mix, 1, 0));
+        RM.Centrifuge.addRecipe1(T, 16, 64, new long[]{6666, 3333, 3333, 2222, 1111}, PT_ItemCont.Comb_Waste.get(1), NF, null, ST.make(ModItems.nuclear_waste_tiny, 1, 0), ST.make(ModItems.nuclear_waste_short, 1, ItemWasteShort.WasteClass.URANIUM235.ordinal()), ST.make(ModItems.nuclear_waste_long, 1, ItemWasteLong.WasteClass.URANIUM235.ordinal()), ST.make(ModItems.nuclear_waste_short, 1, ItemWasteShort.WasteClass.PLUTONIUM240.ordinal()), ST.make(ModItems.nuclear_waste_short, 1, ItemWasteShort.WasteClass.PLUTONIUM241.ordinal()));
+        RM.Centrifuge.addRecipe1(T, 16, 64, new long[]{6666, 4444}, PT_ItemCont.Comb_Fallout.get(1), NF, null, ST.make(ModItems.nugget_co60, 1, 0), ST.make(ModItems.powder_sr90_tiny, 1, 0));
 
         /*Recipe.RecipeMap ParticleCollider = new Recipe.RecipeMap(null, "polytekk.recipe.particlecollider", "Particle Collider", null, 0L, 1L, CS.RES_PATH_GUI + "machines/Fusion", 2L, 6L, 1L, 2L, 6L, 0L, 2L, 1L, "Start: ", 1L, " EU", true, true, true, true, false, false, false);// 91
 

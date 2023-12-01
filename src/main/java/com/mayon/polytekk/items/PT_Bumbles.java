@@ -1,6 +1,7 @@
 package com.mayon.polytekk.items;
 
 import Reika.ChromatiCraft.ModInterface.ItemColoredModInteract;
+import Reika.ChromatiCraft.Registry.ChromaBlocks;
 import Reika.ChromatiCraft.Registry.CrystalElement;
 import com.mayon.polytekk.data.PT_ItemCont;
 import cpw.mods.fml.relauncher.Side;
@@ -14,6 +15,8 @@ import gregapi.item.bumble.IItemBumbleBee;
 import gregapi.item.multiitem.MultiItemRandomWithCompat;
 import gregapi.old.Textures;
 import gregapi.oredict.OreDictItemData;
+import gregapi.oredict.OreDictMaterial;
+import gregapi.oredict.OreDictPrefix;
 import gregapi.util.OM;
 import gregapi.util.ST;
 import gregapi.util.UT;
@@ -162,6 +165,17 @@ public class PT_Bumbles extends MultiItemRandomWithCompat implements IItemBumble
         make(2020, "Bumbolinium", "Like Solinium! Get it?");
         make(2030, "Gelid Euphemium Bumblide", "Formerly known as the Cheater Virus");
 
+        // Actinide + Satanic = Waste
+        make(2100, "Wasted Bumblebee", "Yoooo, dude! I'm Schwasted!");
+        make(2110, "Chernobumbyl", "Get out of here, Stalker!");
+        make(2120, "Nuclear Deterrent Spike Bumble", "Not the same thing as Nuclear Deterrence!");
+        make(2130, "Dangerous and Repulsive Bumblebee", "No highly esteemed Deed is commemorated here...");
+
+        // Waste + Military = Fallout
+        make(2200, "Vault Bumbler", "A better future... in some hole in the ground. What did you expect?");
+        make(2210, "Bumblehood of Steel", "Ad Victoriam!");
+        make(2220, "Bumbleclave Remnant", "Thank you, God Bless you, and God Bless the United States of America");
+        make(2230, "President John Henry Bumble", "100% Human");
     }
 
     public void make(int aSpeciesID, String aName, String aTooltip) {
@@ -245,6 +259,10 @@ public class PT_Bumbles extends MultiItemRandomWithCompat implements IItemBumble
                 return PT_ItemCont.Comb_Actinide.get(aStacksize);
             case 20:
                 return PT_ItemCont.Comb_Schrabidium.get(aStacksize);
+            case 21:
+                return PT_ItemCont.Comb_Waste.get(aStacksize);
+            case 22:
+                return PT_ItemCont.Comb_Fallout.get(aStacksize);
             default:
                 return IL.Comb_Honey.get(aStacksize);
         }
@@ -260,276 +278,239 @@ public class PT_Bumbles extends MultiItemRandomWithCompat implements IItemBumble
         int[] tOrderY = RNGSUS.nextBoolean() ? aDistance < SCANS_POS.length ? SCANS_POS[aDistance] : SCANS_POS[SCANS_POS.length - 1] : aDistance < SCANS_NEG.length ? SCANS_NEG[aDistance] : SCANS_NEG[SCANS_NEG.length - 1];
         int[] tOrderZ = RNGSUS.nextBoolean() ? aDistance < SCANS_POS.length ? SCANS_POS[aDistance] : SCANS_POS[SCANS_POS.length - 1] : aDistance < SCANS_NEG.length ? SCANS_NEG[aDistance] : SCANS_NEG[SCANS_NEG.length - 1];
         switch (aMetaData / 100) {
-            case 2:
-                Block tColoredLeaf0 = ST.block(Long.parseLong("ChromatiCraft:chromaticraft_block_dyeleaf:0"));
-                Block tColoredSapling0 = ST.block(Long.parseLong("ChromatiCraft:chromaticraft_block_dyesapling:0"));
-                Block tColoredFlower0 = ST.block(Long.parseLong("ChromatiCraft:chromaticraft_block_dyeflower:0"));
+            case 0:
+                Block tCaveCrystal = ST.block(ChromaBlocks.CRYSTAL.getStackOf());
+                Block tLiquidChroma = ST.block(ChromaBlocks.CHROMA.getStackOf());
+                Block tPotionCrystal = ST.block(ChromaBlocks.SUPER.getStackOf());
+                Block tCrystalPylon = ST.block(ChromaBlocks.PYLON.getStackOf());
                 for (int j : tOrderY)
                     for (int i : tOrderX)
                         for (int k : tOrderZ) {
                             Block tBlock = WD.block(aWorld, aX + i, aY + j, aZ + k, F);
-                            if (tBlock == tColoredLeaf0     ) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
-                            if (tBlock == tColoredSapling0           ) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
-                            if (tBlock == tColoredFlower0) {
-                                if (WD.meta(aWorld, aX + i, aY + j, aZ + k) == 2)
-                                    return new ChunkCoordinates(aX + i, aY + j, aZ + k);
-                                continue;
-                            }
+                            if (tBlock == tCaveCrystal) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
+                            if (tBlock == tLiquidChroma) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
+                            if (tBlock == tPotionCrystal) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
+                            if (tBlock == tCrystalPylon) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
+                            return null;
+                        }
+            case   1:
+                Block tEnderPearlDustBlock = ST.block(OM.get(OP.blockDust, MT.EnderPearl, 1));
+                Block tEnderEyeDustBlock = ST.block(OM.get(OP.blockDust, MT.EnderEye, 1));
+                for (int j : tOrderY)
+                    for (int i : tOrderX)
+                        for (int k : tOrderZ) {
+                            Block tBlock = WD.block(aWorld, aX + i, aY + j, aZ + k, F);
+                            if (tBlock == tEnderPearlDustBlock) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
+                            if (tBlock == tEnderEyeDustBlock) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
+                            return null;
+                        }
+                return null;
+            case 2:
+                Block tColoredLeaf0 = ST.block(ChromaBlocks.DYELEAF.getStackOfMetadata(0));
+                Block tColoredSapling0 = ST.block(ChromaBlocks.DYESAPLING.getStackOfMetadata(0));
+                Block tColoredFlower0 = ST.block(ChromaBlocks.DYEFLOWER.getStackOfMetadata(0));
+                for (int j : tOrderY)
+                    for (int i : tOrderX)
+                        for (int k : tOrderZ) {
+                            Block tBlock = WD.block(aWorld, aX + i, aY + j, aZ + k, F);
+                            if (tBlock == tColoredLeaf0) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
+                            if (tBlock == tColoredSapling0) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
+                            if (tBlock == tColoredFlower0) return new ChunkCoordinates(aX + i, aY + j, aZ + k);
                             return null;
                         }
             case 3:
-                Block tColoredLeaf1 = ST.block(Long.parseLong("ChromatiCraft:chromaticraft_block_dyeleaf:1"));
-                Block tColoredSapling1 = ST.block(Long.parseLong("ChromatiCraft:chromaticraft_block_dyesapling:1"));
-                Block tColoredFlower1 = ST.block(Long.parseLong("ChromatiCraft:chromaticraft_block_dyeflower:1"));
+                Block tColoredLeaf1 = ST.block(ChromaBlocks.DYELEAF.getStackOfMetadata(1));
+                Block tColoredSapling1 = ST.block(ChromaBlocks.DYESAPLING.getStackOfMetadata(1));
+                Block tColoredFlower1 = ST.block(ChromaBlocks.DYEFLOWER.getStackOfMetadata(1));
                 for (int j : tOrderY)
                     for (int i : tOrderX)
                         for (int k : tOrderZ) {
                             Block tBlock = WD.block(aWorld, aX + i, aY + j, aZ + k, F);
-                            if (tBlock == tColoredLeaf1     ) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
-                            if (tBlock == tColoredSapling1           ) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
-                            if (tBlock == tColoredFlower1) {
-                                if (WD.meta(aWorld, aX + i, aY + j, aZ + k) == 2)
-                                    return new ChunkCoordinates(aX + i, aY + j, aZ + k);
-                                continue;
-                            }
+                            if (tBlock == tColoredLeaf1) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
+                            if (tBlock == tColoredSapling1) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
+                            if (tBlock == tColoredFlower1)      return new ChunkCoordinates(aX + i, aY + j, aZ + k);
                             return null;
                         }
             case 4:
-                Block tColoredLeaf2 = ST.block(Long.parseLong("ChromatiCraft:chromaticraft_block_dyeleaf:2"));
-                Block tColoredSapling2 = ST.block(Long.parseLong("ChromatiCraft:chromaticraft_block_dyesapling:2"));
-                Block tColoredFlower2 = ST.block(Long.parseLong("ChromatiCraft:chromaticraft_block_dyeflower:2"));
+                Block tColoredLeaf2 = ST.block(ChromaBlocks.DYELEAF.getStackOfMetadata(2));
+                Block tColoredSapling2 = ST.block(ChromaBlocks.DYESAPLING.getStackOfMetadata(2));
+                Block tColoredFlower2 = ST.block(ChromaBlocks.DYEFLOWER.getStackOfMetadata(2));
                 for (int j : tOrderY)
                     for (int i : tOrderX)
                         for (int k : tOrderZ) {
                             Block tBlock = WD.block(aWorld, aX + i, aY + j, aZ + k, F);
                             if (tBlock == tColoredLeaf2     ) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
                             if (tBlock == tColoredSapling2           ) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
-                            if (tBlock == tColoredFlower2) {
-                                if (WD.meta(aWorld, aX + i, aY + j, aZ + k) == 2)
-                                    return new ChunkCoordinates(aX + i, aY + j, aZ + k);
-                                continue;
-                            }
+                            if (tBlock == tColoredFlower2) return new ChunkCoordinates(aX + i, aY + j, aZ + k);
                             return null;
                         }
             case 5:
-                Block tColoredLeaf3 = ST.block(Long.parseLong("ChromatiCraft:chromaticraft_block_dyeleaf:3"));
-                Block tColoredSapling3 = ST.block(Long.parseLong("ChromatiCraft:chromaticraft_block_dyesapling:3"));
-                Block tColoredFlower3 = ST.block(Long.parseLong("ChromatiCraft:chromaticraft_block_dyeflower:3"));
+                Block tColoredLeaf3 = ST.block(ChromaBlocks.DYELEAF.getStackOfMetadata(3));
+                Block tColoredSapling3 = ST.block(ChromaBlocks.DYESAPLING.getStackOfMetadata(3));
+                Block tColoredFlower3 = ST.block(ChromaBlocks.DYEFLOWER.getStackOfMetadata(3));
                 for (int j : tOrderY)
                     for (int i : tOrderX)
                         for (int k : tOrderZ) {
                             Block tBlock = WD.block(aWorld, aX + i, aY + j, aZ + k, F);
                             if (tBlock == tColoredLeaf3     ) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
                             if (tBlock == tColoredSapling3           ) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
-                            if (tBlock == tColoredFlower3) {
-                                if (WD.meta(aWorld, aX + i, aY + j, aZ + k) == 2)
-                                    return new ChunkCoordinates(aX + i, aY + j, aZ + k);
-                                continue;
-                            }
+                            if (tBlock == tColoredFlower3) return new ChunkCoordinates(aX + i, aY + j, aZ + k);
                             return null;
                         }
             case 6:
-                Block tColoredLeaf4 = ST.block(Long.parseLong("ChromatiCraft:chromaticraft_block_dyeleaf:4"));
-                Block tColoredSapling4 = ST.block(Long.parseLong("ChromatiCraft:chromaticraft_block_dyesapling:4"));
-                Block tColoredFlower4 = ST.block(Long.parseLong("ChromatiCraft:chromaticraft_block_dyeflower:4"));
+                Block tColoredLeaf4 = ST.block(ChromaBlocks.DYELEAF.getStackOfMetadata(4));
+                Block tColoredSapling4 = ST.block(ChromaBlocks.DYESAPLING.getStackOfMetadata(4));
+                Block tColoredFlower4 = ST.block(ChromaBlocks.DYEFLOWER.getStackOfMetadata(4));
                 for (int j : tOrderY)
                     for (int i : tOrderX)
                         for (int k : tOrderZ) {
                             Block tBlock = WD.block(aWorld, aX + i, aY + j, aZ + k, F);
                             if (tBlock == tColoredLeaf4     ) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
                             if (tBlock == tColoredSapling4           ) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
-                            if (tBlock == tColoredFlower4) {
-                                if (WD.meta(aWorld, aX + i, aY + j, aZ + k) == 2)
-                                    return new ChunkCoordinates(aX + i, aY + j, aZ + k);
-                                continue;
-                            }
+                            if (tBlock == tColoredFlower4) return new ChunkCoordinates(aX + i, aY + j, aZ + k);
                             return null;
                         }
             case 7:
-                Block tColoredLeaf5 = ST.block(Long.parseLong("ChromatiCraft:chromaticraft_block_dyeleaf:5"));
-                Block tColoredSapling5 = ST.block(Long.parseLong("ChromatiCraft:chromaticraft_block_dyesapling:5"));
-                Block tColoredFlower5 = ST.block(Long.parseLong("ChromatiCraft:chromaticraft_block_dyeflower:5"));
+                Block tColoredLeaf5 = ST.block(ChromaBlocks.DYELEAF.getStackOfMetadata(5));
+                Block tColoredSapling5 = ST.block(ChromaBlocks.DYESAPLING.getStackOfMetadata(5));
+                Block tColoredFlower5 = ST.block(ChromaBlocks.DYEFLOWER.getStackOfMetadata(5));
                 for (int j : tOrderY)
                     for (int i : tOrderX)
                         for (int k : tOrderZ) {
                             Block tBlock = WD.block(aWorld, aX + i, aY + j, aZ + k, F);
                             if (tBlock == tColoredLeaf5     ) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
                             if (tBlock == tColoredSapling5           ) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
-                            if (tBlock == tColoredFlower5) {
-                                if (WD.meta(aWorld, aX + i, aY + j, aZ + k) == 2)
-                                    return new ChunkCoordinates(aX + i, aY + j, aZ + k);
-                                continue;
-                            }
+                            if (tBlock == tColoredFlower5) return new ChunkCoordinates(aX + i, aY + j, aZ + k);
                             return null;
                         }
             case 8:
-                Block tColoredLeaf6 = ST.block(Long.parseLong("ChromatiCraft:chromaticraft_block_dyeleaf:6"));
-                Block tColoredSapling6 = ST.block(Long.parseLong("ChromatiCraft:chromaticraft_block_dyesapling:6"));
-                Block tColoredFlower6 = ST.block(Long.parseLong("ChromatiCraft:chromaticraft_block_dyeflower:6"));
+                Block tColoredLeaf6 = ST.block(ChromaBlocks.DYELEAF.getStackOfMetadata(6));
+                Block tColoredSapling6 = ST.block(ChromaBlocks.DYESAPLING.getStackOfMetadata(6));
+                Block tColoredFlower6 = ST.block(ChromaBlocks.DYEFLOWER.getStackOfMetadata(6));
                 for (int j : tOrderY)
                     for (int i : tOrderX)
                         for (int k : tOrderZ) {
                             Block tBlock = WD.block(aWorld, aX + i, aY + j, aZ + k, F);
                             if (tBlock == tColoredLeaf6     ) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
                             if (tBlock == tColoredSapling6           ) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
-                            if (tBlock == tColoredFlower6) {
-                                if (WD.meta(aWorld, aX + i, aY + j, aZ + k) == 2)
-                                    return new ChunkCoordinates(aX + i, aY + j, aZ + k);
-                                continue;
-                            }
+                            if (tBlock == tColoredFlower6) return new ChunkCoordinates(aX + i, aY + j, aZ + k);
                             return null;
                         }
             case 9:
-                Block tColoredLeaf7 = ST.block(Long.parseLong("ChromatiCraft:chromaticraft_block_dyeleaf:7"));
-                Block tColoredSapling7 = ST.block(Long.parseLong("ChromatiCraft:chromaticraft_block_dyesapling:7"));
-                Block tColoredFlower7 = ST.block(Long.parseLong("ChromatiCraft:chromaticraft_block_dyeflower:7"));
+                Block tColoredLeaf7 = ST.block(ChromaBlocks.DYELEAF.getStackOfMetadata(7));
+                Block tColoredSapling7 = ST.block(ChromaBlocks.DYESAPLING.getStackOfMetadata(7));
+                Block tColoredFlower7 = ST.block(ChromaBlocks.DYEFLOWER.getStackOfMetadata(7));
                 for (int j : tOrderY)
                     for (int i : tOrderX)
                         for (int k : tOrderZ) {
                             Block tBlock = WD.block(aWorld, aX + i, aY + j, aZ + k, F);
                             if (tBlock == tColoredLeaf7     ) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
                             if (tBlock == tColoredSapling7           ) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
-                            if (tBlock == tColoredFlower7) {
-                                if (WD.meta(aWorld, aX + i, aY + j, aZ + k) == 2)
-                                    return new ChunkCoordinates(aX + i, aY + j, aZ + k);
-                                continue;
-                            }
+                            if (tBlock == tColoredFlower7) return new ChunkCoordinates(aX + i, aY + j, aZ + k);
                             return null;
                         }
             case 10:
-                Block tColoredLeaf8 = ST.block(Long.parseLong("ChromatiCraft:chromaticraft_block_dyeleaf:8"));
-                Block tColoredSapling8 = ST.block(Long.parseLong("ChromatiCraft:chromaticraft_block_dyesapling:8"));
-                Block tColoredFlower8 = ST.block(Long.parseLong("ChromatiCraft:chromaticraft_block_dyeflower:8"));
+                Block tColoredLeaf8 = ST.block(ChromaBlocks.DYELEAF.getStackOfMetadata(8));
+                Block tColoredSapling8 = ST.block(ChromaBlocks.DYESAPLING.getStackOfMetadata(8));
+                Block tColoredFlower8 = ST.block(ChromaBlocks.DYEFLOWER.getStackOfMetadata(8));
                 for (int j : tOrderY)
                     for (int i : tOrderX)
                         for (int k : tOrderZ) {
                             Block tBlock = WD.block(aWorld, aX + i, aY + j, aZ + k, F);
                             if (tBlock == tColoredLeaf8     ) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
                             if (tBlock == tColoredSapling8           ) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
-                            if (tBlock == tColoredFlower8) {
-                                if (WD.meta(aWorld, aX + i, aY + j, aZ + k) == 2)
-                                    return new ChunkCoordinates(aX + i, aY + j, aZ + k);
-                                continue;
-                            }
+                            if (tBlock == tColoredFlower8) return new ChunkCoordinates(aX + i, aY + j, aZ + k);
                             return null;
                         }
             case 11:
-                Block tColoredLeaf9 = ST.block(Long.parseLong("ChromatiCraft:chromaticraft_block_dyeleaf:9"));
-                Block tColoredSapling9 = ST.block(Long.parseLong("ChromatiCraft:chromaticraft_block_dyesapling:9"));
-                Block tColoredFlower9 = ST.block(Long.parseLong("ChromatiCraft:chromaticraft_block_dyeflower:9"));
+                Block tColoredLeaf9 = ST.block(ChromaBlocks.DYELEAF.getStackOfMetadata(9));
+                Block tColoredSapling9 = ST.block(ChromaBlocks.DYESAPLING.getStackOfMetadata(9));
+                Block tColoredFlower9 = ST.block(ChromaBlocks.DYEFLOWER.getStackOfMetadata(9));
                 for (int j : tOrderY)
                     for (int i : tOrderX)
                         for (int k : tOrderZ) {
                             Block tBlock = WD.block(aWorld, aX + i, aY + j, aZ + k, F);
                             if (tBlock == tColoredLeaf9     ) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
                             if (tBlock == tColoredSapling9           ) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
-                            if (tBlock == tColoredFlower9) {
-                                if (WD.meta(aWorld, aX + i, aY + j, aZ + k) == 2)
-                                    return new ChunkCoordinates(aX + i, aY + j, aZ + k);
-                                continue;
-                            }
+                            if (tBlock == tColoredFlower9) return new ChunkCoordinates(aX + i, aY + j, aZ + k);
                             return null;
                         }
             case 12:
-                Block tColoredLeaf10 = ST.block(Long.parseLong("ChromatiCraft:chromaticraft_block_dyeleaf:10"));
-                Block tColoredSapling10 = ST.block(Long.parseLong("ChromatiCraft:chromaticraft_block_dyesapling:10"));
-                Block tColoredFlower10 = ST.block(Long.parseLong("ChromatiCraft:chromaticraft_block_dyeflower:10"));
+                Block tColoredLeaf10 = ST.block(ChromaBlocks.DYELEAF.getStackOfMetadata(10));
+                Block tColoredSapling10 = ST.block(ChromaBlocks.DYESAPLING.getStackOfMetadata(10));
+                Block tColoredFlower10 = ST.block(ChromaBlocks.DYEFLOWER.getStackOfMetadata(10));
                 for (int j : tOrderY)
                     for (int i : tOrderX)
                         for (int k : tOrderZ) {
                             Block tBlock = WD.block(aWorld, aX + i, aY + j, aZ + k, F);
                             if (tBlock == tColoredLeaf10     ) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
                             if (tBlock == tColoredSapling10           ) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
-                            if (tBlock == tColoredFlower10) {
-                                if (WD.meta(aWorld, aX + i, aY + j, aZ + k) == 2)
-                                    return new ChunkCoordinates(aX + i, aY + j, aZ + k);
-                                continue;
-                            }
+                            if (tBlock == tColoredFlower10) return new ChunkCoordinates(aX + i, aY + j, aZ + k);
                             return null;
                         }
             case 13:
-                Block tColoredLeaf11 = ST.block(Long.parseLong("ChromatiCraft:chromaticraft_block_dyeleaf:11"));
-                Block tColoredSapling11 = ST.block(Long.parseLong("ChromatiCraft:chromaticraft_block_dyesapling:11"));
-                Block tColoredFlower11 = ST.block(Long.parseLong("ChromatiCraft:chromaticraft_block_dyeflower:11"));
+                Block tColoredLeaf11 = ST.block(ChromaBlocks.DYELEAF.getStackOfMetadata(11));
+                Block tColoredSapling11 = ST.block(ChromaBlocks.DYESAPLING.getStackOfMetadata(11));
+                Block tColoredFlower11 = ST.block(ChromaBlocks.DYEFLOWER.getStackOfMetadata(11));
                 for (int j : tOrderY)
                     for (int i : tOrderX)
                         for (int k : tOrderZ) {
                             Block tBlock = WD.block(aWorld, aX + i, aY + j, aZ + k, F);
                             if (tBlock == tColoredLeaf11     ) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
                             if (tBlock == tColoredSapling11           ) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
-                            if (tBlock == tColoredFlower11) {
-                                if (WD.meta(aWorld, aX + i, aY + j, aZ + k) == 2)
-                                    return new ChunkCoordinates(aX + i, aY + j, aZ + k);
-                                continue;
-                            }
+                            if (tBlock == tColoredFlower11) return new ChunkCoordinates(aX + i, aY + j, aZ + k);
                             return null;
                         }
             case 14:
-                Block tColoredLeaf12 = ST.block(Long.parseLong("ChromatiCraft:chromaticraft_block_dyeleaf:12"));
-                Block tColoredSapling12 = ST.block(Long.parseLong("ChromatiCraft:chromaticraft_block_dyesapling:12"));
-                Block tColoredFlower12 = ST.block(Long.parseLong("ChromatiCraft:chromaticraft_block_dyeflower:12"));
+                Block tColoredLeaf12 = ST.block(ChromaBlocks.DYELEAF.getStackOfMetadata(12));
+                Block tColoredSapling12 = ST.block(ChromaBlocks.DYESAPLING.getStackOfMetadata(12));
+                Block tColoredFlower12 = ST.block(ChromaBlocks.DYEFLOWER.getStackOfMetadata(12));
                 for (int j : tOrderY)
                     for (int i : tOrderX)
                         for (int k : tOrderZ) {
                             Block tBlock = WD.block(aWorld, aX + i, aY + j, aZ + k, F);
                             if (tBlock == tColoredLeaf12     ) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
                             if (tBlock == tColoredSapling12           ) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
-                            if (tBlock == tColoredFlower12) {
-                                if (WD.meta(aWorld, aX + i, aY + j, aZ + k) == 2)
-                                    return new ChunkCoordinates(aX + i, aY + j, aZ + k);
-                                continue;
-                            }
+                            if (tBlock == tColoredFlower12) return new ChunkCoordinates(aX + i, aY + j, aZ + k);
                             return null;
                         }
             case 15:
-                Block tColoredLeaf13 = ST.block(Long.parseLong("ChromatiCraft:chromaticraft_block_dyeleaf:13"));
-                Block tColoredSapling13 = ST.block(Long.parseLong("ChromatiCraft:chromaticraft_block_dyesapling:13"));
-                Block tColoredFlower13 = ST.block(Long.parseLong("ChromatiCraft:chromaticraft_block_dyeflower:13"));
+                Block tColoredLeaf13 = ST.block(ChromaBlocks.DYELEAF.getStackOfMetadata(13));
+                Block tColoredSapling13 = ST.block(ChromaBlocks.DYESAPLING.getStackOfMetadata(13));
+                Block tColoredFlower13 = ST.block(ChromaBlocks.DYEFLOWER.getStackOfMetadata(13));
                 for (int j : tOrderY)
                     for (int i : tOrderX)
                         for (int k : tOrderZ) {
                             Block tBlock = WD.block(aWorld, aX + i, aY + j, aZ + k, F);
                             if (tBlock == tColoredLeaf13     ) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
                             if (tBlock == tColoredSapling13           ) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
-                            if (tBlock == tColoredFlower13) {
-                                if (WD.meta(aWorld, aX + i, aY + j, aZ + k) == 2)
-                                    return new ChunkCoordinates(aX + i, aY + j, aZ + k);
-                                continue;
-                            }
+                            if (tBlock == tColoredFlower13) return new ChunkCoordinates(aX + i, aY + j, aZ + k);
                             return null;
                         }
             case 16:
-                Block tColoredLeaf14 = ST.block(Long.parseLong("ChromatiCraft:chromaticraft_block_dyeleaf:14"));
-                Block tColoredSapling14 = ST.block(Long.parseLong("ChromatiCraft:chromaticraft_block_dyesapling:14"));
-                Block tColoredFlower14 = ST.block(Long.parseLong("ChromatiCraft:chromaticraft_block_dyeflower:14"));
+                Block tColoredLeaf14 = ST.block(ChromaBlocks.DYELEAF.getStackOfMetadata(14));
+                Block tColoredSapling14 = ST.block(ChromaBlocks.DYESAPLING.getStackOfMetadata(14));
+                Block tColoredFlower14 = ST.block(ChromaBlocks.DYEFLOWER.getStackOfMetadata(14));
                 for (int j : tOrderY)
                     for (int i : tOrderX)
                         for (int k : tOrderZ) {
                             Block tBlock = WD.block(aWorld, aX + i, aY + j, aZ + k, F);
                             if (tBlock == tColoredLeaf14     ) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
                             if (tBlock == tColoredSapling14           ) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
-                            if (tBlock == tColoredFlower14) {
-                                if (WD.meta(aWorld, aX + i, aY + j, aZ + k) == 2)
-                                    return new ChunkCoordinates(aX + i, aY + j, aZ + k);
-                                continue;
-                            }
+                            if (tBlock == tColoredFlower14) return new ChunkCoordinates(aX + i, aY + j, aZ + k);
                             return null;
                         }
             case 17:
-                Block tColoredLeaf15 = ST.block(Long.parseLong("ChromatiCraft:chromaticraft_block_dyeleaf:15"));
-                Block tColoredSapling15 = ST.block(Long.parseLong("ChromatiCraft:chromaticraft_block_dyesapling:15"));
-                Block tColoredFlower15 = ST.block(Long.parseLong("ChromatiCraft:chromaticraft_block_dyeflower:15"));
+                Block tColoredLeaf15 = ST.block(ChromaBlocks.DYELEAF.getStackOfMetadata(15));
+                Block tColoredSapling15 = ST.block(ChromaBlocks.DYESAPLING.getStackOfMetadata(15));
+                Block tColoredFlower15 = ST.block(ChromaBlocks.DYEFLOWER.getStackOfMetadata(15));
                 for (int j : tOrderY)
                     for (int i : tOrderX)
                         for (int k : tOrderZ) {
                             Block tBlock = WD.block(aWorld, aX + i, aY + j, aZ + k, F);
                             if (tBlock == tColoredLeaf15     ) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
                             if (tBlock == tColoredSapling15           ) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
-                            if (tBlock == tColoredFlower15) {
-                                if (WD.meta(aWorld, aX + i, aY + j, aZ + k) == 2)
-                                    return new ChunkCoordinates(aX + i, aY + j, aZ + k);
-                                continue;
-                            }
+                            if (tBlock == tColoredFlower15) return new ChunkCoordinates(aX + i, aY + j, aZ + k);
                             return null;
                         }
             case 18:
@@ -538,11 +519,7 @@ public class PT_Bumbles extends MultiItemRandomWithCompat implements IItemBumble
                     for (int i : tOrderX)
                         for (int k : tOrderZ) {
                             Block tBlock = WD.block(aWorld, aX + i, aY + j, aZ + k, F);
-                            if (tBlock == tUraniumFuel) {
-                                if (WD.meta(aWorld, aX + i, aY + j, aZ + k) == 2)
-                                    return new ChunkCoordinates(aX + i, aY + j, aZ + k);
-                                continue;
-                            }
+                            if (tBlock == tUraniumFuel) return new ChunkCoordinates(aX + i, aY + j, aZ + k);
                             return null;
                         }
             case 19:
@@ -551,11 +528,7 @@ public class PT_Bumbles extends MultiItemRandomWithCompat implements IItemBumble
                     for (int i : tOrderX)
                         for (int k : tOrderZ) {
                             Block tBlock = WD.block(aWorld, aX + i, aY + j, aZ + k, F);
-                            if (tBlock == tPlutoniumFuel) {
-                                if (WD.meta(aWorld, aX + i, aY + j, aZ + k) == 2)
-                                    return new ChunkCoordinates(aX + i, aY + j, aZ + k);
-                                continue;
-                            }
+                            if (tBlock == tPlutoniumFuel) return new ChunkCoordinates(aX + i, aY + j, aZ + k);
                             return null;
                         }
             case 20:
@@ -564,11 +537,20 @@ public class PT_Bumbles extends MultiItemRandomWithCompat implements IItemBumble
                     for (int i : tOrderX)
                         for (int k : tOrderZ) {
                             Block tBlock = WD.block(aWorld, aX + i, aY + j, aZ + k, F);
-                            if (tBlock == tSchrabBlock) {
-                                if (WD.meta(aWorld, aX + i, aY + j, aZ + k) == 2)
-                                    return new ChunkCoordinates(aX + i, aY + j, aZ + k);
-                                continue;
-                            }
+                            if (tBlock == tSchrabBlock) return new ChunkCoordinates(aX + i, aY + j, aZ + k);
+                            return null;
+                        }
+            case 21:
+                Block tNuclearWastePaintedBlock = ST.block(MD.HBM, "block_waste_painted", null);
+                Block tNuclearWasteVitrifiedBlock = ST.block(MD.HBM, "block_waste_vitrified", null);
+                Block tNuclearWasteBlock = ST.block(MD.HBM, "block_waste", null);
+                for (int j : tOrderY)
+                    for (int i : tOrderX)
+                        for (int k : tOrderZ) {
+                            Block tBlock = WD.block(aWorld, aX + i, aY + j, aZ + k, F);
+                            if (tBlock == tNuclearWastePaintedBlock     ) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
+                            if (tBlock == tNuclearWasteVitrifiedBlock           ) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
+                            if (tBlock == tNuclearWasteBlock) return new ChunkCoordinates(aX + i, aY + j, aZ + k);
                             return null;
                         }
             default:
@@ -586,6 +568,10 @@ public class PT_Bumbles extends MultiItemRandomWithCompat implements IItemBumble
 
     public String getFlowerTooltip(short aMetaData) {
         switch (aMetaData / 100) {
+            case 0:
+                return "Kuro Plant Life (Flowers, Saplings, Leaves)";
+            case 1:
+                return "Should be the same as End Bees! (Chorus Flower or Dragon Egg if Et Futurum is installed, otherwise End Biome, Ender Portal, or Dragon Egg)";
             case 2:
                 return "Kuro Plant Life (Flowers, Saplings, Leaves)";
             case 3:
@@ -624,6 +610,8 @@ public class PT_Bumbles extends MultiItemRandomWithCompat implements IItemBumble
                 return "Plutonium Fuel Blocks";
             case 20:
                 return "Schrabidium Blocks";
+            case 21:
+                return "Nuclear Waste Blocks (Vitrified and Painted variants work too!)";
             default:
                 return "Flowers (even potted ones work)";
         }
@@ -650,31 +638,41 @@ public class PT_Bumbles extends MultiItemRandomWithCompat implements IItemBumble
                         return ST.make(this, 1, 1800 + aBumbleType);
                 }
                 break;
-                //Aero + Pyro = Rad & Aero + Rad = Xen
+                //Aero + Pyro = Rad
+            // Aero + Rad = Xen
             case   2023:
                 switch(aMetaDataB / 10) {
                     case   2033: return ST.make(this, 1, 1800+aBumbleType);
-                    case   18: return ST.make(this, 1, 100+aBumbleType);
+                    case   183: return ST.make(this, 1, 100+aBumbleType);
                 }
                 break;
-                //Rad + Pyro = Actinide & Rad + Actinide = Schrabidium
-            case   18:
+                //Rad + Pyro = Actinide
+            // Rad + Actinide = Schrabidium
+            // Rad + Satanic = Waste
+            case   183:
                 switch(aMetaDataB / 10) {
                     case   2003: return ST.make(this, 1, 1900+aBumbleType);
-                    case   19: return ST.make(this, 1, 2000+aBumbleType);
+                    case   193: return ST.make(this, 1, 2000+aBumbleType);
+                    case   1033: return ST.make(this, 1, 2100+aBumbleType);
 
+                }
+                // Rad + Satanic = Waste
+            case   1033:
+                switch(aMetaDataB / 10) {
+                   case   183: return ST.make(this, 1, 2100+aBumbleType);
                 }
                 break;
                 //Actinide + Rad = Schrabidium
-            case   19:
+            case   193:
                 switch(aMetaDataB / 10) {
-                    case   18: return ST.make(this, 1, 2000+aBumbleType);
+                    case   183: return ST.make(this, 1, 2000+aBumbleType);
                 }
                 break;
-                //Rad + Pyro = Actinide & Pyro + Limpid = Kitrino
+                //Rad + Pyro = Actinide
+            // Pyro + Limpid = Kitrino
             case   2003:
                 switch(aMetaDataB / 10) {
-                    case   19: return ST.make(this, 1, 1900+aBumbleType);
+                    case   193: return ST.make(this, 1, 1900+aBumbleType);
                     case   0: return ST.make(this, 1, 1300+aBumbleType);
 
                 }

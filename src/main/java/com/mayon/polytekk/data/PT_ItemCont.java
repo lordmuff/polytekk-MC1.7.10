@@ -18,13 +18,13 @@ public enum PT_ItemCont implements IItemContainer {
 
     Proton, Anti_Proton, Electron, Positron, Neutron, Anti_Neutron, Neutrino, Anti_Neutrino, Higgs_Boson,
 
-    Comb_Rad, Comb_Actinide, Comb_Schrabidium, Comb_Xen, Comb_Limpid,
+    Comb_Rad, Comb_Actinide, Comb_Schrabidium, Comb_Xen, Comb_Limpid, Comb_Waste, Comb_Fallout,
 
     NULL;
 
     public final static PT_ItemCont[]
             PARTICLE = {Proton, Anti_Proton, Electron, Positron, Neutron, Anti_Neutron, Neutrino, Anti_Neutrino, Higgs_Boson}
-            , COMB = {Comb_Rad, Comb_Actinide, Comb_Schrabidium, Comb_Xen, Comb_Limpid}
+            , COMB = {Comb_Rad, Comb_Actinide, Comb_Schrabidium, Comb_Xen, Comb_Limpid, Comb_Waste, Comb_Fallout}
             ;
     private ItemStack mStack;
     private boolean mHasNotBeenSet = T;

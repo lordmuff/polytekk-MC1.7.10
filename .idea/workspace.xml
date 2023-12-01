@@ -4,15 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="839aa97b-596c-44ec-9521-77247cf41d37" name="Changes" comment="oops not an example no more">
-      <change afterPath="$PROJECT_DIR$/dependencies/HBM-NTM-[1.0.27_X4664-Ma100].jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mayon/polytekk/items/PT_Bumbles.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mayon/polytekk/items/PT_Combs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+    <list default="true" id="839aa97b-596c-44ec-9521-77247cf41d37" name="Changes" comment="we done did a modding folks">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mayon/polytekk/PolyTekk_Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mayon/polytekk/PolyTekk_Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mayon/polytekk/data/PT_ItemCont.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mayon/polytekk/data/PT_ItemCont.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mayon/polytekk/items/PTParticleMultiItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mayon/polytekk/items/PTParticleMultiItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mayon/polytekk/items/PT_Bumbles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mayon/polytekk/items/PT_Bumbles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mayon/polytekk/items/PT_Combs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mayon/polytekk/items/PT_Combs.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -255,7 +252,14 @@
       <option name="project" value="LOCAL" />
       <updated>1691691708040</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="we done did a modding folks">
+      <created>1700617083859</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1700617083859</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -263,7 +267,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -273,7 +289,8 @@
     <MESSAGE value="dear god pls" />
     <MESSAGE value="oh gee i forgot to commit the MAIN FILE ecks dee" />
     <MESSAGE value="oops not an example no more" />
-    <option name="LAST_COMMIT_MESSAGE" value="oops not an example no more" />
+    <MESSAGE value="we done did a modding folks" />
+    <option name="LAST_COMMIT_MESSAGE" value="we done did a modding folks" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
