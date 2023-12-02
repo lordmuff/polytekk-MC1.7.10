@@ -3,6 +3,8 @@ package com.mayon.polytekk.items;
 import Reika.ChromatiCraft.ModInterface.ItemColoredModInteract;
 import Reika.ChromatiCraft.Registry.ChromaBlocks;
 import Reika.ChromatiCraft.Registry.CrystalElement;
+import com.hbm.blocks.ModBlocks;
+import com.hbm.items.ModItems;
 import com.mayon.polytekk.data.PT_ItemCont;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -32,6 +34,7 @@ import net.minecraft.entity.monster.EntitySnowman;
 import net.minecraft.entity.passive.EntityHorse;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
@@ -271,7 +274,8 @@ public class PT_Bumbles extends MultiItemRandomWithCompat implements IItemBumble
     @Override
     public ChunkCoordinates bumbleCanProduce(World aWorld, int aX, int aY, int aZ, ItemStack aBumbleBee, short aMetaData, int aDistance) {
         boolean temp = T;
-
+        for (byte tSide : ALL_SIDES_VALID) if (WD.oxygen(aWorld, aX+OFFX[tSide], aY+OFFY[tSide], aZ+OFFZ[tSide])) {temp = F; break;}
+        if (temp) return null;
 
         aDistance = Math.abs(aDistance);
         int[] tOrderX = RNGSUS.nextBoolean() ? aDistance < SCANS_POS.length ? SCANS_POS[aDistance] : SCANS_POS[SCANS_POS.length - 1] : aDistance < SCANS_NEG.length ? SCANS_NEG[aDistance] : SCANS_NEG[SCANS_NEG.length - 1];
@@ -291,8 +295,8 @@ public class PT_Bumbles extends MultiItemRandomWithCompat implements IItemBumble
                             if (tBlock == tLiquidChroma) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
                             if (tBlock == tPotionCrystal) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
                             if (tBlock == tCrystalPylon) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
-                            return null;
                         }
+                return null;
             case   1:
                 Block tEnderPearlDustBlock = ST.block(OM.get(OP.blockDust, MT.EnderPearl, 1));
                 Block tEnderEyeDustBlock = ST.block(OM.get(OP.blockDust, MT.EnderEye, 1));
@@ -302,7 +306,6 @@ public class PT_Bumbles extends MultiItemRandomWithCompat implements IItemBumble
                             Block tBlock = WD.block(aWorld, aX + i, aY + j, aZ + k, F);
                             if (tBlock == tEnderPearlDustBlock) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
                             if (tBlock == tEnderEyeDustBlock) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
-                            return null;
                         }
                 return null;
             case 2:
@@ -316,8 +319,8 @@ public class PT_Bumbles extends MultiItemRandomWithCompat implements IItemBumble
                             if (tBlock == tColoredLeaf0) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
                             if (tBlock == tColoredSapling0) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
                             if (tBlock == tColoredFlower0) return new ChunkCoordinates(aX + i, aY + j, aZ + k);
-                            return null;
                         }
+                return null;
             case 3:
                 Block tColoredLeaf1 = ST.block(ChromaBlocks.DYELEAF.getStackOfMetadata(1));
                 Block tColoredSapling1 = ST.block(ChromaBlocks.DYESAPLING.getStackOfMetadata(1));
@@ -329,8 +332,8 @@ public class PT_Bumbles extends MultiItemRandomWithCompat implements IItemBumble
                             if (tBlock == tColoredLeaf1) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
                             if (tBlock == tColoredSapling1) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
                             if (tBlock == tColoredFlower1)      return new ChunkCoordinates(aX + i, aY + j, aZ + k);
-                            return null;
                         }
+                return null;
             case 4:
                 Block tColoredLeaf2 = ST.block(ChromaBlocks.DYELEAF.getStackOfMetadata(2));
                 Block tColoredSapling2 = ST.block(ChromaBlocks.DYESAPLING.getStackOfMetadata(2));
@@ -342,8 +345,8 @@ public class PT_Bumbles extends MultiItemRandomWithCompat implements IItemBumble
                             if (tBlock == tColoredLeaf2     ) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
                             if (tBlock == tColoredSapling2           ) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
                             if (tBlock == tColoredFlower2) return new ChunkCoordinates(aX + i, aY + j, aZ + k);
-                            return null;
                         }
+                return null;
             case 5:
                 Block tColoredLeaf3 = ST.block(ChromaBlocks.DYELEAF.getStackOfMetadata(3));
                 Block tColoredSapling3 = ST.block(ChromaBlocks.DYESAPLING.getStackOfMetadata(3));
@@ -355,8 +358,8 @@ public class PT_Bumbles extends MultiItemRandomWithCompat implements IItemBumble
                             if (tBlock == tColoredLeaf3     ) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
                             if (tBlock == tColoredSapling3           ) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
                             if (tBlock == tColoredFlower3) return new ChunkCoordinates(aX + i, aY + j, aZ + k);
-                            return null;
                         }
+                return null;
             case 6:
                 Block tColoredLeaf4 = ST.block(ChromaBlocks.DYELEAF.getStackOfMetadata(4));
                 Block tColoredSapling4 = ST.block(ChromaBlocks.DYESAPLING.getStackOfMetadata(4));
@@ -368,8 +371,8 @@ public class PT_Bumbles extends MultiItemRandomWithCompat implements IItemBumble
                             if (tBlock == tColoredLeaf4     ) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
                             if (tBlock == tColoredSapling4           ) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
                             if (tBlock == tColoredFlower4) return new ChunkCoordinates(aX + i, aY + j, aZ + k);
-                            return null;
                         }
+                return null;
             case 7:
                 Block tColoredLeaf5 = ST.block(ChromaBlocks.DYELEAF.getStackOfMetadata(5));
                 Block tColoredSapling5 = ST.block(ChromaBlocks.DYESAPLING.getStackOfMetadata(5));
@@ -381,8 +384,8 @@ public class PT_Bumbles extends MultiItemRandomWithCompat implements IItemBumble
                             if (tBlock == tColoredLeaf5     ) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
                             if (tBlock == tColoredSapling5           ) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
                             if (tBlock == tColoredFlower5) return new ChunkCoordinates(aX + i, aY + j, aZ + k);
-                            return null;
                         }
+                return null;
             case 8:
                 Block tColoredLeaf6 = ST.block(ChromaBlocks.DYELEAF.getStackOfMetadata(6));
                 Block tColoredSapling6 = ST.block(ChromaBlocks.DYESAPLING.getStackOfMetadata(6));
@@ -394,8 +397,8 @@ public class PT_Bumbles extends MultiItemRandomWithCompat implements IItemBumble
                             if (tBlock == tColoredLeaf6     ) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
                             if (tBlock == tColoredSapling6           ) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
                             if (tBlock == tColoredFlower6) return new ChunkCoordinates(aX + i, aY + j, aZ + k);
-                            return null;
                         }
+                return null;
             case 9:
                 Block tColoredLeaf7 = ST.block(ChromaBlocks.DYELEAF.getStackOfMetadata(7));
                 Block tColoredSapling7 = ST.block(ChromaBlocks.DYESAPLING.getStackOfMetadata(7));
@@ -407,8 +410,8 @@ public class PT_Bumbles extends MultiItemRandomWithCompat implements IItemBumble
                             if (tBlock == tColoredLeaf7     ) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
                             if (tBlock == tColoredSapling7           ) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
                             if (tBlock == tColoredFlower7) return new ChunkCoordinates(aX + i, aY + j, aZ + k);
-                            return null;
                         }
+                return null;
             case 10:
                 Block tColoredLeaf8 = ST.block(ChromaBlocks.DYELEAF.getStackOfMetadata(8));
                 Block tColoredSapling8 = ST.block(ChromaBlocks.DYESAPLING.getStackOfMetadata(8));
@@ -420,8 +423,8 @@ public class PT_Bumbles extends MultiItemRandomWithCompat implements IItemBumble
                             if (tBlock == tColoredLeaf8     ) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
                             if (tBlock == tColoredSapling8           ) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
                             if (tBlock == tColoredFlower8) return new ChunkCoordinates(aX + i, aY + j, aZ + k);
-                            return null;
                         }
+                return null;
             case 11:
                 Block tColoredLeaf9 = ST.block(ChromaBlocks.DYELEAF.getStackOfMetadata(9));
                 Block tColoredSapling9 = ST.block(ChromaBlocks.DYESAPLING.getStackOfMetadata(9));
@@ -433,8 +436,8 @@ public class PT_Bumbles extends MultiItemRandomWithCompat implements IItemBumble
                             if (tBlock == tColoredLeaf9     ) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
                             if (tBlock == tColoredSapling9           ) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
                             if (tBlock == tColoredFlower9) return new ChunkCoordinates(aX + i, aY + j, aZ + k);
-                            return null;
                         }
+                return null;
             case 12:
                 Block tColoredLeaf10 = ST.block(ChromaBlocks.DYELEAF.getStackOfMetadata(10));
                 Block tColoredSapling10 = ST.block(ChromaBlocks.DYESAPLING.getStackOfMetadata(10));
@@ -446,8 +449,8 @@ public class PT_Bumbles extends MultiItemRandomWithCompat implements IItemBumble
                             if (tBlock == tColoredLeaf10     ) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
                             if (tBlock == tColoredSapling10           ) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
                             if (tBlock == tColoredFlower10) return new ChunkCoordinates(aX + i, aY + j, aZ + k);
-                            return null;
                         }
+                return null;
             case 13:
                 Block tColoredLeaf11 = ST.block(ChromaBlocks.DYELEAF.getStackOfMetadata(11));
                 Block tColoredSapling11 = ST.block(ChromaBlocks.DYESAPLING.getStackOfMetadata(11));
@@ -459,8 +462,8 @@ public class PT_Bumbles extends MultiItemRandomWithCompat implements IItemBumble
                             if (tBlock == tColoredLeaf11     ) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
                             if (tBlock == tColoredSapling11           ) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
                             if (tBlock == tColoredFlower11) return new ChunkCoordinates(aX + i, aY + j, aZ + k);
-                            return null;
                         }
+                return null;
             case 14:
                 Block tColoredLeaf12 = ST.block(ChromaBlocks.DYELEAF.getStackOfMetadata(12));
                 Block tColoredSapling12 = ST.block(ChromaBlocks.DYESAPLING.getStackOfMetadata(12));
@@ -472,8 +475,8 @@ public class PT_Bumbles extends MultiItemRandomWithCompat implements IItemBumble
                             if (tBlock == tColoredLeaf12     ) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
                             if (tBlock == tColoredSapling12           ) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
                             if (tBlock == tColoredFlower12) return new ChunkCoordinates(aX + i, aY + j, aZ + k);
-                            return null;
                         }
+                return null;
             case 15:
                 Block tColoredLeaf13 = ST.block(ChromaBlocks.DYELEAF.getStackOfMetadata(13));
                 Block tColoredSapling13 = ST.block(ChromaBlocks.DYESAPLING.getStackOfMetadata(13));
@@ -485,8 +488,8 @@ public class PT_Bumbles extends MultiItemRandomWithCompat implements IItemBumble
                             if (tBlock == tColoredLeaf13     ) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
                             if (tBlock == tColoredSapling13           ) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
                             if (tBlock == tColoredFlower13) return new ChunkCoordinates(aX + i, aY + j, aZ + k);
-                            return null;
                         }
+                return null;
             case 16:
                 Block tColoredLeaf14 = ST.block(ChromaBlocks.DYELEAF.getStackOfMetadata(14));
                 Block tColoredSapling14 = ST.block(ChromaBlocks.DYESAPLING.getStackOfMetadata(14));
@@ -498,8 +501,8 @@ public class PT_Bumbles extends MultiItemRandomWithCompat implements IItemBumble
                             if (tBlock == tColoredLeaf14     ) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
                             if (tBlock == tColoredSapling14           ) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
                             if (tBlock == tColoredFlower14) return new ChunkCoordinates(aX + i, aY + j, aZ + k);
-                            return null;
                         }
+                return null;
             case 17:
                 Block tColoredLeaf15 = ST.block(ChromaBlocks.DYELEAF.getStackOfMetadata(15));
                 Block tColoredSapling15 = ST.block(ChromaBlocks.DYESAPLING.getStackOfMetadata(15));
@@ -511,39 +514,39 @@ public class PT_Bumbles extends MultiItemRandomWithCompat implements IItemBumble
                             if (tBlock == tColoredLeaf15     ) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
                             if (tBlock == tColoredSapling15           ) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
                             if (tBlock == tColoredFlower15) return new ChunkCoordinates(aX + i, aY + j, aZ + k);
-                            return null;
                         }
+                return null;
             case 18:
-                Block tUraniumFuel = ST.block(MD.HBM, "block_uranium", null);
+                Block tUraniumFuel = ST.block(Item.getItemFromBlock(ModBlocks.block_uranium_fuel));
                 for (int j : tOrderY)
                     for (int i : tOrderX)
                         for (int k : tOrderZ) {
                             Block tBlock = WD.block(aWorld, aX + i, aY + j, aZ + k, F);
                             if (tBlock == tUraniumFuel) return new ChunkCoordinates(aX + i, aY + j, aZ + k);
-                            return null;
                         }
+                return null;
             case 19:
-                Block tPlutoniumFuel = ST.block(MD.HBM, "block_plutonium_fuel", null);
+                Block tPlutoniumFuel = ST.block(Item.getItemFromBlock(ModBlocks.block_plutonium_fuel));
                 for (int j : tOrderY)
                     for (int i : tOrderX)
                         for (int k : tOrderZ) {
                             Block tBlock = WD.block(aWorld, aX + i, aY + j, aZ + k, F);
                             if (tBlock == tPlutoniumFuel) return new ChunkCoordinates(aX + i, aY + j, aZ + k);
-                            return null;
                         }
+                return null;
             case 20:
-                Block tSchrabBlock = ST.block(MD.HBM, "block_schrabidium", null);
+                Block tSchrabBlock = ST.block(Item.getItemFromBlock(ModBlocks.block_schrabidium));
                 for (int j : tOrderY)
                     for (int i : tOrderX)
                         for (int k : tOrderZ) {
                             Block tBlock = WD.block(aWorld, aX + i, aY + j, aZ + k, F);
                             if (tBlock == tSchrabBlock) return new ChunkCoordinates(aX + i, aY + j, aZ + k);
-                            return null;
                         }
+                return null;
             case 21:
-                Block tNuclearWastePaintedBlock = ST.block(MD.HBM, "block_waste_painted", null);
-                Block tNuclearWasteVitrifiedBlock = ST.block(MD.HBM, "block_waste_vitrified", null);
-                Block tNuclearWasteBlock = ST.block(MD.HBM, "block_waste", null);
+                Block tNuclearWastePaintedBlock = ST.block(Item.getItemFromBlock(ModBlocks.block_waste_painted));
+                Block tNuclearWasteVitrifiedBlock = ST.block(Item.getItemFromBlock(ModBlocks.block_waste_vitrified));
+                Block tNuclearWasteBlock = ST.block(Item.getItemFromBlock(ModBlocks.block_waste));
                 for (int j : tOrderY)
                     for (int i : tOrderX)
                         for (int k : tOrderZ) {
@@ -551,8 +554,17 @@ public class PT_Bumbles extends MultiItemRandomWithCompat implements IItemBumble
                             if (tBlock == tNuclearWastePaintedBlock     ) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
                             if (tBlock == tNuclearWasteVitrifiedBlock           ) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
                             if (tBlock == tNuclearWasteBlock) return new ChunkCoordinates(aX + i, aY + j, aZ + k);
-                            return null;
                         }
+                return null;
+            case 22:
+                Block tSellafite = ST.block(Item.getItemFromBlock(ModBlocks.sellafield));
+                for (int j : tOrderY)
+                    for (int i : tOrderX)
+                        for (int k : tOrderZ) {
+                            Block tBlock = WD.block(aWorld, aX + i, aY + j, aZ + k, F);
+                            if (tBlock == tSellafite     ) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
+                        }
+                return null;
             default:
                 if (RNGSUS.nextBoolean()) {
                     for (int j : tOrderY) for (int i : tOrderX) for (int k : tOrderZ) if (checkFlowers(aWorld, aX+i, aY+j, aZ+k)) return new ChunkCoordinates(aX+i, aY+j, aZ+k);
@@ -569,9 +581,9 @@ public class PT_Bumbles extends MultiItemRandomWithCompat implements IItemBumble
     public String getFlowerTooltip(short aMetaData) {
         switch (aMetaData / 100) {
             case 0:
-                return "Kuro Plant Life (Flowers, Saplings, Leaves)";
+                return "Sources of Lumen Energy... (Pylons, Cave Crystals, etc...)";
             case 1:
-                return "Should be the same as End Bees! (Chorus Flower or Dragon Egg if Et Futurum is installed, otherwise End Biome, Ender Portal, or Dragon Egg)";
+                return "Block of Ender Pearl / Ender Eye Dust";
             case 2:
                 return "Kuro Plant Life (Flowers, Saplings, Leaves)";
             case 3:
@@ -605,13 +617,15 @@ public class PT_Bumbles extends MultiItemRandomWithCompat implements IItemBumble
             case 17:
                 return "Tahara Plant Life (Flowers, Saplings, Leaves)";
             case 18:
-                return "Uraninite / Natural Uranium Blocks";
+                return "Uranium Fuel Blocks";
             case 19:
                 return "Plutonium Fuel Blocks";
             case 20:
                 return "Schrabidium Blocks";
             case 21:
                 return "Nuclear Waste Blocks (Vitrified and Painted variants work too!)";
+            case 22:
+                return "Sellafite (From Nuclear Bomb craters...)";
             default:
                 return "Flowers (even potted ones work)";
         }

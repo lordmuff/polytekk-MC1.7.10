@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="839aa97b-596c-44ec-9521-77247cf41d37" name="Changes" comment="we done did a modding folks">
+    <list default="true" id="839aa97b-596c-44ec-9521-77247cf41d37" name="Changes" comment="let's try THIS for bumble time!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mayon/polytekk/PolyTekk_Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mayon/polytekk/PolyTekk_Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mayon/polytekk/data/PT_ItemCont.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mayon/polytekk/data/PT_ItemCont.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mayon/polytekk/items/PT_Bumbles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mayon/polytekk/items/PT_Bumbles.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mayon/polytekk/items/PT_Combs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mayon/polytekk/items/PT_Combs.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -259,7 +257,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700617083859</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="let's try THIS for bumble time!">
+      <created>1701401307413</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1701401307413</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -290,7 +295,8 @@
     <MESSAGE value="oh gee i forgot to commit the MAIN FILE ecks dee" />
     <MESSAGE value="oops not an example no more" />
     <MESSAGE value="we done did a modding folks" />
-    <option name="LAST_COMMIT_MESSAGE" value="we done did a modding folks" />
+    <MESSAGE value="let's try THIS for bumble time!" />
+    <option name="LAST_COMMIT_MESSAGE" value="let's try THIS for bumble time!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
