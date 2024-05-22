@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="839aa97b-596c-44ec-9521-77247cf41d37" name="Changes" comment="let's try THIS for bumble time!">
+    <list default="true" id="839aa97b-596c-44ec-9521-77247cf41d37" name="Changes" comment="disclaimers and waivers oh my">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dependencies.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/dependencies.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,7 +22,11 @@
     <system id="GRADLE">
       <state>
         <task path="$PROJECT_DIR$">
-          <activation />
+          <activation>
+            <after_sync>
+              <task name="processIdeaSettings" />
+            </after_sync>
+          </activation>
         </task>
         <projects_view>
           <tree_state>
@@ -66,6 +69,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Gradle.polytekk-MC1.7.10 [processIdeaSettings].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -99,7 +103,7 @@
       <option name="MAIN_CLASS_NAME" value="GradleStart" />
       <module name="polytekk-MC1.7.10.ideVirtualMain" />
       <option name="PROGRAM_PARAMETERS" value="&quot;--username&quot; &quot;Developer&quot; &quot;--version&quot; &quot;1.7.10&quot; &quot;--gameDir&quot; &quot;C:\Users\tranq\IdeaProjects\polytekk-MC1.7.10\run&quot; &quot;--assetsDir&quot; &quot;C:\Users\tranq\.gradle\caches\retro_futura_gradle\assets&quot; &quot;--assetIndex&quot; &quot;1.7.10&quot; &quot;--uuid&quot; &quot;31c4910d-9b69-4725-8969-9ed53ac8a7dc&quot; &quot;--userProperties&quot; &quot;{}&quot; &quot;--accessToken&quot; &quot;0&quot;" />
-      <option name="VM_PARAMETERS" value="&quot;-ea:com.myname.mymodid&quot; &quot;-Dfml.ignoreInvalidMinecraftCertificates=true&quot; &quot;-Djava.library.path=C:\Users\tranq\IdeaProjects\polytekk-MC1.7.10\run\natives\lwjgl2;C:\Program Files\OpenLogic\jdk-8.0.402.06-hotspot\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files\OpenLogic\jre-8.0.402.06-hotspot\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files\OpenLogic\jdk-8.0.402.06-hotspot\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\dotnet\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\Git\cmd;C:\Users\tranq\AppData\Local\Programs\Python\Launcher\;C:\Users\tranq\AppData\Local\Microsoft\WindowsApps;;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.3\bin;;C:\Users\tranq\.dotnet\tools;.&quot;" />
+      <option name="VM_PARAMETERS" value="&quot;-ea:com.myname.mymodid&quot; &quot;-noverify&quot; &quot;-DragonAPI_ForceMethodStrip&quot; &quot;-Dfml.ignoreInvalidMinecraftCertificates=true&quot; &quot;-Djava.library.path=C:\Users\tranq\IdeaProjects\polytekk-MC1.7.10\run\natives\lwjgl2;C:\Program Files\OpenLogic\jdk-8.0.402.06-hotspot\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files\OpenLogic\jre-8.0.402.06-hotspot\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files\OpenLogic\jdk-8.0.402.06-hotspot\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\dotnet\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\Git\cmd;C:\Users\tranq\AppData\Local\Programs\Python\Launcher\;C:\Users\tranq\AppData\Local\Microsoft\WindowsApps;;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.3\bin;;C:\Users\tranq\.dotnet\tools;.&quot;" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/run" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -109,7 +113,7 @@
       <option name="MAIN_CLASS_NAME" value="GradleStartServer" />
       <module name="polytekk-MC1.7.10.ideVirtualMain" />
       <option name="PROGRAM_PARAMETERS" value="&quot;nogui&quot;" />
-      <option name="VM_PARAMETERS" value="&quot;-ea:com.myname.mymodid&quot; &quot;-Dfml.ignoreInvalidMinecraftCertificates=true&quot;" />
+      <option name="VM_PARAMETERS" value="&quot;-ea:com.myname.mymodid&quot; &quot;-noverify&quot; &quot;-DragonAPI_ForceMethodStrip&quot; &quot;-Dfml.ignoreInvalidMinecraftCertificates=true&quot;" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/run" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -543,7 +547,9 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
+        <option value="jdk-1.8.0_402-azul-1.8.0_402-4caba194b151-32bb955f" />
         <option value="jdk-1.8.0_402-corretto-1.8.0_402-4caba194b151-ae57be32" />
+        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-5cd809f4" />
       </set>
     </attachedChunks>
   </component>
@@ -605,7 +611,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701401307413</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="disclaimers and waivers oh my">
+      <option name="closed" value="true" />
+      <created>1716386046348</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1716386046348</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -637,7 +651,8 @@
     <MESSAGE value="oops not an example no more" />
     <MESSAGE value="we done did a modding folks" />
     <MESSAGE value="let's try THIS for bumble time!" />
-    <option name="LAST_COMMIT_MESSAGE" value="let's try THIS for bumble time!" />
+    <MESSAGE value="disclaimers and waivers oh my" />
+    <option name="LAST_COMMIT_MESSAGE" value="disclaimers and waivers oh my" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
