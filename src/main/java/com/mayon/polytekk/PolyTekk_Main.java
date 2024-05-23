@@ -70,11 +70,11 @@ import static gregapi.data.CS.*;
 @cpw.mods.fml.common.Mod(modid= PolyTekk_Main.MOD_ID, name=PolyTekk_Main.MOD_NAME, version=PolyTekk_Main.VERSION, dependencies="required-after:gregapi_post")
 public final class PolyTekk_Main extends gregapi.api.Abstract_Mod {
     /** Your Mod-ID has to be LOWERCASE and without Spaces. Uppercase Chars and Spaces can create problems with Resource Packs. This is a vanilla forge "Issue". */
-    public static final String MOD_ID = "polytekk"; // <-- TODO: you need to change this to the ID of your own Mod, and then remove this Comment after you did that.
+    public static final String MOD_ID = "polytekk";
     /** This is your Mods Name */
-    public static final String MOD_NAME = "POLYTEKK"; // <-- TODO: you need to change this to the Name of your own Mod, and then remove this Comment after you did that.
+    public static final String MOD_NAME = "POLYTEKK";
     /** This is your Mods Version */
-    public static final String VERSION = "POLYTEKK-MC1710"; // <-- TODO: you need to change this to the Version of your own Mod, and then remove this Comment after you did that.
+    public static final String VERSION = "POLYTEKK-MC1710";
     /** Contains a ModData Object for ID and Name. Doesn't have to be changed. */
     public static gregapi.code.ModData MOD_DATA = new gregapi.code.ModData(MOD_ID, MOD_NAME);
 
@@ -135,13 +135,13 @@ public final class PolyTekk_Main extends gregapi.api.Abstract_Mod {
         RM.Centrifuge.addRecipe1(T, 16, 64, new long[]{6666, 3333, 3333, 2222, 1111}, PT_ItemCont.Comb_Waste.get(1), NF, null, ST.make(ModItems.nuclear_waste_tiny, 1, 0), ST.make(ModItems.nuclear_waste_short, 1, ItemWasteShort.WasteClass.URANIUM235.ordinal()), ST.make(ModItems.nuclear_waste_long, 1, ItemWasteLong.WasteClass.URANIUM235.ordinal()), ST.make(ModItems.nuclear_waste_short, 1, ItemWasteShort.WasteClass.PLUTONIUM240.ordinal()), ST.make(ModItems.nuclear_waste_short, 1, ItemWasteShort.WasteClass.PLUTONIUM241.ordinal()));
         RM.Centrifuge.addRecipe1(T, 16, 64, new long[]{6666, 4444}, PT_ItemCont.Comb_Fallout.get(1), NF, null, ST.make(ModItems.nugget_co60, 1, 0), ST.make(ModItems.powder_sr90_tiny, 1, 0));
 
-        Recipe.RecipeMap ParticleCollider = new Recipe.RecipeMap(null, "polytekk.recipe.particlecollider", "Particle Collider", null, 0L, 1L, CS.RES_PATH_GUI + "machines/Fusion", 2L, 6L, 1L, 2L, 6L, 0L, 2L, 1L, "Start: ", 1L, " EU", true, true, true, true, false, false, false);// 91
+        //Recipe.RecipeMap ParticleCollider = new Recipe.RecipeMap(null, "polytekk.recipe.particlecollider", "Particle Collider", null, 0L, 1L, CS.RES_PATH_GUI + "machines/Fusion", 2L, 6L, 1L, 2L, 6L, 0L, 2L, 1L, "Start: ", 1L, " EU", true, true, true, true, false, false, false);// 91
 
-        ParticleCollider.addRecipe1(true, 8192L, 10L, new long[]{100L, 100L, 6L, 4L, 6L, 4L, 10L, 8L}, ST.tag(1L), FL.Hydrogen.make(10L), FL.Hydrogen.make(0L), PT_ItemCont.Proton.get(1L), PT_ItemCont.Anti_Proton.get(1L), PT_ItemCont.Neutron.get(1L), PT_ItemCont.Anti_Neutron.get(1L), PT_ItemCont.Electron.get(1L), PT_ItemCont.Positron.get(1L)).setSpecialNumber(10000000L);// 269
-        ParticleCollider.addRecipe1(true, 8192L, 20L, new long[]{100L, 100L, 8L, 6L, 8L, 6L, 14L, 12L}, ST.tag(1L), FL.Deuterium.make(10L), FL.Deuterium.make(0L), PT_ItemCont.Proton.get(1L), PT_ItemCont.Anti_Proton.get(1L), PT_ItemCont.Neutron.get(1L), PT_ItemCont.Anti_Neutron.get(1L), PT_ItemCont.Electron.get(1L), PT_ItemCont.Positron.get(1L)).setSpecialNumber(10000000L);// 270
-        ParticleCollider.addRecipe1(true, 8192L, 30L, new long[]{100L, 100L, 6L, 4L, 10L, 8L, 16L, 14L}, ST.tag(1L), FL.Tritium.make(10L), FL.Tritium.make(0L), PT_ItemCont.Proton.get(1L), PT_ItemCont.Anti_Proton.get(1L), PT_ItemCont.Neutron.get(1L), PT_ItemCont.Anti_Neutron.get(1L), PT_ItemCont.Electron.get(1L), PT_ItemCont.Positron.get(1L)).setSpecialNumber(10000000L);// 271
-        ParticleCollider.addRecipe1(true, 8192L, 40L, new long[]{100L, 100L, 12L, 10L, 12L, 10L, 18L, 16L}, ST.tag(1L), FL.Helium.make(10L), FL.Helium.make(0L), PT_ItemCont.Proton.get(1L), PT_ItemCont.Anti_Proton.get(1L), PT_ItemCont.Neutron.get(1L), PT_ItemCont.Anti_Neutron.get(1L), PT_ItemCont.Electron.get(1L), PT_ItemCont.Positron.get(1L)).setSpecialNumber(10000000L);// 272
-        ParticleCollider.addRecipe1(true, 32768L, 80L, new long[]{100L, 40L, 60L, 30L, 15L, 1L}, ST.tag(1L), FL.array(MT.Xe.gas(648648000L, true)), FL.array(MT.Xe.gas(6486480L, true)), PT_ItemCont.Photon.get(1L), PT_ItemCont.Neutrino.get(1L), PT_ItemCont.Anti_Neutrino.get(1L), PT_ItemCont.Higgs_Boson.get(1L)).setSpecialNumber(10000000L);// 273
+        //ParticleCollider.addRecipe1(true, 8192L, 10L, new long[]{100L, 100L, 6L, 4L, 6L, 4L, 10L, 8L}, ST.tag(1L), FL.Hydrogen.make(10L), FL.Hydrogen.make(0L), PT_ItemCont.Proton.get(1L), PT_ItemCont.Anti_Proton.get(1L), PT_ItemCont.Neutron.get(1L), PT_ItemCont.Anti_Neutron.get(1L), PT_ItemCont.Electron.get(1L), PT_ItemCont.Positron.get(1L)).setSpecialNumber(10000000L);// 269
+        //ParticleCollider.addRecipe1(true, 8192L, 20L, new long[]{100L, 100L, 8L, 6L, 8L, 6L, 14L, 12L}, ST.tag(1L), FL.Deuterium.make(10L), FL.Deuterium.make(0L), PT_ItemCont.Proton.get(1L), PT_ItemCont.Anti_Proton.get(1L), PT_ItemCont.Neutron.get(1L), PT_ItemCont.Anti_Neutron.get(1L), PT_ItemCont.Electron.get(1L), PT_ItemCont.Positron.get(1L)).setSpecialNumber(10000000L);// 270
+        //ParticleCollider.addRecipe1(true, 8192L, 30L, new long[]{100L, 100L, 6L, 4L, 10L, 8L, 16L, 14L}, ST.tag(1L), FL.Tritium.make(10L), FL.Tritium.make(0L), PT_ItemCont.Proton.get(1L), PT_ItemCont.Anti_Proton.get(1L), PT_ItemCont.Neutron.get(1L), PT_ItemCont.Anti_Neutron.get(1L), PT_ItemCont.Electron.get(1L), PT_ItemCont.Positron.get(1L)).setSpecialNumber(10000000L);// 271
+        //ParticleCollider.addRecipe1(true, 8192L, 40L, new long[]{100L, 100L, 12L, 10L, 12L, 10L, 18L, 16L}, ST.tag(1L), FL.Helium.make(10L), FL.Helium.make(0L), PT_ItemCont.Proton.get(1L), PT_ItemCont.Anti_Proton.get(1L), PT_ItemCont.Neutron.get(1L), PT_ItemCont.Anti_Neutron.get(1L), PT_ItemCont.Electron.get(1L), PT_ItemCont.Positron.get(1L)).setSpecialNumber(10000000L);// 272
+        //ParticleCollider.addRecipe1(true, 32768L, 80L, new long[]{100L, 40L, 60L, 30L, 15L, 1L}, ST.tag(1L), FL.array(MT.Xe.gas(648648000L, true)), FL.array(MT.Xe.gas(6486480L, true)), PT_ItemCont.Photon.get(1L), PT_ItemCont.Neutrino.get(1L), PT_ItemCont.Anti_Neutrino.get(1L), PT_ItemCont.Higgs_Boson.get(1L)).setSpecialNumber(10000000L);// 273
 
         for (Runnable runnableList : loaderList) try {runnableList.run();} catch (Throwable e) {e.printStackTrace(ERR);}
 
