@@ -16,14 +16,14 @@ import net.minecraft.nbt.NBTTagCompound;
 
 public enum PT_ItemCont implements IItemContainer {
 
-    Proton, Anti_Proton, Electron, Positron, Neutron, Anti_Neutron, Neutrino, Anti_Neutrino, Higgs_Boson,
+    Proton, Anti_Proton, Electron, Positron, Neutron, Anti_Neutron, Neutrino, Anti_Neutrino, Higgs_Boson, Photon,
 
     Comb_Rad, Comb_Actinide, Comb_Schrabidium, Comb_Xen, Comb_Limpid, Comb_Waste, Comb_Fallout,
 
     NULL;
 
     public final static PT_ItemCont[]
-            PARTICLE = {Proton, Anti_Proton, Electron, Positron, Neutron, Anti_Neutron, Neutrino, Anti_Neutrino, Higgs_Boson}
+            PARTICLE = {Proton, Anti_Proton, Electron, Positron, Neutron, Anti_Neutron, Neutrino, Anti_Neutrino, Higgs_Boson, Photon}
             , COMB = {Comb_Rad, Comb_Actinide, Comb_Schrabidium, Comb_Xen, Comb_Limpid, Comb_Waste, Comb_Fallout}
             ;
     private ItemStack mStack;
