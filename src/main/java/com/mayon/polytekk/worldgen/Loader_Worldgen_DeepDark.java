@@ -48,17 +48,26 @@ public class Loader_Worldgen_DeepDark implements Runnable {
         new WorldgenFluidSpring(   "fluid.gas.natural"   , T, BlocksGT.GasNatural     , 15, 800, tInfiniteGas ? FL.Gas_Natural     .make( 9000) : NF, GEN_DEEPDARK);
 
         new WorldgenOresLarge("ore.large.alexandrite", T, T, 1, 255, 1, 32, 256, MT.Emerald, MT.Diamond, MT.Alexandrite, MT.Alexandrite, ORE_DEEPDARK);
-        new WorldgenOresLarge("ore.large.tetrahedrite", T, T, 1, 255, 150, 4, 48, MT.OREMATS.Tetrahedrite         , MT.OREMATS.Tetrahedrite        , MT.Cu                          , MT.OREMATS.Stibnite   , ORE_DEEPDARK);
+        new WorldgenOresLarge("ore.large.tetrahedrite", T, T, 1, 255, 90, 4, 48, MT.OREMATS.Tetrahedrite         , MT.OREMATS.Tetrahedrite        , MT.Cu                          , MT.OREMATS.Stibnite   , ORE_DEEPDARK);
         new WorldgenOresLarge("ore.large.uraninite", T, T, 1, 255, 80, 6, 32, MT.Pb, MT.OREMATS.Uraninite, MT.OREMATS.Uraninite, MT.Ra, ORE_DEEPDARK);
         new WorldgenOresLarge("ore.large.pitchblende", T, T, 1, 255, 80, 6, 32, MT.Pb, MT.OREMATS.Pitchblende, MT.OREMATS.Pitchblende, MT.Ra, ORE_DEEPDARK);
-        new WorldgenOresLarge("ore.large.gold"        , T, T, 1,  255,   60, 4, 32, MT.Pyrite                       , MT.OREMATS.Chalcopyrite        , MT.OREMATS.Arsenopyrite        , MT.Au                 , ORE_DEEPDARK);
+        new WorldgenOresLarge("ore.large.gold"        , T, T, 1,  255,   50, 4, 32, MT.Pyrite                       , MT.OREMATS.Chalcopyrite        , MT.OREMATS.Arsenopyrite        , MT.Au                 , ORE_DEEPDARK);
         new WorldgenOresLarge("ore.large.adamantium"  , T, T, 1, 255,   5, 3, 24, MT.OREMATS.BrownLimonite        , MT.OREMATS.YellowLimonite      , MT.Fe2O3                       , MT.Adamantine         , ORE_DEEPDARK);
-        new WorldgenOresLarge("ore.large.naquadah"    , T, T, 1,  255,  18, 7, 76, MT.Nq                           , MT.Nq                          , MT.Nq_522                          , MT.Nq_528                 , ORE_DEEPDARK);
+        new WorldgenOresLarge("ore.large.naquadah"    , T, T, 1,  255,  40, 7, 76, MT.Nq                           , MT.Nq                          , MT.Nq_522                          , MT.Nq_528                 , ORE_DEEPDARK);
+        new WorldgenOresLarge("ore.large.coltan"    , T, T, 1,  255,  46, 4, 48, MT.OREMATS.Coltan                            , MT.OREMATS.Columbite                          , MT.OREMATS.Columbite                         , MT.OREMATS.Coltan                 , ORE_DEEPDARK);
+        new WorldgenOresLarge("ore.large.diamond"     , T, T,  1,  255,  38, 2, 16, MT.Graphite                     , MT.Graphite                    , MT.Diamond                     , MT.Graphite           , ORE_DEEPDARK);
+        new WorldgenOresLarge("ore.large.monazite"    , T, T, 1,  255,  38, 3, 20, MT.OREMATS.Bastnasite           , MT.OREMATS.Bastnasite          , MT.Monazite                    , MT.Nd                 , ORE_DEEPDARK);
+        new WorldgenOresLarge("ore.large.redstone"    , T, T, 1,  255,  60, 3, 28, MT.Redstone                     , MT.Redstone                    , MT.Ruby                        , MT.OREMATS.Cinnabar   , ORE_DEEPDARK);
+        new WorldgenOresLarge("ore.large.platinum"    , T, T, 1,  255,   30, 3, 20, MT.OREMATS.Cooperite            , MT.Pd                          , MT.OREMATS.Sperrylite          , MT.Ir                 , ORE_DEEPDARK);
+        new WorldgenOresLarge("ore.large.molybdenum"  , T, T, 1,  255,   46, 2, 12, MT.OREMATS.Wulfenite            , MT.OREMATS.Molybdenite         , MT.Mo                          , MT.OREMATS.Powellite  , ORE_DEEPDARK);
+        new WorldgenOresLarge("ore.large.dolamide"    , T, T,  1,  255,  5, 5, 42, MT.OREMATS.DuraniumHexaiodide   , MT.OREMATS.DuraniumHexafluoride, MT.OREMATS.DuraniumHexachloride, MT.Dolamide           , ORE_MARS, ORE_PLANETS, ORE_ASTEROIDS);
 
         new WorldgenOresSmall("ore.small.lead"           , T,  1, 255,  512, MT.Pb                 , GEN_DEEPDARK);
         new WorldgenOresSmall("ore.small.copper"           , T,  1, 255,  512, MT.Cu                 , GEN_DEEPDARK);
+        new WorldgenOresSmall("ore.small.coal"             , T,  1, 255,  512, MT.Coal                , GEN_DEEPDARK);
         new WorldgenOresSmall("ore.small.chalcopyrite"           , T,  1, 255,  256, MT.OREMATS.Chalcopyrite                  , GEN_DEEPDARK);
         new WorldgenOresSmall("ore.small.cassiterite"           , T,  1, 255,  256, MT.OREMATS.Cassiterite                  , GEN_DEEPDARK);
+        new WorldgenOresSmall("ore.small.niter"            , T,  1, 255,  256, MT.Niter               , GEN_DEEPDARK);
         new WorldgenOresSmall("ore.small.sphalerite"           , T,  1, 255,  128, MT.OREMATS.Sphalerite                  , GEN_DEEPDARK);
         new WorldgenOresSmall("ore.small.stibnite"           , T,  1, 255,  128, MT.OREMATS.Stibnite                  , GEN_DEEPDARK);
         new WorldgenOresSmall("ore.small.galena"           , T,  1, 255,  128, MT.OREMATS.Galena                  , GEN_DEEPDARK);
@@ -69,6 +78,7 @@ public class Loader_Worldgen_DeepDark implements Runnable {
         new WorldgenOresSmall("ore.small.columbite"           , T,  1, 255,  64, MT.OREMATS.Columbite                  , GEN_DEEPDARK);
         new WorldgenOresSmall("ore.small.tantalite"           , T,  1, 255,  64, MT.OREMATS.Tantalite                  , GEN_DEEPDARK);
         new WorldgenOresSmall("ore.small.gold"           , T,  1, 255,  48, MT.Au                  , GEN_DEEPDARK);
+        new WorldgenOresSmall("ore.small.diamond"          , T,   1,  255,   24, MT.Diamond             , GEN_DEEPDARK);
 
     }
 }

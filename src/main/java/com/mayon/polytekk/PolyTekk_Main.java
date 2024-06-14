@@ -36,6 +36,8 @@ import gregapi.block.multitileentity.MultiTileEntityBlock;
 import gregapi.block.multitileentity.MultiTileEntityRegistry;
 import gregapi.code.ArrayListNoNulls;
 import gregapi.data.*;
+import gregapi.oredict.OreDictManager;
+import gregapi.oredict.OreDictPrefix;
 import gregapi.recipes.Recipe;
 import gregapi.tileentity.multiblocks.MultiTileEntityMultiBlockPart;
 import gregapi.util.OM;
@@ -49,6 +51,7 @@ import scala.reflect.internal.Trees;
 import java.util.Collection;
 
 import static gregapi.data.CS.*;
+import static gregapi.data.OP.crushedPurified;
 
 /**
  * @author Your Name Here, also might be worth replacing that automatically generated Copyright notice with your LPGL compatible License/Name instead of mine.
