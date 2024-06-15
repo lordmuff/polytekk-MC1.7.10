@@ -20,12 +20,14 @@ public enum PT_ItemCont implements IItemContainer {
 
     Comb_Rad, Comb_Actinide, Comb_Schrabidium, Comb_Xen, Comb_Limpid, Comb_Waste, Comb_Fallout,
 
+    Battery_Lead_Acid_IV, Battery_Alkaline_IV, Battery_NiCd_IV, Battery_LiCoO2_IV, Battery_LiMn_IV, Battery_Lead_Acid_LUV, Battery_Alkaline_LUV, Battery_NiCd_LUV, Battery_LiCoO2_LUV, Battery_LiMn_LUV, Battery_Lead_Acid_ZPM, Battery_Alkaline_ZPM, Battery_NiCd_ZPM, Battery_LiCoO2_ZPM, Battery_LiMn_ZPM, Battery_Lead_Acid_UV, Battery_Alkaline_UV, Battery_NiCd_UV, Battery_LiCoO2_UV, Battery_LiMn_UV , Battery_Lead_Acid_PUV1, Battery_Alkaline_PUV1, Battery_NiCd_PUV1, Battery_LiCoO2_PUV1, Battery_LiMn_PUV1, Crystal_Energium_Red_LUV, Crystal_Energium_Cyan_LUV, Crystal_Energium_Red_ZPM, Crystal_Energium_Cyan_ZPM, Crystal_Energium_Red_UV, Crystal_Energium_Cyan_UV, Crystal_Energium_Red_PUV1, Crystal_Energium_Cyan_PUV1,
     NULL;
 
     public final static PT_ItemCont[]
             PARTICLE = {Proton, Anti_Proton, Electron, Positron, Neutron, Anti_Neutron, Neutrino, Anti_Neutrino, Higgs_Boson, Photon}
             , COMB = {Comb_Rad, Comb_Actinide, Comb_Schrabidium, Comb_Xen, Comb_Limpid, Comb_Waste, Comb_Fallout}
-            ;
+            , BATTERY = {Battery_Lead_Acid_IV, Battery_Alkaline_IV, Battery_NiCd_IV, Battery_LiCoO2_IV, Battery_LiMn_IV, Battery_Lead_Acid_LUV, Battery_Alkaline_LUV, Battery_NiCd_LUV, Battery_LiCoO2_LUV, Battery_LiMn_LUV, Battery_Lead_Acid_ZPM, Battery_Alkaline_ZPM, Battery_NiCd_ZPM, Battery_LiCoO2_ZPM, Battery_LiMn_ZPM, Battery_Lead_Acid_UV, Battery_Alkaline_UV, Battery_NiCd_UV, Battery_LiCoO2_UV, Battery_LiMn_UV , Battery_Lead_Acid_PUV1, Battery_Alkaline_PUV1, Battery_NiCd_PUV1, Battery_LiCoO2_PUV1, Battery_LiMn_PUV1, Crystal_Energium_Red_LUV, Crystal_Energium_Cyan_LUV, Crystal_Energium_Red_ZPM, Crystal_Energium_Cyan_ZPM, Crystal_Energium_Red_UV, Crystal_Energium_Cyan_UV, Crystal_Energium_Red_PUV1, Crystal_Energium_Cyan_PUV1}
+        ;
     private ItemStack mStack;
     private boolean mHasNotBeenSet = T;
 
