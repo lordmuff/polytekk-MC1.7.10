@@ -39,11 +39,11 @@ dependencies {
     compile fileTree(dir: 'lib', include: '*.jar')
 
     compile("com.github.GTNewHorizons:waila:1.6.0:dev")
-    api("com.github.GTNewHorizons:Baubles:1.0.1.16:dev")
+    compile("com.github.GTNewHorizons:Baubles:1.0.1.16:dev")
     implementation("com.github.GTNewHorizons:Avaritia:1.45:dev")
     implementation("com.github.GTNewHorizons:WitcheryExtras:1.1.14:dev")
     implementation("curse.maven:witchery-69673:2234410")
-    api("thaumcraft:Thaumcraft:1.7.10-4.2.3.5:dev")
+    compile("thaumcraft:Thaumcraft:1.7.10-4.2.3.5:dev")
     api("com.github.GTNewHorizons:Botania:1.9.24-GTNH:dev")
     api("com.github.GTNewHorizons:BloodMagic:1.4.3:dev")
     implementation("com.github.GTNewHorizons:ForgeMultipart:1.3.4:dev")
@@ -68,9 +68,10 @@ dependencies {
     runtimeOnly("dan200.computercraft:ComputerCraft:1.75")
     implementation("li.cil.oc:OpenComputers:MC1.7.10-1.7.2.1204:dev")
 
-    implementation("Reika:DragonAPI:v33a:dev")
-    implementation("Reika:ChromatiCraft:v33a:dev")
-    implementation("Reika:VoidMonster:v33a:dev")
+    compile("Reika:DragonAPI:v33a:dev")
+    compile("Reika:ChromatiCraft:v33a:dev")
+    compile("Reika:RotaryCraft:v33a:dev")
+    compile("Reika:ReactorCraft:v33a:dev")
 
     //Greg dependencies...
 

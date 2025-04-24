@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="839aa97b-596c-44ec-9521-77247cf41d37" name="Changes" comment="teh epic itemz of d00m &lt;/s&gt;">
+    <list default="true" id="839aa97b-596c-44ec-9521-77247cf41d37" name="Changes" comment="oops fixed something stupid">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mayon/polytekk/PolyTekk_Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mayon/polytekk/PolyTekk_Main.java" afterDir="false" />
     </list>
@@ -110,7 +110,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/tranq/IdeaProjects/polytekk/dependencies",
+    "last_opened_file_path": "C:/Users/tranq/IdeaProjects/polytekk-MC1.7.10",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -139,7 +139,7 @@
       <option name="MAIN_CLASS_NAME" value="GradleStart" />
       <module name="polytekk-MC1.7.10.ideVirtualMain" />
       <option name="PROGRAM_PARAMETERS" value="&quot;--username&quot; &quot;Developer&quot; &quot;--version&quot; &quot;1.7.10&quot; &quot;--gameDir&quot; &quot;C:\Users\tranq\IdeaProjects\polytekk-MC1.7.10\run&quot; &quot;--assetsDir&quot; &quot;C:\Users\tranq\.gradle\caches\retro_futura_gradle\assets&quot; &quot;--assetIndex&quot; &quot;1.7.10&quot; &quot;--uuid&quot; &quot;31c4910d-9b69-4725-8969-9ed53ac8a7dc&quot; &quot;--userProperties&quot; &quot;{}&quot; &quot;--accessToken&quot; &quot;0&quot;" />
-      <option name="VM_PARAMETERS" value="&quot;-ea:com.mayon&quot; &quot;-noverify&quot; &quot;-DragonAPI_ForceMethodStrip&quot; &quot;-Dfml.ignoreInvalidMinecraftCertificates=true&quot; &quot;-Djava.library.path=C:\Users\tranq\IdeaProjects\polytekk-MC1.7.10\run\natives\lwjgl2;C:\Program Files\OpenLogic\jdk-8.0.402.06-hotspot\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files\OpenLogic\jre-8.0.402.06-hotspot\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files\OpenLogic\jdk-8.0.402.06-hotspot\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\dotnet\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\Git\cmd;C:\Users\tranq\AppData\Local\Programs\Python\Launcher\;C:\Users\tranq\AppData\Local\Microsoft\WindowsApps;;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.3\bin;;C:\Users\tranq\.dotnet\tools;.&quot;" />
+      <option name="VM_PARAMETERS" value="&quot;-ea:com.mayon&quot; &quot;-noverify&quot; &quot;-DragonAPI_ForceMethodStrip&quot; &quot;-Dfml.ignoreInvalidMinecraftCertificates=true&quot; &quot;-Djava.library.path=C:\Users\tranq\IdeaProjects\polytekk-MC1.7.10\run\natives\lwjgl2;C:\Program Files\OpenLogic\jdk-8.0.402.06-hotspot\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\OpenLogic\jdk-8.0.412.08-hotspot\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files\OpenLogic\jre-8.0.402.06-hotspot\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files\OpenLogic\jdk-8.0.402.06-hotspot\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\dotnet\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\Git\cmd;C:\Users\tranq\AppData\Local\Programs\Python\Launcher\;C:\Users\tranq\AppData\Local\Microsoft\WindowsApps;;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.3\bin;;C:\Users\tranq\.dotnet\tools;.&quot;" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/run" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -695,7 +695,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718422062103</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="oops fixed something stupid">
+      <option name="closed" value="true" />
+      <created>1718422636216</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1718422636216</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -733,7 +741,8 @@
     <MESSAGE value="deep dork gets the ore-ingtons" />
     <MESSAGE value="more ores pl0x" />
     <MESSAGE value="teh epic itemz of d00m &lt;/s&gt;" />
-    <option name="LAST_COMMIT_MESSAGE" value="teh epic itemz of d00m &lt;/s&gt;" />
+    <MESSAGE value="oops fixed something stupid" />
+    <option name="LAST_COMMIT_MESSAGE" value="oops fixed something stupid" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
