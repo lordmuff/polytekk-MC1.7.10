@@ -50,7 +50,7 @@ public class Loader_Worldgen_DeepDark implements Runnable {
         new WorldgenOresBedrock("ore.bedrock.zirconium"    , T, T,   7500, MT.Zr               , GEN_DEEPDARK);
         new WorldgenOresBedrock("ore.bedrock.firestone"    , T, T,   16666, MT.Firestone                                 , GEN_DEEPDARK);
 
-        new WorldgenFluidSpring(   "fluid.lava.volcanic"          , T, ModBlocks.volcanic_lava_block            ,  0, 1000,                FL.Lava_Volcanic            .make( 16000)     , GEN_DEEPDARK);
+        //new WorldgenFluidSpring(   "fluid.lava.volcanic"          , T, ModBlocks.volcanic_lava_block            ,  0, 1000,                FL.Lava_Volcanic            .make( 16000)     , GEN_DEEPDARK);
         new WorldgenFluidSpring(   "fluid.lava"          , T, Blocks.lava             ,  0, 600,                FL.Lava            .make( 10000)     , GEN_DEEPDARK);
 
         new WorldgenFluidSpring(   "fluid.oil.extraheavy", T, BlocksGT.OilExtraHeavy  , 15, 600, tInfiniteOil ? FL.Oil_ExtraHeavy  .make( 12000) : NF, GEN_DEEPDARK);
