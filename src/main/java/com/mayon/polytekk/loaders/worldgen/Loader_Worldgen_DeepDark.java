@@ -1,4 +1,4 @@
-package com.mayon.polytekk.worldgen;
+package com.mayon.polytekk.loaders.worldgen;
 
 import Reika.ChromatiCraft.Registry.ChromaBlocks;
 import Reika.DragonAPI.ModInteract.ItemHandlers.ThaumIDHandler;
@@ -71,7 +71,7 @@ public class Loader_Worldgen_DeepDark implements Runnable {
         new WorldgenOresLarge("ore.large.uraninite", T, T, 1, 255, 80, 6, 32, MT.Pb, MT.OREMATS.Uraninite, MT.OREMATS.Uraninite, MT.Ra, ORE_DEEPDARK);
         new WorldgenOresLarge("ore.large.pitchblende", T, T, 1, 255, 80, 6, 32, MT.Pb, MT.OREMATS.Pitchblende, MT.OREMATS.Pitchblende, MT.Ra, ORE_DEEPDARK);
         new WorldgenOresLarge("ore.large.plutonium", T, T, 1, 255, 22, 2, 20, MT.OREMATS.Uraninite, MT.OREMATS.Uraninite, MT.Pu, MT.Pu, ORE_DEEPDARK);
-        new WorldgenOresLarge("ore.large.gold"        , T, T, 1,  255,   50, 4, 32, MT.Pyrite                       , MT.OREMATS.Chalcopyrite        , MT.OREMATS.Arsenopyrite        , MT.Au                 , ORE_DEEPDARK);
+        new WorldgenOresLarge("ore.large.chalcopyrite"        , T, T, 1,  255,   50, 4, 32, MT.Pyrite                       , MT.OREMATS.Chalcopyrite        , MT.OREMATS.Arsenopyrite        , MT.Au                 , ORE_DEEPDARK);
         new WorldgenOresLarge("ore.large.adamantium"  , T, T, 1, 255,   10, 3, 24, MT.OREMATS.BrownLimonite        , MT.OREMATS.YellowLimonite      , MT.Fe2O3                       , MT.Adamantine         , ORE_DEEPDARK);
         new WorldgenOresLarge("ore.large.naquadah"    , T, T, 1,  255,  40, 7, 76, MT.Nq                           , MT.Nq                          , MT.Nq_522                          , MT.Nq_528                 , ORE_DEEPDARK);
         new WorldgenOresLarge("ore.large.coltan"    , T, T, 1,  255,  46, 4, 48, MT.OREMATS.Coltan                            , MT.OREMATS.Columbite                          , MT.OREMATS.Columbite                         , MT.OREMATS.Coltan                 , ORE_DEEPDARK);

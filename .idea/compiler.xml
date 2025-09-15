@@ -11,10 +11,18 @@
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy-agent/1.14.9/dfb8707031008535048bad2b69735f46d0b6c5e5/byte-buddy-agent-1.14.9.jar" />
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.java.dev.jna/jna/5.13.0/1200e7ebeedbe0d10062093f32925a912020e747/jna-5.13.0.jar" />
         </processorPath>
-        <module name="polytekk-MC1.7.10.main" />
+        <module name="com.github.GTNewHorizons.polytekk-MC1.7.10.main" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="17" />
+    <bytecodeTargetLevel target="17">
+      <module name="polytekk-MC1.7.10.api" target="1.8" />
+      <module name="polytekk-MC1.7.10.ideVirtualMain" target="1.8" />
+      <module name="polytekk-MC1.7.10.injectedTags" target="1.8" />
+      <module name="polytekk-MC1.7.10.main" target="1.8" />
+      <module name="polytekk-MC1.7.10.mcLauncher" target="1.8" />
+      <module name="polytekk-MC1.7.10.patchedMc" target="1.8" />
+      <module name="polytekk-MC1.7.10.test" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_STRING" value="-encoding utf8" />

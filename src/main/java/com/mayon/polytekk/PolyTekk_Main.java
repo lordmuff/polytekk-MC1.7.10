@@ -25,20 +25,16 @@ import Reika.ChromatiCraft.ModInterface.ItemColoredModInteract;
 import Reika.ChromatiCraft.Registry.CrystalElement;
 import com.hbm.items.ModItems;
 import com.mayon.polytekk.data.PT_ItemCont;
-import com.mayon.polytekk.items.PTParticleMultiItem;
 import com.mayon.polytekk.items.PT_Bumbles;
 import com.mayon.polytekk.items.PT_Combs;
 import com.mayon.polytekk.tileentity.multiblocks.MultiTileEntityParticleCollider;
-import com.mayon.polytekk.worldgen.Loader_Worldgen_DeepDark;
-import gregapi.api.example.Example_Mod;
+import com.mayon.polytekk.loaders.worldgen.Loader_Worldgen_DeepDark;
 import gregapi.block.MaterialMachines;
 import gregapi.block.MaterialScoopable;
 import gregapi.block.multitileentity.MultiTileEntityBlock;
 import gregapi.block.multitileentity.MultiTileEntityRegistry;
 import gregapi.code.ArrayListNoNulls;
 import gregapi.data.*;
-import gregapi.oredict.OreDictManager;
-import gregapi.oredict.OreDictPrefix;
 import gregapi.recipes.Recipe;
 import gregapi.tileentity.multiblocks.MultiTileEntityMultiBlockPart;
 import gregapi.util.OM;
@@ -49,16 +45,10 @@ import gregtech.tileentity.batteries.eu.MultiTileEntityBatteryEU2048;
 import gregtech.tileentity.batteries.lu.MultiTileEntityBatteryLU8192;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.fluids.FluidStack;
-import scala.reflect.internal.Trees;
-
-import java.util.Collection;
 
 import static gregapi.data.CS.*;
 import static gregapi.data.MT.EnergiumCyan;
 import static gregapi.data.MT.EnergiumRed;
-import static gregapi.data.OP.crushedPurified;
 
 /**
  * @author Your Name Here, also might be worth replacing that automatically generated Copyright notice with your LPGL compatible License/Name instead of mine.
