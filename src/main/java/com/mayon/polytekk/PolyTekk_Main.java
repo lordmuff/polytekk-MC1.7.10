@@ -19,23 +19,29 @@
 
 package com.mayon.polytekk;
 
+import com.hbm.blocks.ModBlocks;
 import com.hbm.items.special.ItemWasteLong;
 import com.hbm.items.special.ItemWasteShort;
 import Reika.ChromatiCraft.ModInterface.ItemColoredModInteract;
 import Reika.ChromatiCraft.Registry.CrystalElement;
 import com.hbm.items.ModItems;
 import com.mayon.polytekk.data.PT_ItemCont;
+import com.mayon.polytekk.data.PT_Material;
 import com.mayon.polytekk.items.PT_Bumbles;
 import com.mayon.polytekk.items.PT_Combs;
+import com.mayon.polytekk.loaders.ores.PT_Loader_Ores;
+import com.mayon.polytekk.loaders.worldgen.*;
 import com.mayon.polytekk.tileentity.multiblocks.MultiTileEntityParticleCollider;
-import com.mayon.polytekk.loaders.worldgen.Loader_Worldgen_DeepDark;
 import gregapi.block.MaterialMachines;
 import gregapi.block.MaterialScoopable;
 import gregapi.block.multitileentity.MultiTileEntityBlock;
 import gregapi.block.multitileentity.MultiTileEntityRegistry;
 import gregapi.code.ArrayListNoNulls;
 import gregapi.data.*;
+import gregapi.oredict.OreDictMaterial;
 import gregapi.recipes.Recipe;
+import gregapi.render.BlockTextureCopied;
+import gregapi.render.TextureSet;
 import gregapi.tileentity.multiblocks.MultiTileEntityMultiBlockPart;
 import gregapi.util.OM;
 import gregapi.util.ST;
@@ -45,10 +51,18 @@ import gregtech.tileentity.batteries.eu.MultiTileEntityBatteryEU2048;
 import gregtech.tileentity.batteries.lu.MultiTileEntityBatteryLU8192;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import com.mayon.polytekk.loaders.ores.PT_Loader_Ores.*;
 
 import static gregapi.data.CS.*;
-import static gregapi.data.MT.EnergiumCyan;
-import static gregapi.data.MT.EnergiumRed;
+import static gregapi.data.CS.F;
+import static gregapi.data.CS.T;
+import static gregapi.data.CS.V;
+import static gregapi.data.MT.*;
+import static gregapi.data.OP.dust;
+import static gregapi.data.OP.oreMoon;
+import static gregapi.data.TD.Prefix.BLOCK_BASED;
+import static gregapi.data.TD.Prefix.STANDARD_ORE;
+import static gregtech.loaders.a.Loader_Ores.rockset;
 
 /**
  * @author Your Name Here, also might be worth replacing that automatically generated Copyright notice with your LPGL compatible License/Name instead of mine.
@@ -80,6 +94,7 @@ public final class PolyTekk_Main extends gregapi.api.Abstract_Mod {
 
     @cpw.mods.fml.common.SidedProxy(modId = MOD_ID, clientSide = "gregapi.api.example.Example_Proxy_Client", serverSide = "gregapi.api.example.Example_Proxy_Server")
     public static gregapi.api.Abstract_Proxy PROXY;
+
     @Override public String getModID() {return MOD_ID;}
     @Override public String getModName() {return MOD_NAME;}
     @Override public String getModNameForLog() {return "PolyTekk";}
@@ -98,22 +113,147 @@ public final class PolyTekk_Main extends gregapi.api.Abstract_Mod {
     public void onModPreInit2(cpw.mods.fml.common.event.FMLPreInitializationEvent aEvent) {
 
         MultiTileEntityBlock
-            aMetal      = MultiTileEntityBlock.getOrCreate(MOD_ID, "iron"         , Material.iron             , Block.soundTypeMetal, TOOL_pickaxe, 0, 0, 15, F, F)
-            , aMetalChips = MultiTileEntityBlock.getOrCreate(MOD_ID, "iron"         , Material.iron             , Block.soundTypeMetal, TOOL_shovel , 0, 0, 15, F, F)
-            , aMetalWires = MultiTileEntityBlock.getOrCreate(MOD_ID, "machine"      , MaterialMachines.instance , Block.soundTypeMetal, TOOL_cutter , 0, 0, 15, F, F)
-            , aMachine    = MultiTileEntityBlock.getOrCreate(MOD_ID, "machine"      , MaterialMachines.instance , Block.soundTypeMetal, TOOL_wrench , 0, 0, 15, F, F)
-            , aWooden     = MultiTileEntityBlock.getOrCreate(MOD_ID, "wood"         , Material.wood             , Block.soundTypeWood , TOOL_axe    , 0, 0, 15, F, F)
-            , aBush       = MultiTileEntityBlock.getOrCreate(MOD_ID, "leaves"       , Material.leaves           , Block.soundTypeGrass, TOOL_axe    , 0, 0, 15, F, F)
-            , aStone      = MultiTileEntityBlock.getOrCreate(MOD_ID, "rock"         , Material.rock             , Block.soundTypeStone, TOOL_pickaxe, 0, 0, 15, F, F)
-            , aWool       = MultiTileEntityBlock.getOrCreate(MOD_ID, "cloth"        , Material.cloth            , Block.soundTypeCloth, TOOL_shears , 0, 0, 15, F, F)
-            , aTNT        = MultiTileEntityBlock.getOrCreate(MOD_ID, "tnt"          , Material.tnt              , Block.soundTypeGrass, TOOL_pickaxe, 0, 0, 15, F, F)
-            , aUtilMetal  = MultiTileEntityBlock.getOrCreate(MOD_ID, "redstoneLight", Material.redstoneLight    , Block.soundTypeMetal, TOOL_pickaxe, 0, 0, 15, F, F)
-            , aUtilStone  = MultiTileEntityBlock.getOrCreate(MOD_ID, "redstoneLight", Material.redstoneLight    , Block.soundTypeStone, TOOL_pickaxe, 0, 0, 15, F, F)
-            , aUtilWood   = MultiTileEntityBlock.getOrCreate(MOD_ID, "redstoneLight", Material.redstoneLight    , Block.soundTypeWood , TOOL_axe    , 0, 0, 15, F, F)
-            , aUtilWool   = MultiTileEntityBlock.getOrCreate(MOD_ID, "redstoneLight", Material.redstoneLight    , Block.soundTypeCloth, TOOL_shears , 0, 0, 15, F, F)
-            , aHive       = MultiTileEntityBlock.getOrCreate(MOD_ID, "rock"         , MaterialScoopable.instance, Block.soundTypeWood , TOOL_scoop  , 0, 0, 15, F, F)
-            ;
+            aUtilMetal  = MultiTileEntityBlock.getOrCreate(MOD_ID, "redstoneLight", Material.redstoneLight    , Block.soundTypeMetal, TOOL_pickaxe, 0, 0, 15, F, F)
+           ;
         // hope Greg doesn't mind if i take this xd
+
+        PT_Loader_Ores.StoneMoho.setTextures(TextureSet.SET_STONE);
+        PT_Loader_Ores.StoneEve.setTextures(TextureSet.SET_STONE);
+        PT_Loader_Ores.StoneMinmus.setTextures(TextureSet.SET_STONE);
+        PT_Loader_Ores.StoneDuna.setTextures(TextureSet.SET_STONE);
+        PT_Loader_Ores.StoneDres.setTextures(TextureSet.SET_STONE);
+        PT_Loader_Ores.StoneIke.setTextures(TextureSet.SET_STONE);
+        PT_Loader_Ores.StoneLaythe.setTextures(TextureSet.SET_STONE);
+        PT_Loader_Ores.StoneTekto.setTextures(TextureSet.SET_STONE);
+
+        PT_Loader_Ores.Tiberium.setTextures(TextureSet.SET_GEM_HORIZONTAL);
+
+        PT_Loader_Ores.Australium.setTextures(TextureSet.SET_RAD);
+        PT_Loader_Ores.Schrabidium.setTextures(TextureSet.SET_RAD);
+        PT_Loader_Ores.Solinium.setTextures(TextureSet.SET_RAD);
+        PT_Loader_Ores.Euphemium.setTextures(TextureSet.SET_RAD);
+        PT_Loader_Ores.Pb_209.setTextures(TextureSet.SET_RAD);
+        PT_Loader_Ores.Bk_247.setTextures(TextureSet.SET_RAD);
+        PT_Loader_Ores.Es_253.setTextures(TextureSet.SET_RAD);
+
+        PT_Loader_Ores.StoneMoho.put(gregapi.data.TD.Processing.CENTRIFUGE);
+        PT_Loader_Ores.StoneEve.put(gregapi.data.TD.Processing.CENTRIFUGE);
+        PT_Loader_Ores.StoneMinmus.put(gregapi.data.TD.Processing.CENTRIFUGE);
+        PT_Loader_Ores.StoneDuna.put(gregapi.data.TD.Processing.CENTRIFUGE);
+        PT_Loader_Ores.StoneDres.put(gregapi.data.TD.Processing.CENTRIFUGE);
+        PT_Loader_Ores.StoneIke.put(gregapi.data.TD.Processing.CENTRIFUGE);
+        PT_Loader_Ores.StoneLaythe.put(gregapi.data.TD.Processing.CENTRIFUGE);
+        PT_Loader_Ores.StoneTekto.put(gregapi.data.TD.Processing.CENTRIFUGE);
+
+        PT_Loader_Ores.StoneMoho.put(gregapi.data.TD.Processing.ELECTROLYSER);
+        PT_Loader_Ores.StoneEve.put(gregapi.data.TD.Processing.ELECTROLYSER);
+        PT_Loader_Ores.StoneMinmus.put(gregapi.data.TD.Processing.ELECTROLYSER);
+        PT_Loader_Ores.StoneDuna.put(gregapi.data.TD.Processing.ELECTROLYSER);
+        PT_Loader_Ores.StoneDres.put(gregapi.data.TD.Processing.ELECTROLYSER);
+        PT_Loader_Ores.StoneIke.put(gregapi.data.TD.Processing.ELECTROLYSER);
+        PT_Loader_Ores.StoneLaythe.put(gregapi.data.TD.Processing.ELECTROLYSER);
+        PT_Loader_Ores.StoneTekto.put(gregapi.data.TD.Processing.ELECTROLYSER);
+
+        PT_Loader_Ores.StoneMoho.heat(3888, 4122);
+        PT_Loader_Ores.StoneEve.heat(2575, 4666);
+        PT_Loader_Ores.StoneMinmus.heat(274, 666);
+        PT_Loader_Ores.StoneDuna.heat(750, 1200);
+        PT_Loader_Ores.StoneDres.heat(860, 1200);
+        PT_Loader_Ores.StoneIke.heat(880, 1225);
+        PT_Loader_Ores.StoneLaythe.heat(280, 666);
+        PT_Loader_Ores.StoneTekto.heat(300, 777);
+
+        PT_Loader_Ores.StoneMoho.setOriginalMod(MD.HBM);
+        PT_Loader_Ores.StoneEve.setOriginalMod(MD.HBM);
+        PT_Loader_Ores.StoneMinmus.setOriginalMod(MD.HBM);
+        PT_Loader_Ores.StoneDuna.setOriginalMod(MD.HBM);
+        PT_Loader_Ores.StoneDres.setOriginalMod(MD.HBM);
+        PT_Loader_Ores.StoneIke.setOriginalMod(MD.HBM);
+        PT_Loader_Ores.StoneLaythe.setOriginalMod(MD.HBM);
+        PT_Loader_Ores.StoneTekto.setOriginalMod(MD.HBM);
+
+        PT_Loader_Ores.Australium.setOriginalMod(MD.HBM);
+        PT_Loader_Ores.Schrabidium.setOriginalMod(MD.HBM);
+        PT_Loader_Ores.Solinium.setOriginalMod(MD.HBM);
+        PT_Loader_Ores.Euphemium.setOriginalMod(MD.HBM);
+        PT_Loader_Ores.Pb_209.setOriginalMod(MD.HBM);
+
+        PT_Loader_Ores.Australium.heat(Au_198.mMeltingPoint - 300, Au_198.mBoilingPoint - 450);
+        PT_Loader_Ores.Schrabidium.heat(Nq.mMeltingPoint - 300, Nq.mBoilingPoint - 450);
+        PT_Loader_Ores.Solinium.heat(Nq_522.mMeltingPoint - 300, Nq_522.mBoilingPoint - 450);
+        PT_Loader_Ores.Euphemium.heat(Nq_528.mMeltingPoint - 400, Nq_528.mBoilingPoint - 750);
+        PT_Loader_Ores.Pb_209.heat(Pb.mMeltingPoint - 50, Pb.mBoilingPoint - 150);
+        PT_Loader_Ores.Bk_247.heat(Bk.mMeltingPoint, Bk.mBoilingPoint);
+        PT_Loader_Ores.Es_253.heat(Es.mMeltingPoint, Es.mBoilingPoint);
+
+        PT_Loader_Ores.Australium.ores(Au, Au_198, Ag, PT_Loader_Ores.Pb_209);
+        PT_Loader_Ores.Schrabidium.ores(Pu, OREMATS.Uraninite, PT_Loader_Ores.Solinium);
+        PT_Loader_Ores.Solinium.ores(PT_Loader_Ores.Euphemium, Pu, Pu, Cm, Am);
+        PT_Loader_Ores.Euphemium.ores(PT_Loader_Ores.Solinium, PT_Loader_Ores.Schrabidium, Nq_522, Nq_528, Nq);
+
+        PT_Loader_Ores.Tiberium.aspects(TC.RADIO, 4).aspects(TC.VITREUS, 2);
+        PT_Loader_Ores.Australium.aspects_met_rad(2, 4).aspects(TC.LUCRUM, 2);
+        PT_Loader_Ores.Schrabidium.aspects_met_rad(1, 5).aspects(TC.PERMUTATIO, 2).aspects(TC.POTENTIA, 1);
+        PT_Loader_Ores.Solinium.aspects_met_rad(2, 6).aspects(TC.PERMUTATIO, 1).aspects(TC.POTENTIA, 2);
+        PT_Loader_Ores.Euphemium.aspects_met_rad(1, 7).aspects(TC.NEBRISUM, 2).aspects(TC.LUCRUM, 2);
+        PT_Loader_Ores.Pb_209.aspects_met_rad(3, 13).aspects(TC.NEBRISUM, 1).aspects(TC.ORDO, 1);
+        PT_Loader_Ores.Bk_247.aspects_met_rad(5, 6).aspects(TC.NEBRISUM, 2);
+        PT_Loader_Ores.Es_253.aspects_met_rad(5, 23).aspects(TC.NEBRISUM, 3);
+
+        PT_Loader_Ores.Australium.setRGBa(255, 238, 0 ,255);
+        PT_Loader_Ores.Schrabidium.setRGBa(0, 189, 189,255);
+        PT_Loader_Ores.Solinium.setRGBa(0, 230, 224,255);
+        PT_Loader_Ores.Euphemium.setRGBa(230, 77, 160,255);
+        PT_Loader_Ores.Pb_209.setRGBa(179, 138, 148,255);
+        PT_Loader_Ores.Bk_247.setRGBa(206, 202, 205,255);
+        PT_Loader_Ores.Es_253.setRGBa(193, 198, 186,255);
+
+        PT_Loader_Ores.Australium.put(gregapi.data.TD.ItemGenerator.G_INGOT_MACHINE_ORES);
+        PT_Loader_Ores.Schrabidium.put(gregapi.data.TD.ItemGenerator.G_INGOT_MACHINE_ORES);
+        PT_Loader_Ores.Solinium.put(gregapi.data.TD.ItemGenerator.G_INGOT_MACHINE);
+        PT_Loader_Ores.Euphemium.put(gregapi.data.TD.ItemGenerator.G_INGOT_MACHINE_ORES);
+        PT_Loader_Ores.Pb_209.put(gregapi.data.TD.ItemGenerator.G_INGOT_MACHINE);
+        PT_Loader_Ores.Bk_247.put(gregapi.data.TD.ItemGenerator.G_INGOT_MACHINE);
+        PT_Loader_Ores.Es_253.put(gregapi.data.TD.ItemGenerator.G_INGOT_MACHINE);
+
+        PT_Loader_Ores.Tiberium.setOriginalMod(MD.GT5U);
+
+        final gregapi.oredict.OreDictPrefix oreMoho = gregapi.oredict.OreDictPrefix.createPrefix("oreMoho").setOreStats( 3*U ).add(BLOCK_BASED, STANDARD_ORE).aspects(TC.ALIENIS,  1).aspects(TC.IGNIS, 2).setTextureSetName("ore");
+        final gregapi.oredict.OreDictPrefix oreEve = gregapi.oredict.OreDictPrefix.createPrefix("oreEve").setOreStats( 4*U ).add(BLOCK_BASED, STANDARD_ORE).aspects(TC.ALIENIS,  1).aspects(TC.VENEMUM, 2).setTextureSetName("ore");
+        final gregapi.oredict.OreDictPrefix oreMinmus = gregapi.oredict.OreDictPrefix.createPrefix("oreMinmus").setOreStats( 2*U ).add(BLOCK_BASED, STANDARD_ORE).aspects(TC.ALIENIS,  1).aspects(TC.GELUM, 2).setTextureSetName("ore");
+        final gregapi.oredict.OreDictPrefix oreDuna = gregapi.oredict.OreDictPrefix.createPrefix("oreDuna").setOreStats( 3*U ).add(BLOCK_BASED, STANDARD_ORE).aspects(TC.ALIENIS,  1).aspects(TC.METALLUM, 1).setTextureSetName("ore");
+        final gregapi.oredict.OreDictPrefix oreDres = gregapi.oredict.OreDictPrefix.createPrefix("oreDres").setOreStats( 4*U ).add(BLOCK_BASED, STANDARD_ORE).aspects(TC.ALIENIS,  1).aspects(TC.NEBRISUM, 1).setTextureSetName("ore");
+        final gregapi.oredict.OreDictPrefix oreIke = gregapi.oredict.OreDictPrefix.createPrefix("oreIke").setOreStats( 3*U ).add(BLOCK_BASED, STANDARD_ORE).aspects(TC.ALIENIS,  1).aspects(TC.RADIO, 1).setTextureSetName("ore");
+        final gregapi.oredict.OreDictPrefix oreLaythe = gregapi.oredict.OreDictPrefix.createPrefix("oreLaythe").setOreStats( 5*U ).add(BLOCK_BASED, STANDARD_ORE).aspects(TC.ALIENIS,  1).aspects(TC.FAMES, 1).setTextureSetName("ore");
+        final gregapi.oredict.OreDictPrefix oreTekto = gregapi.oredict.OreDictPrefix.createPrefix("oreTekto").setOreStats( 5*U ).add(BLOCK_BASED, STANDARD_ORE).aspects(TC.ALIENIS,  1).aspects(TC.FABRICO, 1).setTextureSetName("ore");
+
+        new gregapi.block.prefixblock.PrefixBlock_(MOD_ID, MOD_ID, "pt.meta.ore.normal.moho", oreMoho, null, null, null, BlockTextureCopied.get(ModBlocks.moho_stone), net.minecraft.block.material.Material.rock, net.minecraft.block.Block.soundTypeStone, gregapi.data.CS.TOOL_pickaxe, 1.5F, 4.5F,   0,   0, 999, 0, 0, 0, 1, 1, 1, false, false, false, false, true, true, true, true, true, true, false, true, true, true, gregapi.oredict.OreDictMaterial.MATERIAL_ARRAY);
+        new gregapi.block.prefixblock.PrefixBlock_(MOD_ID, MOD_ID, "pt.meta.ore.normal.eve", oreEve, null, null, null, BlockTextureCopied.get(ModBlocks.eve_rock), net.minecraft.block.material.Material.rock, net.minecraft.block.Block.soundTypeStone, gregapi.data.CS.TOOL_pickaxe, 1.5F, 4.5F,   0,   0, 999, 0, 0, 0, 1, 1, 1, false, false, false, false, true, true, true, true, true, true, false, true, true, true, gregapi.oredict.OreDictMaterial.MATERIAL_ARRAY);
+        new gregapi.block.prefixblock.PrefixBlock_(MOD_ID, MOD_ID, "pt.meta.ore.normal.minmus", oreMinmus, null, null, null, BlockTextureCopied.get(ModBlocks.minmus_stone), net.minecraft.block.material.Material.rock, net.minecraft.block.Block.soundTypeStone, gregapi.data.CS.TOOL_pickaxe, 1.5F, 4.5F,   0,   0, 999, 0, 0, 0, 1, 1, 1, false, false, false, false, true, true, true, true, true, true, false, true, true, true, gregapi.oredict.OreDictMaterial.MATERIAL_ARRAY);
+        new gregapi.block.prefixblock.PrefixBlock_(MOD_ID, MOD_ID, "pt.meta.ore.normal.duna", oreDuna, null, null, null, BlockTextureCopied.get(ModBlocks.duna_rock), net.minecraft.block.material.Material.rock, net.minecraft.block.Block.soundTypeStone, gregapi.data.CS.TOOL_pickaxe, 1.5F, 4.5F,   0,   0, 999, 0, 0, 0, 1, 1, 1, false, false, false, false, true, true, true, true, true, true, false, true, true, true, gregapi.oredict.OreDictMaterial.MATERIAL_ARRAY);
+        new gregapi.block.prefixblock.PrefixBlock_(MOD_ID, MOD_ID, "pt.meta.ore.normal.dres", oreDres, null, null, null, BlockTextureCopied.get(ModBlocks.dres_rock), net.minecraft.block.material.Material.rock, net.minecraft.block.Block.soundTypeStone, gregapi.data.CS.TOOL_pickaxe, 1.5F, 4.5F,   0,   0, 999, 0, 0, 0, 1, 1, 1, false, false, false, false, true, true, true, true, true, true, false, true, true, true, gregapi.oredict.OreDictMaterial.MATERIAL_ARRAY);
+        new gregapi.block.prefixblock.PrefixBlock_(MOD_ID, MOD_ID, "pt.meta.ore.normal.ike", oreIke, null, null, null, BlockTextureCopied.get(ModBlocks.ike_stone), net.minecraft.block.material.Material.rock, net.minecraft.block.Block.soundTypeStone, gregapi.data.CS.TOOL_pickaxe, 1.5F, 4.5F,   0,   0, 999, 0, 0, 0, 1, 1, 1, false, false, false, false, true, true, true, true, true, true, false, true, true, true, gregapi.oredict.OreDictMaterial.MATERIAL_ARRAY);
+        new gregapi.block.prefixblock.PrefixBlock_(MOD_ID, MOD_ID, "pt.meta.ore.normal.laythe", oreLaythe, null, null, null, BlockTextureCopied.get(ModBlocks.flesh_block), net.minecraft.block.material.Material.rock, Block.soundTypeSnow, gregapi.data.CS.TOOL_pickaxe, 1.5F, 4.5F,   0,   0, 999, 0, 0, 0, 1, 1, 1, false, false, false, false, true, true, true, true, true, true, false, true, true, true, gregapi.oredict.OreDictMaterial.MATERIAL_ARRAY);
+        new gregapi.block.prefixblock.PrefixBlock_(MOD_ID, MOD_ID, "pt.meta.ore.normal.tekto", oreTekto, null, null, null, BlockTextureCopied.get(ModBlocks.rubber_silt), net.minecraft.block.material.Material.rock, net.minecraft.block.Block.soundTypeSand, gregapi.data.CS.TOOL_pickaxe, 1.5F, 4.5F,   0,   0, 999, 0, 0, 0, 1, 1, 1, false, false, false, false, true, true, true, true, true, true, false, true, true, true, gregapi.oredict.OreDictMaterial.MATERIAL_ARRAY);
+
+        oreMoho                 .mByProducts.add(OM.stack(PT_Loader_Ores.StoneMoho     , dust.mAmount * 4));
+        oreEve                 .mByProducts.add(OM.stack(PT_Loader_Ores.StoneEve     , dust.mAmount * 4));
+        oreMinmus                 .mByProducts.add(OM.stack(PT_Loader_Ores.StoneMinmus     , dust.mAmount * 4));
+        oreDuna                 .mByProducts.add(OM.stack(PT_Loader_Ores.StoneDuna     , dust.mAmount * 4));
+        oreDres                 .mByProducts.add(OM.stack(PT_Loader_Ores.StoneDres     , dust.mAmount * 4));
+        oreIke                 .mByProducts.add(OM.stack(PT_Loader_Ores.StoneIke     , dust.mAmount * 4));
+        oreLaythe                 .mByProducts.add(OM.stack(PT_Loader_Ores.StoneLaythe     , dust.mAmount * 4));
+        oreTekto                 .mByProducts.add(OM.stack(PT_Loader_Ores.StoneTekto     , dust.mAmount * 4));
+
+        rockset(MD.HBM,"tile.moho_stone"                  , 0, "hbm.moho.rock"         , oreMoho              , PT_Loader_Ores.StoneMoho);
+        rockset(MD.HBM,"tile.eve_rock"                  , 0, "hbm.eve.rock"         , oreEve              , PT_Loader_Ores.StoneEve);
+        rockset(MD.HBM,"tile.minmus_stone"                  , 0, "hbm.minmus.rock"         , oreMinmus              , PT_Loader_Ores.StoneMinmus);
+        rockset(MD.HBM,"tile.moon_rock"                  , 0, "hbm.mun.rock"         , oreMoon              , MT.STONES.MoonRock);
+        rockset(MD.HBM,"tile.duna_rock"                  , 0, "hbm.duna.rock"         , oreDuna              , PT_Loader_Ores.StoneDuna);
+        rockset(MD.HBM,"tile.dres_rock"                  , 0, "hbm.dres.rock"         , oreDres              , PT_Loader_Ores.StoneDres);
+        rockset(MD.HBM,"tile.ike_stone"                  , 0, "hbm.ike.rock"         , oreIke              , PT_Loader_Ores.StoneIke);
+        //rockset(MD.HBM,"tile.flesh_block"                  , 0, "hbm.laythe.rock"         , oreLaythe              , PT_Loader_Ores.StoneLaythe);
+
 
         new gregapi.block.multitileentity.MultiTileEntityRegistry("polytekk.multitileentity");
 
@@ -182,7 +322,16 @@ public final class PolyTekk_Main extends gregapi.api.Abstract_Mod {
 
         ArrayListNoNulls<Runnable> loaderList = new ArrayListNoNulls<>(F,
 
-            new Loader_Worldgen_DeepDark()
+            new Loader_Worldgen_DeepDark(),
+            new Loader_Worldgen_Moho(),
+            new Loader_Worldgen_Eve(),
+            new Loader_Worldgen_Mun(),
+            new Loader_Worldgen_Minmus(),
+            new Loader_Worldgen_Duna(),
+            new Loader_Worldgen_Ike(),
+            new Loader_Worldgen_Dres(),
+            new Loader_Worldgen_Laythe(),
+            new Loader_Worldgen_Tekto()
 
             );
 

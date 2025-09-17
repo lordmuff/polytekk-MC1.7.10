@@ -19,4 +19,4 @@ plugins {
     id 'com.gtnewhorizons.gtnhsettingsconvention' version '1.0.21'
 }
 
-rootProject.name = 'polytekk-MC1.7.10'
+rootProject.name = 'polytekk'
