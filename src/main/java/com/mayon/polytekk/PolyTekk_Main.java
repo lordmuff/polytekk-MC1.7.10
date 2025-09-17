@@ -217,7 +217,7 @@ public final class PolyTekk_Main extends gregapi.api.Abstract_Mod {
         PT_Loader_Materials.StoneDres.setRGBa(67, 67, 67,255);
         PT_Loader_Materials.StoneIke.setRGBa(136, 134, 134,255);
         PT_Loader_Materials.StoneLaythe.setRGBa(172, 8, 0,255);
-        PT_Loader_Materials.StoneTekto.setRGBa(131, 69, 52,255);
+        PT_Loader_Materials.StoneTekto.setRGBa(52, 64, 58,255);
 
         PT_Loader_Materials.StoneMoho.put(DUST_BASED);
         PT_Loader_Materials.StoneEve.put(DUST_BASED);
