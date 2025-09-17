@@ -4,6 +4,7 @@ import Reika.ChromatiCraft.Registry.ChromaBlocks;
 import Reika.DragonAPI.ModInteract.ItemHandlers.ThaumIDHandler;
 import cofh.api.modhelpers.ThaumcraftHelper;
 import com.hbm.blocks.ModBlocks;
+import com.mayon.polytekk.loaders.ores.PT_Loader_Materials;
 import gregapi.block.BlockBase;
 import gregapi.block.metatype.BlockStones;
 import gregapi.config.ConfigCategories;
@@ -80,7 +81,9 @@ public class Loader_Worldgen_DeepDark implements Runnable {
         new WorldgenOresLarge("ore.large.redstone"    , T, T, 1,  255,  60, 3, 34, MT.Redstone                     , MT.Redstone                    , MT.Ruby                        , MT.OREMATS.Cinnabar   , ORE_DEEPDARK);
         new WorldgenOresLarge("ore.large.platinum"    , T, T, 1,  255,   30, 3, 20, MT.OREMATS.Cooperite            , MT.Pd                          , MT.OREMATS.Sperrylite          , MT.Ir                 , ORE_DEEPDARK);
         new WorldgenOresLarge("ore.large.molybdenum"  , T, T, 1,  255,   46, 2, 12, MT.OREMATS.Wulfenite            , MT.OREMATS.Molybdenite         , MT.Mo                          , MT.OREMATS.Powellite  , ORE_DEEPDARK);
-        new WorldgenOresLarge("ore.large.dolamide"    , T, T,  1,  255,  5, 5, 42, MT.OREMATS.DuraniumHexaiodide   , MT.OREMATS.DuraniumHexafluoride, MT.OREMATS.DuraniumHexachloride, MT.Dolamide           , ORE_MARS, ORE_PLANETS, ORE_ASTEROIDS);
+        new WorldgenOresLarge("ore.large.dolamide"    , T, T,  1,  255,  12, 5, 42, MT.OREMATS.DuraniumHexaiodide   , MT.OREMATS.DuraniumHexafluoride, MT.OREMATS.DuraniumHexachloride, MT.Dolamide           , ORE_DEEPDARK);
+        new WorldgenOresLarge("ore.large.adamantine"  , T, T, 1, 50,   7, 2, 16, MT.OREMATS.BrownLimonite        , MT.OREMATS.YellowLimonite      , MT.Fe2O3                       , MT.Adamantine         , ORE_DEEPDARK);
+        new WorldgenOresLarge("ore.large.tiberium"  , T, T, 1, 255,   7, 3, 22, PT_Loader_Materials.Tiberium, MT.BlueSapphire      , MT.Ruby                       , PT_Loader_Materials.Tiberium         , ORE_DEEPDARK);
 
         new WorldgenOresSmall("ore.small.bismuth"           , T,  200, 255,  624, MT.Bi                 , GEN_DEEPDARK);
         new WorldgenOresSmall("ore.small.lead"           , T,  1, 255,  512, MT.Pb                 , GEN_DEEPDARK);
