@@ -47,9 +47,9 @@ public class Loader_Worldgen_Moho implements Runnable {
 
         new WorldgenFluidSpring(   "fluid.lava"          , T, Blocks.lava             ,  0, 200,                FL.Lava            .make( 10000)     , GEN_MOHO);
 
-        new WorldgenOresLarge("ore.large.bismoid"        , T, T, 1,  40,   2, 9, 26, MT.Au       , MT.Cu                 , MT.Bi        , MT.As                 , GEN_MOHO);
-        new WorldgenOresLarge("ore.large.geode.1"        , T, T, 1,  255,   8, 1, 6, MT.Diamond, MT.Emerald                 , PT_Loader_Materials.Volcanic        , PT_Loader_Materials.Volcanic                 , GEN_MOHO);
-        new WorldgenOresLarge("ore.large.geode.2"        , T, T, 1,  255,   4, 1, 6, MT.Firestone, MT.Firestone                 , PT_Loader_Materials.Volcanic        , PT_Loader_Materials.Volcanic                 , GEN_MOHO);
+        new WorldgenOresLarge("ore.large.bismoid"        , T, T, 1,  40,   2, 9, 26, MT.Au       , MT.Cu                 , MT.Bi        , MT.As                 , ORE_MOHO);
+        new WorldgenOresLarge("ore.large.geode.1"        , T, T, 1,  255,   8, 1, 6, MT.Diamond, MT.Emerald                 , PT_Loader_Materials.Volcanic        , PT_Loader_Materials.Volcanic                 , ORE_MOHO);
+        new WorldgenOresLarge("ore.large.geode.2"        , T, T, 1,  255,   4, 1, 6, MT.Firestone, MT.Firestone                 , PT_Loader_Materials.Volcanic        , PT_Loader_Materials.Volcanic                 , ORE_MOHO);
 
         new WorldgenOresSmall("ore.small.gold"           , T,  1, 55,  612, MT.Au                  , GEN_MOHO);
         new WorldgenOresSmall("ore.small.lithium"           , T,  30, 80,  612, MT.Li                  , GEN_MOHO);
