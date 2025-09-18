@@ -1,5 +1,6 @@
 package com.mayon.polytekk.loaders.worldgen;
 
+import com.hbm.config.SpaceConfig;
 import gregapi.code.ArrayListNoNulls;
 import gregapi.code.BiomeNameSet;
 import gregapi.util.WD;
@@ -26,15 +27,15 @@ public class PT_WorldGenerator {
 
     public static void generate(World aWorld, int aX, int aZ) {
 
-            if (PT_BiomeDim.dimMoho           (aWorld)) {generate(new GT6WorldGenerator.WorldGenContainer(GEN_MOHO,      ORE_MOHO                     , DIM_MOHO            , aWorld, aX, aZ)); return;}
-            if (PT_BiomeDim.dimEve            (aWorld)) {generate(new GT6WorldGenerator.WorldGenContainer(GEN_EVE,       ORE_EVE                      , DIM_EVE             , aWorld, aX, aZ)); return;}
-            if (PT_BiomeDim.dimMun            (aWorld)) {generate(new GT6WorldGenerator.WorldGenContainer(GEN_MUN,       ORE_MUN                      , DIM_MUN             , aWorld, aX, aZ)); return;}
-            if (PT_BiomeDim.dimMinmus         (aWorld)) {generate(new GT6WorldGenerator.WorldGenContainer(GEN_MINMUS,    ORE_MINMUS                   , DIM_MINMUS          , aWorld, aX, aZ)); return;}
-            if (PT_BiomeDim.dimDuna           (aWorld)) {generate(new GT6WorldGenerator.WorldGenContainer(GEN_DUNA,      ORE_DUNA                     , DIM_DUNA            , aWorld, aX, aZ)); return;}
-            if (PT_BiomeDim.dimDres           (aWorld)) {generate(new GT6WorldGenerator.WorldGenContainer(GEN_DRES,      ORE_DRES                     , DIM_DRES            , aWorld, aX, aZ)); return;}
-            if (PT_BiomeDim.dimIke            (aWorld)) {generate(new GT6WorldGenerator.WorldGenContainer(GEN_IKE,       ORE_IKE                      , DIM_IKE             , aWorld, aX, aZ)); return;}
-            if (PT_BiomeDim.dimLaythe         (aWorld)) {generate(new GT6WorldGenerator.WorldGenContainer(GEN_LAYTHE,    ORE_LAYTHE                   , DIM_LAYTHE          , aWorld, aX, aZ)); return;}
-            if (PT_BiomeDim.dimTekto          (aWorld)) {generate(new GT6WorldGenerator.WorldGenContainer(GEN_TEKTO,     ORE_TEKTO                    , DIM_TEKTO           , aWorld, aX, aZ)); return;}
+            if (aWorld.provider.dimensionId == SpaceConfig.mohoDimension) {generate(new GT6WorldGenerator.WorldGenContainer(GEN_MOHO,      ORE_MOHO                     , SpaceConfig.mohoDimension            , aWorld, aX, aZ)); return;}
+            if (aWorld.provider.dimensionId == SpaceConfig.eveDimension) {generate(new GT6WorldGenerator.WorldGenContainer(GEN_EVE,       ORE_EVE                      , SpaceConfig.eveDimension             , aWorld, aX, aZ)); return;}
+            if (aWorld.provider.dimensionId == SpaceConfig.moonDimension) {generate(new GT6WorldGenerator.WorldGenContainer(GEN_MUN,       ORE_MUN                      , SpaceConfig.moonDimension             , aWorld, aX, aZ)); return;}
+            if (aWorld.provider.dimensionId == SpaceConfig.minmusDimension) {generate(new GT6WorldGenerator.WorldGenContainer(GEN_MINMUS,    ORE_MINMUS                   , SpaceConfig.minmusDimension          , aWorld, aX, aZ)); return;}
+            if (aWorld.provider.dimensionId == SpaceConfig.dunaDimension) {generate(new GT6WorldGenerator.WorldGenContainer(GEN_DUNA,      ORE_DUNA                     , SpaceConfig.dunaDimension            , aWorld, aX, aZ)); return;}
+            if (aWorld.provider.dimensionId == SpaceConfig.dresDimension) {generate(new GT6WorldGenerator.WorldGenContainer(GEN_DRES,      ORE_DRES                     , SpaceConfig.dresDimension            , aWorld, aX, aZ)); return;}
+            if (aWorld.provider.dimensionId == SpaceConfig.ikeDimension) {generate(new GT6WorldGenerator.WorldGenContainer(GEN_IKE,       ORE_IKE                      , SpaceConfig.ikeDimension             , aWorld, aX, aZ)); return;}
+            if (aWorld.provider.dimensionId == SpaceConfig.laytheDimension) {generate(new GT6WorldGenerator.WorldGenContainer(GEN_LAYTHE,    ORE_LAYTHE                   , SpaceConfig.laytheDimension          , aWorld, aX, aZ)); return;}
+            if (aWorld.provider.dimensionId == SpaceConfig.tektoDimension) {generate(new GT6WorldGenerator.WorldGenContainer(GEN_TEKTO,     ORE_TEKTO                    , SpaceConfig.tektoDimension           , aWorld, aX, aZ)); return;}
 
         }
 

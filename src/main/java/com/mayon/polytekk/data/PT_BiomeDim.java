@@ -1,5 +1,6 @@
 package com.mayon.polytekk.data;
 
+import com.hbm.config.SpaceConfig;
 import gregapi.code.ArrayListNoNulls;
 import gregapi.data.MD;
 import gregapi.util.UT;
@@ -10,56 +11,6 @@ import net.minecraft.world.WorldProvider;
 import java.util.List;
 
 public class PT_BiomeDim {
-
-
-    public static final int
-        DIM_MOHO = 20
-        , DIM_EVE = 18
-        , DIM_MUN = 15
-        , DIM_MINMUS = 21
-        , DIM_DUNA = 16
-        , DIM_DRES = 19
-        , DIM_IKE = 17
-        , DIM_LAYTHE = 22
-        , DIM_TEKTO = 24
-        ;
-
-    public static boolean dimMoho(World aWorld) {return aWorld != null && dimMoho(aWorld.provider);}
-
-    public static boolean dimMoho(WorldProvider aProvider) {return (MD.HBM.mLoaded) && dimMoho(aProvider, UT.Reflection.getLowercaseClass(aProvider));}
-    public static boolean dimMoho(WorldProvider aProvider, String aProviderClassName) {return MD.HBM.mLoaded && "WorldProviderMoho".equalsIgnoreCase(aProviderClassName);}
-
-    public static boolean dimEve(World aWorld) {return aWorld != null && dimEve(aWorld.provider);}
-    public static boolean dimEve(WorldProvider aProvider) {return (MD.HBM.mLoaded) && dimEve(aProvider, UT.Reflection.getLowercaseClass(aProvider));}
-    public static boolean dimEve(WorldProvider aProvider, String aProviderClassName) {return MD.HBM.mLoaded && "WorldProviderEve".equalsIgnoreCase(aProviderClassName);}
-
-    public static boolean dimMun(World aWorld) {return aWorld != null && dimMun(aWorld.provider);}
-    public static boolean dimMun(WorldProvider aProvider) {return (MD.HBM.mLoaded) && dimMun(aProvider, UT.Reflection.getLowercaseClass(aProvider));}
-    public static boolean dimMun(WorldProvider aProvider, String aProviderClassName) {return MD.HBM.mLoaded && "WorldProviderMoon".equalsIgnoreCase(aProviderClassName);}
-
-    public static boolean dimMinmus(World aWorld) {return aWorld != null && dimMinmus(aWorld.provider);}
-    public static boolean dimMinmus(WorldProvider aProvider) {return (MD.HBM.mLoaded) && dimMinmus(aProvider, UT.Reflection.getLowercaseClass(aProvider));}
-    public static boolean dimMinmus(WorldProvider aProvider, String aProviderClassName) {return MD.HBM.mLoaded && "WorldProviderMinmus".equalsIgnoreCase(aProviderClassName);}
-
-    public static boolean dimDuna(World aWorld) {return aWorld != null && dimDuna(aWorld.provider);}
-    public static boolean dimDuna(WorldProvider aProvider) {return (MD.HBM.mLoaded) && dimDuna(aProvider, UT.Reflection.getLowercaseClass(aProvider));}
-    public static boolean dimDuna(WorldProvider aProvider, String aProviderClassName) {return MD.HBM.mLoaded && "WorldProviderDuna".equalsIgnoreCase(aProviderClassName);}
-
-    public static boolean dimDres(World aWorld) {return aWorld != null && dimDres(aWorld.provider);}
-    public static boolean dimDres(WorldProvider aProvider) {return (MD.HBM.mLoaded) && dimDres(aProvider, UT.Reflection.getLowercaseClass(aProvider));}
-    public static boolean dimDres(WorldProvider aProvider, String aProviderClassName) {return MD.HBM.mLoaded && "WorldProviderDres".equalsIgnoreCase(aProviderClassName);}
-
-    public static boolean dimIke(World aWorld) {return aWorld != null && dimIke(aWorld.provider);}
-    public static boolean dimIke(WorldProvider aProvider) {return (MD.HBM.mLoaded) && dimIke(aProvider, UT.Reflection.getLowercaseClass(aProvider));}
-    public static boolean dimIke(WorldProvider aProvider, String aProviderClassName) {return MD.HBM.mLoaded && "WorldProviderIke".equalsIgnoreCase(aProviderClassName);}
-
-    public static boolean dimLaythe(World aWorld) {return aWorld != null && dimLaythe(aWorld.provider);}
-    public static boolean dimLaythe(WorldProvider aProvider) {return (MD.HBM.mLoaded) && dimLaythe(aProvider, UT.Reflection.getLowercaseClass(aProvider));}
-    public static boolean dimLaythe(WorldProvider aProvider, String aProviderClassName) {return MD.HBM.mLoaded && "WorldProviderLaythe".equalsIgnoreCase(aProviderClassName);}
-
-    public static boolean dimTekto(World aWorld) {return aWorld != null && dimTekto(aWorld.provider);}
-    public static boolean dimTekto(WorldProvider aProvider) {return (MD.HBM.mLoaded) && dimTekto(aProvider, UT.Reflection.getLowercaseClass(aProvider));}
-    public static boolean dimTekto(WorldProvider aProvider, String aProviderClassName) {return MD.HBM.mLoaded && "WorldProviderTekto".equalsIgnoreCase(aProviderClassName);}
 
     @SuppressWarnings("unchecked")
     public static final List<WorldgenObject>
