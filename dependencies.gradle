@@ -47,6 +47,7 @@ dependencies {
     compile("com.github.GTNewHorizons:GT5NEIOrePlugin:+:dev")
     compile("com.github.GTNewHorizons:PolyGT5:+:dev") {
         exclude group: 'com.github.GTNewHorizons', module: 'Galacticraft'
+        exclude group: 'com.github.GTNewHorizons', module: 'polytekk'
     }
     implementation("com.github.GTNewHorizons:Avaritia:1.45:dev")
     implementation("com.github.GTNewHorizons:WitcheryExtras:1.1.14:dev")

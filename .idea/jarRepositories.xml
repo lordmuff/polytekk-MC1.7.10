@@ -91,5 +91,20 @@
       <option name="name" value="sponge" />
       <option name="url" value="https://repo.spongepowered.org/maven/" />
     </remote-repository>
+    <remote-repository>
+      <option name="id" value="OpenComputers" />
+      <option name="name" value="OpenComputers" />
+      <option name="url" value="https://maven.cil.li/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="Jitpack" />
+      <option name="name" value="Jitpack" />
+      <option name="url" value="https://jitpack.io" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="ModMaven" />
+      <option name="name" value="ModMaven" />
+      <option name="url" value="https://modmaven.dev" />
+    </remote-repository>
   </component>
 </project>
