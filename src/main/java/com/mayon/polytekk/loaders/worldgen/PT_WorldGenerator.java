@@ -34,7 +34,7 @@ public class PT_WorldGenerator {
             if (PT_BiomeDim.dimDres           (aWorld)) {generate(new GT6WorldGenerator.WorldGenContainer(GEN_DRES,      ORE_DRES                     , DIM_DRES            , aWorld, aX, aZ)); return;}
             if (PT_BiomeDim.dimIke            (aWorld)) {generate(new GT6WorldGenerator.WorldGenContainer(GEN_IKE,       ORE_IKE                      , DIM_IKE             , aWorld, aX, aZ)); return;}
             if (PT_BiomeDim.dimLaythe         (aWorld)) {generate(new GT6WorldGenerator.WorldGenContainer(GEN_LAYTHE,    ORE_LAYTHE                   , DIM_LAYTHE          , aWorld, aX, aZ)); return;}
-            if (PT_BiomeDim.dimTekto          (aWorld)) {generate(new GT6WorldGenerator.WorldGenContainer(GEN_TEKTO,     ORE_TEKTO                    , DIM_TEKTO           , aWorld, aX, aZ));}
+            if (PT_BiomeDim.dimTekto          (aWorld)) {generate(new GT6WorldGenerator.WorldGenContainer(GEN_TEKTO,     ORE_TEKTO                    , DIM_TEKTO           , aWorld, aX, aZ)); return;}
 
         }
 

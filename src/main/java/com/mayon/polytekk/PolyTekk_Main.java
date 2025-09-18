@@ -131,6 +131,15 @@ public final class PolyTekk_Main extends gregapi.api.Abstract_Mod {
         PT_Loader_Materials.Bk_247.setTextures(TextureSet.SET_RAD);
         PT_Loader_Materials.Es_253.setTextures(TextureSet.SET_RAD);
 
+        PT_Loader_Materials.StoneMoho.put(TD.Compounds.DECOMPOSABLE);
+        PT_Loader_Materials.StoneEve.put(TD.Compounds.DECOMPOSABLE);
+        PT_Loader_Materials.StoneMinmus.put(TD.Compounds.DECOMPOSABLE);
+        PT_Loader_Materials.StoneDuna.put(TD.Compounds.DECOMPOSABLE);
+        PT_Loader_Materials.StoneDres.put(TD.Compounds.DECOMPOSABLE);
+        PT_Loader_Materials.StoneIke.put(TD.Compounds.DECOMPOSABLE);
+        PT_Loader_Materials.StoneLaythe.put(TD.Compounds.DECOMPOSABLE);
+        PT_Loader_Materials.StoneTekto.put(TD.Compounds.DECOMPOSABLE);
+
         PT_Loader_Materials.StoneMoho.put(gregapi.data.TD.Processing.CENTRIFUGE);
         PT_Loader_Materials.StoneEve.put(gregapi.data.TD.Processing.CENTRIFUGE);
         PT_Loader_Materials.StoneMinmus.put(gregapi.data.TD.Processing.CENTRIFUGE);
@@ -172,6 +181,11 @@ public final class PolyTekk_Main extends gregapi.api.Abstract_Mod {
         PT_Loader_Materials.Solinium.setOriginalMod(MD.HBM);
         PT_Loader_Materials.Euphemium.setOriginalMod(MD.HBM);
         PT_Loader_Materials.Pb_209.setOriginalMod(MD.HBM);
+        PT_Loader_Materials.Bk_247.setOriginalMod(MD.HBM);
+        PT_Loader_Materials.Es_253.setOriginalMod(MD.HBM);
+        PT_Loader_Materials.Volcanic.setOriginalMod(MD.HBM);
+        PT_Loader_Materials.Molysite.setOriginalMod(MD.HBM);
+        PT_Loader_Materials.Chlorocalcite.setOriginalMod(MD.HBM);
 
         PT_Loader_Materials.Volcanic.heat(NetherizedDiamond.mMeltingPoint + 400, NetherizedDiamond.mBoilingPoint + 750);
         PT_Loader_Materials.Molysite.heat(Sodalite.mMeltingPoint + 375, Sodalite.mBoilingPoint + 575);
@@ -191,7 +205,7 @@ public final class PolyTekk_Main extends gregapi.api.Abstract_Mod {
         PT_Loader_Materials.Schrabidium.ores(Pu, OREMATS.Uraninite, PT_Loader_Materials.Solinium);
         PT_Loader_Materials.Solinium.ores(PT_Loader_Materials.Euphemium, Pu, Pu, Cm, Am);
         PT_Loader_Materials.Euphemium.ores(PT_Loader_Materials.Solinium, PT_Loader_Materials.Schrabidium, Nq_522, Nq_528, Nq);
-        PT_Loader_Materials.Tiberium.ores(PT_Loader_Materials.Tiberium, Nq, Nq, Nq_528, Nq_522, Ta);
+        PT_Loader_Materials.Tiberium.ores(PT_Loader_Materials.Tiberium, Nq, Nq, Nq_528, Nq_522, OREMATS.Tantalite, OREMATS.Coltan);
 
         PT_Loader_Materials.Tiberium.aspects(TC.RADIO, 4).aspects(TC.VITREUS, 2);
         PT_Loader_Materials.Australium.aspects_met_rad(2, 4).aspects(TC.LUCRUM, 2);
@@ -199,7 +213,7 @@ public final class PolyTekk_Main extends gregapi.api.Abstract_Mod {
         PT_Loader_Materials.Solinium.aspects_met_rad(2, 6).aspects(TC.PERMUTATIO, 1).aspects(TC.POTENTIA, 2);
         PT_Loader_Materials.Euphemium.aspects_met_rad(1, 7).aspects(TC.NEBRISUM, 2).aspects(TC.LUCRUM, 2);
         PT_Loader_Materials.Pb_209.aspects_met_rad(3, 13).aspects(TC.NEBRISUM, 1).aspects(TC.ORDO, 1);
-        PT_Loader_Materials.Bk_247.aspects_met_rad(5, 6).aspects(TC.NEBRISUM, 2);
+        PT_Loader_Materials.Bk_247.aspects_met_rad(3, 6).aspects(TC.NEBRISUM, 2);
         PT_Loader_Materials.Es_253.aspects_met_rad(5, 23).aspects(TC.NEBRISUM, 3);
 
         PT_Loader_Materials.Tengam.setRGBa(160, 191,  96, 255);
@@ -231,13 +245,21 @@ public final class PolyTekk_Main extends gregapi.api.Abstract_Mod {
         PT_Loader_Materials.StoneLaythe.put(gregapi.data.TD.ItemGenerator.G_DUST);
         PT_Loader_Materials.StoneTekto.put(gregapi.data.TD.ItemGenerator.G_DUST);
 
-        PT_Loader_Materials.Australium.put(gregapi.data.TD.ItemGenerator.G_INGOT_MACHINE_ORES);
-        PT_Loader_Materials.Schrabidium.put(gregapi.data.TD.ItemGenerator.G_INGOT_MACHINE_ORES);
-        PT_Loader_Materials.Solinium.put(gregapi.data.TD.ItemGenerator.G_INGOT_MACHINE);
-        PT_Loader_Materials.Euphemium.put(gregapi.data.TD.ItemGenerator.G_INGOT_MACHINE_ORES);
-        PT_Loader_Materials.Pb_209.put(gregapi.data.TD.ItemGenerator.G_INGOT_MACHINE);
-        PT_Loader_Materials.Bk_247.put(gregapi.data.TD.ItemGenerator.G_INGOT_MACHINE);
-        PT_Loader_Materials.Es_253.put(gregapi.data.TD.ItemGenerator.G_INGOT_MACHINE);
+        PT_Loader_Materials.Australium.put(gregapi.data.TD.ItemGenerator.G_INGOT_MACHINE_ORES, TD.Processing.EXTRUDER);
+        PT_Loader_Materials.Schrabidium.put(gregapi.data.TD.ItemGenerator.G_INGOT_MACHINE_ORES, TD.Processing.EXTRUDER);
+        PT_Loader_Materials.Solinium.put(gregapi.data.TD.ItemGenerator.G_INGOT_MACHINE_ORES);
+        PT_Loader_Materials.Euphemium.put(gregapi.data.TD.ItemGenerator.G_INGOT_MACHINE_ORES, TD.Properties.MAZEBREAKER);
+        PT_Loader_Materials.Pb_209.put(gregapi.data.TD.ItemGenerator.G_INGOT_MACHINE_ORES);
+        PT_Loader_Materials.Bk_247.put(gregapi.data.TD.ItemGenerator.G_INGOT_MACHINE_ORES);
+        PT_Loader_Materials.Es_253.put(gregapi.data.TD.ItemGenerator.G_INGOT_MACHINE_ORES);
+        PT_Loader_Materials.Tengam.put(gregapi.data.TD.ItemGenerator.G_INGOT_MACHINE_ORES, TD.Properties.MAGNETIC_PASSIVE);
+        PT_Loader_Materials.Volcanic.put(TD.ItemGenerator.G_GEM_ORES, TD.Properties.BURNING, TD.Properties.MAZEBREAKER, TD.Properties.UNBURNABLE);
+        PT_Loader_Materials.Tiberium.put(TD.ItemGenerator.G_GEM_ORES, TD.Processing.CRYSTALLISABLE);
+
+        PT_Loader_Materials.Australium.qual(3, 6.0, 40_960, 3);
+        PT_Loader_Materials.Volcanic.qual(3, 11.0, 1028, 5);
+        PT_Loader_Materials.Schrabidium.qual(3, 15.0, 2048, 6);
+        PT_Loader_Materials.Euphemium.qual(3, 19.0, 4096, 8);
 
         PT_Loader_Materials.Tiberium.setOriginalMod(MD.GT5U);
         PT_Loader_Materials.Tengam.setOriginalMod(MD.GT5U);
