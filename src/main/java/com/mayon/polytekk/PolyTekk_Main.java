@@ -277,7 +277,8 @@ public final class PolyTekk_Main extends gregapi.api.Abstract_Mod {
         rockset(MD.HBM,"tile.duna_rock"                  , 0, "hbm.duna.rock"         , oreDuna              , PT_Loader_Materials.StoneDuna);
         rockset(MD.HBM,"tile.dres_rock"                  , 0, "hbm.dres.rock"         , oreDres              , PT_Loader_Materials.StoneDres);
         rockset(MD.HBM,"tile.ike_stone"                  , 0, "hbm.ike.rock"         , oreIke              , PT_Loader_Materials.StoneIke);
-        //rockset(MD.HBM,"tile.flesh_block"                  , 0, "hbm.laythe.rock"         , oreLaythe              , PT_Loader_Ores.StoneLaythe);
+        rockset(MD.HBM,"stone"                  , 0, "hbm.laythe.rock"         , oreLaythe              , PT_Loader_Materials.StoneLaythe);
+        rockset(MD.HBM,"stone"                  , 0, "hbm.tekto.rock"         , oreTekto              , PT_Loader_Materials.StoneTekto);
 
 
         new gregapi.block.multitileentity.MultiTileEntityRegistry("polytekk.multitileentity");
