@@ -25,8 +25,8 @@ public class PT_Loader_Materials {
     public static OreDictMaterial Bk_247 = OreDictMaterial.createMaterial(31214, "Berkelium247", "Berkelium-247").aspects_met_rad(5, 6).aspects(TC.NEBRISUM, 2);
     public static OreDictMaterial Es_253 = OreDictMaterial.createMaterial(31215, "Einsteinium-253", "Einsteinium-253").aspects_met_rad(5, 23).aspects(TC.NEBRISUM, 3);
     public static OreDictMaterial Molysite = OreDictMaterial.createMaterial(31216, "Molysite", "Molysite").aspects(TC.LIMUS, 3, TC.VENEMUM, 2);
-
     public static OreDictMaterial Chlorocalcite = OreDictMaterial.createMaterial(31217, "Chlorocalcite", "Chlorocalcite").aspects(TC.VENEMUM, 3, TC.AQUA, 1, TC.TERRA, 1);
     public static OreDictMaterial Volcanic = OreDictMaterial.createMaterial(31218, "Volcanic", "Volcanic Gem").aspects(TC.IGNIS, 5, TC.VINCULUM, 3, TC.VITREUS, 2);
+    public static OreDictMaterial Tengam = OreDictMaterial.createMaterial(31219, "TengamRaw", "Raw Tengam").aspects(TC.MAGNETO, 1, TC.ELECTRUM, 4, TC.NEBRISUM, 2);
 
 }

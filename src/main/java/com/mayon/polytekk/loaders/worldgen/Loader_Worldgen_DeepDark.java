@@ -83,7 +83,7 @@ public class Loader_Worldgen_DeepDark implements Runnable {
         new WorldgenOresLarge("ore.large.molybdenum"  , T, T, 1,  255,   46, 2, 12, MT.OREMATS.Wulfenite            , MT.OREMATS.Molybdenite         , MT.Mo                          , MT.OREMATS.Powellite  , ORE_DEEPDARK);
         new WorldgenOresLarge("ore.large.dolamide"    , T, T,  1,  255,  12, 5, 42, MT.OREMATS.DuraniumHexaiodide   , MT.OREMATS.DuraniumHexafluoride, MT.OREMATS.DuraniumHexachloride, MT.Dolamide           , ORE_DEEPDARK);
         new WorldgenOresLarge("ore.large.adamantine"  , T, T, 1, 50,   7, 2, 16, MT.OREMATS.BrownLimonite        , MT.OREMATS.YellowLimonite      , MT.Fe2O3                       , MT.Adamantine         , ORE_DEEPDARK);
-        new WorldgenOresLarge("ore.large.tiberium"  , T, T, 1, 255,   7, 3, 22, PT_Loader_Materials.Tiberium, MT.BlueSapphire      , MT.Ruby                       , PT_Loader_Materials.Tiberium         , ORE_DEEPDARK);
+        new WorldgenOresLarge("ore.large.tiberium"  , T, T, 1, 255,   7, 3, 22, MT.Ruby, MT.BlueSapphire      , PT_Loader_Materials.Tiberium                       , PT_Loader_Materials.Tiberium         , ORE_DEEPDARK);
 
         new WorldgenOresSmall("ore.small.bismuth"           , T,  200, 255,  624, MT.Bi                 , GEN_DEEPDARK);
         new WorldgenOresSmall("ore.small.lead"           , T,  1, 255,  512, MT.Pb                 , GEN_DEEPDARK);

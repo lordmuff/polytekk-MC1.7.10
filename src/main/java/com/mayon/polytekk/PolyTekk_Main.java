@@ -202,6 +202,9 @@ public final class PolyTekk_Main extends gregapi.api.Abstract_Mod {
         PT_Loader_Materials.Bk_247.aspects_met_rad(5, 6).aspects(TC.NEBRISUM, 2);
         PT_Loader_Materials.Es_253.aspects_met_rad(5, 23).aspects(TC.NEBRISUM, 3);
 
+        PT_Loader_Materials.Tengam.setRGBa(160, 191,  96, 255);
+        PT_Loader_Materials.Tiberium.setRGBa(10, 255,  10, 255);
+
         PT_Loader_Materials.Australium.setRGBa(255, 238, 0 ,255);
         PT_Loader_Materials.Schrabidium.setRGBa(0, 189, 189,255);
         PT_Loader_Materials.Solinium.setRGBa(0, 230, 224,255);
@@ -237,6 +240,7 @@ public final class PolyTekk_Main extends gregapi.api.Abstract_Mod {
         PT_Loader_Materials.Es_253.put(gregapi.data.TD.ItemGenerator.G_INGOT_MACHINE);
 
         PT_Loader_Materials.Tiberium.setOriginalMod(MD.GT5U);
+        PT_Loader_Materials.Tengam.setOriginalMod(MD.GT5U);
 
 
         final gregapi.oredict.OreDictPrefix oreMoho = gregapi.oredict.OreDictPrefix.createPrefix("oreMoho").setOreStats( 3*U ).add(BLOCK_BASED, STANDARD_ORE).aspects(TC.ALIENIS,  1).aspects(TC.IGNIS, 2).setTextureSetName("ore");
