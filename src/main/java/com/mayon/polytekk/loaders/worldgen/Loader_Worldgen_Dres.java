@@ -17,10 +17,6 @@ public class Loader_Worldgen_Dres implements Runnable {
 
     public void run() {
 
-        boolean
-            tInfiniteOil = CS.ConfigsGT.WORLDGEN.get(ConfigCategories.general, "GenerateInfiniteOilSources", F),
-            tInfiniteGas = CS.ConfigsGT.WORLDGEN.get(ConfigCategories.general, "GenerateInfiniteGasSources", F);
-
         new WorldgenRocks(     "rocks"      , T, 5, 5, GEN_DRES);
 
         new WorldgenOresBedrock("ore.bedrock.tengam"   , T, T,  12000, PT_Loader_Materials.Tengam                                , GEN_DRES);

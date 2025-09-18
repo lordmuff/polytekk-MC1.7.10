@@ -19,10 +19,6 @@ public class Loader_Worldgen_Moho implements Runnable {
 
     public void run() {
 
-        boolean
-            tInfiniteOil = CS.ConfigsGT.WORLDGEN.get(ConfigCategories.general, "GenerateInfiniteOilSources", F),
-            tInfiniteGas = CS.ConfigsGT.WORLDGEN.get(ConfigCategories.general, "GenerateInfiniteGasSources", F);
-
         new WorldgenRocks(     "rocks"      , T, 5, 5, GEN_MOHO);
 
         new WorldgenOresBedrock("ore.bedrock.tantalite"      , T, T, 16000, MT.OREMATS.Tantalite             , GEN_MOHO);

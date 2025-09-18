@@ -87,7 +87,7 @@ public final class PolyTekk_Main extends gregapi.api.Abstract_Mod {
     /** Contains a ModData Object for ID and Name. Doesn't have to be changed. */
     public static gregapi.code.ModData MOD_DATA = new gregapi.code.ModData(MOD_ID, MOD_NAME);
 
-    @cpw.mods.fml.common.SidedProxy(modId = MOD_ID, clientSide = "gregapi.api.example.Example_Proxy_Client", serverSide = "gregapi.api.example.Example_Proxy_Server")
+    @cpw.mods.fml.common.SidedProxy(modId = MOD_ID, clientSide = "polytekk.PolyTekk_Client_Proxy", serverSide = "polytekk.PolyTekk_Server_Proxy")
     public static gregapi.api.Abstract_Proxy PROXY;
 
     @Override public String getModID() {return MOD_ID;}
@@ -222,14 +222,14 @@ public final class PolyTekk_Main extends gregapi.api.Abstract_Mod {
         PT_Loader_Materials.StoneLaythe.setRGBa(172, 8, 0,255);
         PT_Loader_Materials.StoneTekto.setRGBa(52, 64, 58,255);
 
-        PT_Loader_Materials.StoneMoho.put(DUST_BASED);
-        PT_Loader_Materials.StoneEve.put(DUST_BASED);
-        PT_Loader_Materials.StoneMinmus.put(DUST_BASED);
-        PT_Loader_Materials.StoneDuna.put(DUST_BASED);
-        PT_Loader_Materials.StoneDres.put(DUST_BASED);
-        PT_Loader_Materials.StoneIke.put(DUST_BASED);
-        PT_Loader_Materials.StoneLaythe.put(DUST_BASED);
-        PT_Loader_Materials.StoneTekto.put(DUST_BASED);
+        PT_Loader_Materials.StoneMoho.put(gregapi.data.TD.ItemGenerator.G_DUST);
+        PT_Loader_Materials.StoneEve.put(gregapi.data.TD.ItemGenerator.G_DUST);
+        PT_Loader_Materials.StoneMinmus.put(gregapi.data.TD.ItemGenerator.G_DUST);
+        PT_Loader_Materials.StoneDuna.put(gregapi.data.TD.ItemGenerator.G_DUST);
+        PT_Loader_Materials.StoneDres.put(gregapi.data.TD.ItemGenerator.G_DUST);
+        PT_Loader_Materials.StoneIke.put(gregapi.data.TD.ItemGenerator.G_DUST);
+        PT_Loader_Materials.StoneLaythe.put(gregapi.data.TD.ItemGenerator.G_DUST);
+        PT_Loader_Materials.StoneTekto.put(gregapi.data.TD.ItemGenerator.G_DUST);
 
         PT_Loader_Materials.Australium.put(gregapi.data.TD.ItemGenerator.G_INGOT_MACHINE_ORES);
         PT_Loader_Materials.Schrabidium.put(gregapi.data.TD.ItemGenerator.G_INGOT_MACHINE_ORES);
@@ -243,14 +243,14 @@ public final class PolyTekk_Main extends gregapi.api.Abstract_Mod {
         PT_Loader_Materials.Tengam.setOriginalMod(MD.GT5U);
 
 
-        final gregapi.oredict.OreDictPrefix oreMoho = gregapi.oredict.OreDictPrefix.createPrefix("oreMoho").setOreStats( 3*U ).add(BLOCK_BASED, STANDARD_ORE).aspects(TC.ALIENIS,  1).aspects(TC.IGNIS, 2).setTextureSetName("ore");
-        final gregapi.oredict.OreDictPrefix oreEve = gregapi.oredict.OreDictPrefix.createPrefix("oreEve").setOreStats( 4*U ).add(BLOCK_BASED, STANDARD_ORE).aspects(TC.ALIENIS,  1).aspects(TC.VENEMUM, 2).setTextureSetName("ore");
-        final gregapi.oredict.OreDictPrefix oreMinmus = gregapi.oredict.OreDictPrefix.createPrefix("oreMinmus").setOreStats( 2*U ).add(BLOCK_BASED, STANDARD_ORE).aspects(TC.ALIENIS,  1).aspects(TC.GELUM, 2).setTextureSetName("ore");
-        final gregapi.oredict.OreDictPrefix oreDuna = gregapi.oredict.OreDictPrefix.createPrefix("oreDuna").setOreStats( 3*U ).add(BLOCK_BASED, STANDARD_ORE).aspects(TC.ALIENIS,  1).aspects(TC.METALLUM, 1).setTextureSetName("ore");
-        final gregapi.oredict.OreDictPrefix oreDres = gregapi.oredict.OreDictPrefix.createPrefix("oreDres").setOreStats( 4*U ).add(BLOCK_BASED, STANDARD_ORE).aspects(TC.ALIENIS,  1).aspects(TC.NEBRISUM, 1).setTextureSetName("ore");
-        final gregapi.oredict.OreDictPrefix oreIke = gregapi.oredict.OreDictPrefix.createPrefix("oreIke").setOreStats( 3*U ).add(BLOCK_BASED, STANDARD_ORE).aspects(TC.ALIENIS,  1).aspects(TC.RADIO, 1).setTextureSetName("ore");
-        final gregapi.oredict.OreDictPrefix oreLaythe = gregapi.oredict.OreDictPrefix.createPrefix("oreLaythe").setOreStats( 5*U ).add(BLOCK_BASED, STANDARD_ORE).aspects(TC.ALIENIS,  1).aspects(TC.FAMES, 1).setTextureSetName("ore");
-        final gregapi.oredict.OreDictPrefix oreTekto = gregapi.oredict.OreDictPrefix.createPrefix("oreTekto").setOreStats( 5*U ).add(BLOCK_BASED, STANDARD_ORE).aspects(TC.ALIENIS,  1).aspects(TC.FABRICO, 1).setTextureSetName("ore");
+        final gregapi.oredict.OreDictPrefix oreMoho = gregapi.oredict.OreDictPrefix.createPrefix("oreMoho").setLocalItemName("Moho", "Ore").setOreStats( 3*U ).add(BLOCK_BASED, STANDARD_ORE).aspects(TC.ALIENIS,  1).aspects(TC.IGNIS, 2).setTextureSetName("ore");
+        final gregapi.oredict.OreDictPrefix oreEve = gregapi.oredict.OreDictPrefix.createPrefix("oreEve").setLocalItemName("Eve", "Ore").setOreStats( 4*U ).add(BLOCK_BASED, STANDARD_ORE).aspects(TC.ALIENIS,  1).aspects(TC.VENEMUM, 2).setTextureSetName("ore");
+        final gregapi.oredict.OreDictPrefix oreMinmus = gregapi.oredict.OreDictPrefix.createPrefix("oreMinmus").setLocalItemName("Minmus", "Ore").setOreStats( 2*U ).add(BLOCK_BASED, STANDARD_ORE).aspects(TC.ALIENIS,  1).aspects(TC.GELUM, 2).setTextureSetName("ore");
+        final gregapi.oredict.OreDictPrefix oreDuna = gregapi.oredict.OreDictPrefix.createPrefix("oreDuna").setLocalItemName("Duna", "Ore").setOreStats( 3*U ).add(BLOCK_BASED, STANDARD_ORE).aspects(TC.ALIENIS,  1).aspects(TC.METALLUM, 1).setTextureSetName("ore");
+        final gregapi.oredict.OreDictPrefix oreDres = gregapi.oredict.OreDictPrefix.createPrefix("oreDres").setLocalItemName("Dres", "Ore").setOreStats( 4*U ).add(BLOCK_BASED, STANDARD_ORE).aspects(TC.ALIENIS,  1).aspects(TC.NEBRISUM, 1).setTextureSetName("ore");
+        final gregapi.oredict.OreDictPrefix oreIke = gregapi.oredict.OreDictPrefix.createPrefix("oreIke").setLocalItemName("Ike", "Ore").setOreStats( 3*U ).add(BLOCK_BASED, STANDARD_ORE).aspects(TC.ALIENIS,  1).aspects(TC.RADIO, 1).setTextureSetName("ore");
+        final gregapi.oredict.OreDictPrefix oreLaythe = gregapi.oredict.OreDictPrefix.createPrefix("oreLaythe").setLocalItemName("Laythe", "Ore").setOreStats( 5*U ).add(BLOCK_BASED, STANDARD_ORE).aspects(TC.ALIENIS,  1).aspects(TC.FAMES, 1).setTextureSetName("ore");
+        final gregapi.oredict.OreDictPrefix oreTekto = gregapi.oredict.OreDictPrefix.createPrefix("oreTekto").setLocalItemName("Tekto", "Ore").setOreStats( 5*U ).add(BLOCK_BASED, STANDARD_ORE).aspects(TC.ALIENIS,  1).aspects(TC.FABRICO, 1).setTextureSetName("ore");
 
         new gregapi.block.prefixblock.PrefixBlock_(MOD_ID, MOD_ID, "pt.meta.ore.normal.moho", oreMoho, null, null, null, BlockTextureCopied.get(ModBlocks.moho_stone), net.minecraft.block.material.Material.rock, net.minecraft.block.Block.soundTypeStone, gregapi.data.CS.TOOL_pickaxe, 1.5F, 4.5F,   0,   0, 999, 0, 0, 0, 1, 1, 1, false, false, false, false, true, true, true, true, true, true, false, true, true, true, gregapi.oredict.OreDictMaterial.MATERIAL_ARRAY);
         new gregapi.block.prefixblock.PrefixBlock_(MOD_ID, MOD_ID, "pt.meta.ore.normal.eve", oreEve, null, null, null, BlockTextureCopied.get(ModBlocks.eve_rock), net.minecraft.block.material.Material.rock, net.minecraft.block.Block.soundTypeStone, gregapi.data.CS.TOOL_pickaxe, 1.5F, 4.5F,   0,   0, 999, 0, 0, 0, 1, 1, 1, false, false, false, false, true, true, true, true, true, true, false, true, true, true, gregapi.oredict.OreDictMaterial.MATERIAL_ARRAY);

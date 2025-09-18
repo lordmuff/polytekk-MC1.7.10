@@ -21,10 +21,6 @@ public class Loader_Worldgen_Eve implements Runnable {
 
     public void run() {
 
-        boolean
-            tInfiniteOil = CS.ConfigsGT.WORLDGEN.get(ConfigCategories.general, "GenerateInfiniteOilSources", F),
-            tInfiniteGas = CS.ConfigsGT.WORLDGEN.get(ConfigCategories.general, "GenerateInfiniteGasSources", F);
-
         new WorldgenRocks(     "rocks"      , T, 5, 5, GEN_EVE);
 
         new WorldgenOresBedrock("ore.bedrock.tengam"   , T, T,  24000, PT_Loader_Materials.Tengam                                , GEN_EVE);
