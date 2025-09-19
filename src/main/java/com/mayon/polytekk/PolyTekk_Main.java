@@ -292,16 +292,17 @@ public final class PolyTekk_Main extends gregapi.api.Abstract_Mod {
         oreLaythe                 .mByProducts.add(OM.stack(PT_Loader_Materials.StoneLaythe     , dust.mAmount * 4));
         oreTekto                 .mByProducts.add(OM.stack(PT_Loader_Materials.StoneTekto     , dust.mAmount * 4));
 
-        rockset(MD.HBM,"tile.moho_stone"                  , 0, "hbm.moho.rock"         , oreMoho              , PT_Loader_Materials.StoneMoho);
-        rockset(MD.HBM,"tile.eve_rock"                  , 0, "hbm.eve.rock"         , oreEve              , PT_Loader_Materials.StoneEve);
-        rockset(MD.HBM,"tile.minmus_stone"                  , 0, "hbm.minmus.rock"         , oreMinmus              , PT_Loader_Materials.StoneMinmus);
-        rockset(MD.HBM,"tile.moon_rock"                  , 0, "hbm.mun.rock"         , oreMoon              , MT.STONES.MoonRock);
-        rockset(MD.HBM,"tile.duna_rock"                  , 0, "hbm.duna.rock"         , oreDuna              , PT_Loader_Materials.StoneDuna);
-        rockset(MD.HBM,"tile.dres_rock"                  , 0, "hbm.dres.rock"         , oreDres              , PT_Loader_Materials.StoneDres);
-        rockset(MD.HBM,"tile.ike_stone"                  , 0, "hbm.ike.rock"         , oreIke              , PT_Loader_Materials.StoneIke);
-        rockset(MD.HBM,"stone"                  , 0, "hbm.laythe.rock"         , oreLaythe              , PT_Loader_Materials.StoneLaythe);
-        rockset(MD.HBM,"stone"                  , 0, "hbm.tekto.rock"         , oreTekto              , PT_Loader_Materials.StoneTekto);
-
+        /*
+        rockset(MD.HBM, "tile.moho_stone", 0, 0, "tile.moho_stone", 0, "hbm.moho"         , oreMoho           , PT_Loader_Materials.StoneMoho);
+        rockset(MD.HBM, "tile.eve_rock", 0, 0, "tile.eve_rock", 0, "hbm.eve"         , oreEve           , PT_Loader_Materials.StoneEve);
+        rockset(MD.HBM, "tile.minmus_stone", 0, 0, "tile.minmus_stone", 0, "hbm.minmus"         , oreMinmus           , PT_Loader_Materials.StoneMinmus);
+        rockset(MD.HBM, "tile.moon_rock", 0, 0, "tile.moon_rock", 0, "hbm.mun"         , oreMoon           , MT.STONES.MoonRock);
+        rockset(MD.HBM, "tile.duna_rock", 0, 0, "tile.duna_cobble", 0, "hbm.duna"         , oreDuna           , PT_Loader_Materials.StoneDuna);
+        rockset(MD.HBM, "tile.dres_rock", 0, 0, "tile.dres_rock", 0, "hbm.dres"         , oreDres           , PT_Loader_Materials.StoneDres);
+        rockset(MD.HBM, "tile.ike_stone", 0, 0, "tile.ike_stone", 0, "hbm.ike"         , oreIke           , PT_Loader_Materials.StoneIke);
+        rockset(MD.HBM, "stone", 0, 0, "cobblestone", 0, "hbm.laythe"         , oreLaythe           , PT_Loader_Materials.StoneLaythe);
+        rockset(MD.HBM, "stone", 0, 0, "cobblestone", 0, "hbm.tekto"         , oreTekto           , PT_Loader_Materials.StoneTekto);
+        */
 
         new gregapi.block.multitileentity.MultiTileEntityRegistry("polytekk.multitileentity");
 

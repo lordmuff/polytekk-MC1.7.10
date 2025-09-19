@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="839aa97b-596c-44ec-9521-77247cf41d37" name="Changes" comment="maybe this will fix it (cope x2)">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+    <list default="true" id="839aa97b-596c-44ec-9521-77247cf41d37" name="Changes" comment="workspace changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dependencies.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/dependencies.gradle" afterDir="false" />
     </list>
@@ -149,7 +147,7 @@
       <recent name="C:\Users\tranq\IdeaProjects\polytekk\libs\dependencies" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.polytekk-MC1.7.10 [publishToMavenLocal]">
+  <component name="RunManager" selected="Gradle.1c. Run Client (Java 21)">
     <configuration name="Run Client (IJ Native)" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="GradleStart" />
       <module name="polytekk.ideVirtualMain" />
@@ -836,7 +834,15 @@
       <option name="project" value="LOCAL" />
       <updated>1758230447233</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="workspace changes">
+      <option name="closed" value="true" />
+      <created>1758232307989</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1758232307989</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -889,7 +895,8 @@
     <MESSAGE value="PLEASE fix worldgen? please? (v2)" />
     <MESSAGE value="maybe this will fix it (cope)" />
     <MESSAGE value="maybe this will fix it (cope x2)" />
-    <option name="LAST_COMMIT_MESSAGE" value="maybe this will fix it (cope x2)" />
+    <MESSAGE value="workspace changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="workspace changes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
