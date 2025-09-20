@@ -121,7 +121,9 @@ public final class PolyTekk_Main extends gregapi.api.Abstract_Mod {
         PT_Loader_Materials.StoneLaythe.setTextures(TextureSet.SET_STONE);
         PT_Loader_Materials.StoneTekto.setTextures(TextureSet.SET_STONE);
 
-        PT_Loader_Materials.Tiberium.setTextures(TextureSet.SET_GEM_HORIZONTAL);
+        PT_Loader_Materials.Tiberium.setTextures(TextureSet.SET_GEM_VERTICAL);
+        PT_Loader_Materials.Volcanic.setTextures(TextureSet.SET_GEM_VERTICAL);
+
 
         PT_Loader_Materials.Australium.setTextures(TextureSet.SET_RAD);
         PT_Loader_Materials.Schrabidium.setTextures(TextureSet.SET_RAD);
@@ -200,8 +202,8 @@ public final class PolyTekk_Main extends gregapi.api.Abstract_Mod {
 
         PT_Loader_Materials.Chlorocalcite.ores(CaCO3, LiCl, NaCl, PT_Loader_Materials.Chlorocalcite);
         PT_Loader_Materials.Molysite.ores(Sodalite, FeCl2, FeCl3, NaCl, PT_Loader_Materials.Molysite);
-        PT_Loader_Materials.Volcanic.ores(Firestone, InfusedFire, PhosphorusRed, PhosphorusWhite, PT_Loader_Materials.Molysite, PT_Loader_Materials.Volcanic);
-        PT_Loader_Materials.Australium.ores(Au, Au_198, Ag, PT_Loader_Materials.Pb_209);
+        PT_Loader_Materials.Volcanic.ores(Firestone, InfusedFire, PhosphorusRed, PhosphorusWhite, PT_Loader_Materials.Molysite, Efrine, AncientDebris, NetherQuartz);
+        PT_Loader_Materials.Australium.ores(Au, Au_198, Ag, PT_Loader_Materials.Pb_209, As, Bi, Li);
         PT_Loader_Materials.Schrabidium.ores(Pu, OREMATS.Uraninite, PT_Loader_Materials.Solinium);
         PT_Loader_Materials.Solinium.ores(PT_Loader_Materials.Euphemium, Pu, Pu, Cm, Am);
         PT_Loader_Materials.Euphemium.ores(PT_Loader_Materials.Solinium, PT_Loader_Materials.Schrabidium, Nq_522, Nq_528, Nq);
@@ -219,7 +221,8 @@ public final class PolyTekk_Main extends gregapi.api.Abstract_Mod {
         PT_Loader_Materials.Tengam.setRGBa(160, 191,  96, 255);
         PT_Loader_Materials.Tiberium.setRGBa(10, 255,  10, 255);
 
-        PT_Loader_Materials.Australium.setRGBa(255, 238, 0 ,255);
+        PT_Loader_Materials.Volcanic.setRGBa(255, 55, 0,255);
+        PT_Loader_Materials.Australium.setRGBa(255, 238, 0,255);
         PT_Loader_Materials.Schrabidium.setRGBa(0, 189, 189,255);
         PT_Loader_Materials.Solinium.setRGBa(0, 230, 224,255);
         PT_Loader_Materials.Euphemium.setRGBa(230, 77, 160,255);
@@ -304,13 +307,8 @@ public final class PolyTekk_Main extends gregapi.api.Abstract_Mod {
 
         new gregapi.block.multitileentity.MultiTileEntityRegistry("polytekk.multitileentity");
 
-
-
         new PT_Combs("polytekk", "polytekk.multiitem.combs");
         new PT_Bumbles("polytekk", "polytekk.multiitem.bumble");
-
-
-
 
         MultiTileEntityRegistry PolytekkMultiTileEntity = MultiTileEntityRegistry.getRegistry("polytekk.multitileentity");// 247
         MultiTileEntityBlock PolytekkMachineBlock = MultiTileEntityBlock.getOrCreate("polytekk", "machine", MaterialMachines.instance, net.minecraft.block.Block.soundTypeMetal, "wrench", 0, 0, 15, false, false);// 249
