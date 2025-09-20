@@ -33,6 +33,10 @@ public class Loader_Worldgen_Eve implements Runnable {
 
         new WorldgenFluidSpring("fluid.mercury"          , T, ModBlocks.mercury_block             ,  0, 600,                MT.Hg.fluid(10000L, true)     , GEN_EVE);
 
+        new PT_WorldGen_CrystalOre_Schrabidium("eve.crystals.schrabidium", T, GEN_EVE);
+        new PT_WorldGen_CrystalOre_Isotopes_Intermediate("eve.crystals.isotopes.intermediate", T, GEN_EVE);
+        new PT_WorldGen_CrystalOre_Isotopes_Late("eve.crystals.isotopes.late", T, GEN_EVE);
+
         new WorldgenOresLarge("ore.large.adamantine"  , T, T, 1, 20,   6, 3, 22, MT.OREMATS.BrownLimonite        , MT.OREMATS.YellowLimonite      , MT.Fe2O3                       , MT.Adamantine         , ORE_EVE);
         new WorldgenOresLarge("ore.large.tiberium"  , T, T, 40, 255,   8, 5, 42, MT.Ruby, MT.BlueSapphire      , PT_Loader_Materials.Tiberium                       , PT_Loader_Materials.Tiberium         , ORE_EVE);
         new WorldgenOresLarge("ore.large.zircon"  , T, T, 10, 20,   18, 2, 10, MT.Zircon, MT.Zircon      , MT.Zr                       , MT.Hf         , ORE_EVE);

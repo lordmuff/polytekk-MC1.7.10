@@ -45,6 +45,9 @@ public class Loader_Worldgen_Moho implements Runnable {
         new WorldgenOresBedrock("ore.bedrock.phosphorus.1"       , T, T,  4444, MT.PhosphorusRed                 , GEN_MOHO);
         new WorldgenOresBedrock("ore.bedrock.phosphorus.2"       , T, T,  5454, MT.PhosphorusWhite                 , GEN_MOHO);
 
+        new PT_WorldGen_CrystalOre_Hot        ("moho.crystals.hot", T, GEN_MOHO);
+        new PT_WorldGen_CrystalOre_Australium ("moho.crystals.australium", T, GEN_MOHO);
+
         new WorldgenFluidSpring(   "fluid.lava"          , T, Blocks.lava             ,  0, 200,                FL.Lava            .make( 10000)     , GEN_MOHO);
 
         new WorldgenOresLarge("ore.large.bismoid"        , T, T, 1,  40,   2, 9, 26, MT.Au       , MT.Cu                 , MT.Bi        , MT.As                 , ORE_MOHO);

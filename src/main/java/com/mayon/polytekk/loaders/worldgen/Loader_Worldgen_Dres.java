@@ -25,6 +25,11 @@ public class Loader_Worldgen_Dres implements Runnable {
         new WorldgenOresBedrock("ore.bedrock.naquadah"     , T, T,  5750, MT.Nq                                        , GEN_DRES);
         new WorldgenOresBedrock("ore.bedrock.trinium"     , T, T,  5500, MT.Ke                                        , GEN_DRES);
 
+        new PT_WorldGen_CrystalOre_UltraPrecious("dres.crystals.ultraprecious", T, GEN_DRES);
+        new PT_WorldGen_CrystalOre_Precious("dres.crystals.precious", T, GEN_DRES);
+        new PT_WorldGen_CrystalOre_Isotopes_Common("dres.crystals.isotopes.common", T, GEN_DRES);
+        new PT_WorldGen_CrystalOre_Isotopes_Intermediate("dres.crystals.isotopes.intermediate", T, GEN_DRES);
+
         new WorldgenOresLarge("ore.large.tantalite"  , T, T, 1, 80,   33, 1, 6, MT.OREMATS.Coltan        , MT.OREMATS.Coltan      , MT.OREMATS.Columbite                       , MT.OREMATS.Tantalite         , ORE_DRES);
         new WorldgenOresLarge("ore.large.adamantine"  , T, T, 1, 45,   21, 6, 48, MT.OREMATS.BrownLimonite        , MT.OREMATS.YellowLimonite      , MT.Adamantine                       , MT.Adamantine         , ORE_DRES);
         new WorldgenOresLarge("ore.large.tengam"  , T, T, 1, 20,   13, 3, 28, MT.Nd        , MT.Nd      , PT_Loader_Materials.Tengam                       , MT.Sm         , ORE_DRES);

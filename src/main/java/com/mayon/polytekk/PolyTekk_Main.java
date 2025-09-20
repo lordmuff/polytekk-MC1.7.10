@@ -25,6 +25,8 @@ import com.hbm.items.special.ItemWasteShort;
 import Reika.ChromatiCraft.ModInterface.ItemColoredModInteract;
 import Reika.ChromatiCraft.Registry.CrystalElement;
 import com.hbm.items.ModItems;
+import com.mayon.polytekk.blocks.*;
+import com.mayon.polytekk.data.PT_BlockCont;
 import com.mayon.polytekk.data.PT_ItemCont;
 import com.mayon.polytekk.items.PT_Bumbles;
 import com.mayon.polytekk.items.PT_Combs;
@@ -43,11 +45,13 @@ import gregapi.tileentity.multiblocks.MultiTileEntityMultiBlockPart;
 import gregapi.util.OM;
 import gregapi.util.ST;
 import gregapi.util.UT;
+import gregtech.blocks.stone.BlockCrystalOres;
 import gregtech.tileentity.batteries.eu.MultiTileEntityBatteryAdvEU2048;
 import gregtech.tileentity.batteries.eu.MultiTileEntityBatteryEU2048;
 import gregtech.tileentity.batteries.lu.MultiTileEntityBatteryLU8192;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.enchantment.Enchantment;
 
 import static gregapi.data.CS.*;
 import static gregapi.data.CS.F;
@@ -112,6 +116,21 @@ public final class PolyTekk_Main extends gregapi.api.Abstract_Mod {
            ;
         // hope Greg doesn't mind if i take this xd
 
+        VISUALLY_OPAQUE_BLOCKS.add(PT_BlockCont.CrystalOresPT_Precious                                = new PT_BlockCrystalOres_Precious              ("pt.block.crystalore.precious"));
+        VISUALLY_OPAQUE_BLOCKS.add(PT_BlockCont.CrystalOresPT_UltraPrecious                           = new PT_BlockCrystalOres_UltraPrecious         ("pt.block.crystalore.ultraprecious"));
+
+        VISUALLY_OPAQUE_BLOCKS.add(PT_BlockCont.CrystalOresPT_Magic                                   = new PT_BlockCrystalOres_Magic                 ("pt.block.crystalore.magic"));
+        VISUALLY_OPAQUE_BLOCKS.add(PT_BlockCont.CrystalOresPT_Hot                                     = new PT_BlockCrystalOres_Hot                   ("pt.block.crystalore.hot"));
+
+        VISUALLY_OPAQUE_BLOCKS.add(PT_BlockCont.CrystalOresPT_Rad                                     = new PT_BlockCrystalOres_Rad                   ("pt.block.crystalore.rad"));
+        VISUALLY_OPAQUE_BLOCKS.add(PT_BlockCont.CrystalOresPT_Isotopes_Common                         = new PT_BlockCrystalOres_Isotopes_Common       ("pt.block.crystalore.isotope.common"));
+        VISUALLY_OPAQUE_BLOCKS.add(PT_BlockCont.CrystalOresPT_Isotopes_Intermediate                   = new PT_BlockCrystalOres_Isotopes_Intermediate ("pt.block.crystalore.isotope.intermediate"));
+        VISUALLY_OPAQUE_BLOCKS.add(PT_BlockCont.CrystalOresPT_Isotopes_Late                           = new PT_BlockCrystalOres_Isotopes_Late         ("pt.block.crystalore.isotope.late"));
+
+        VISUALLY_OPAQUE_BLOCKS.add(PT_BlockCont.CrystalOresPT_Australium                              = new PT_BlockCrystalOres_Australium            ("pt.block.crystalore.australium"));
+        VISUALLY_OPAQUE_BLOCKS.add(PT_BlockCont.CrystalOresPT_Schrabidium                             = new PT_BlockCrystalOres_Schrabidium           ("pt.block.crystalore.schrabidium"));
+
+
         PT_Loader_Materials.StoneMoho.setTextures(TextureSet.SET_STONE);
         PT_Loader_Materials.StoneEve.setTextures(TextureSet.SET_STONE);
         PT_Loader_Materials.StoneMinmus.setTextures(TextureSet.SET_STONE);
@@ -132,6 +151,8 @@ public final class PolyTekk_Main extends gregapi.api.Abstract_Mod {
         PT_Loader_Materials.Pb_209.setTextures(TextureSet.SET_RAD);
         PT_Loader_Materials.Bk_247.setTextures(TextureSet.SET_RAD);
         PT_Loader_Materials.Es_253.setTextures(TextureSet.SET_RAD);
+        PT_Loader_Materials.Cf_251.setTextures(TextureSet.SET_RAD);
+        PT_Loader_Materials.Cf_252.setTextures(TextureSet.SET_RAD);
 
         PT_Loader_Materials.StoneMoho.put(TD.Compounds.DECOMPOSABLE);
         PT_Loader_Materials.StoneEve.put(TD.Compounds.DECOMPOSABLE);
@@ -199,6 +220,8 @@ public final class PolyTekk_Main extends gregapi.api.Abstract_Mod {
         PT_Loader_Materials.Pb_209.heat(Pb.mMeltingPoint - 50, Pb.mBoilingPoint - 150);
         PT_Loader_Materials.Bk_247.heat(Bk.mMeltingPoint, Bk.mBoilingPoint);
         PT_Loader_Materials.Es_253.heat(Es.mMeltingPoint, Es.mBoilingPoint);
+        PT_Loader_Materials.Cf_251.heat(Cf.mMeltingPoint, Cf.mBoilingPoint);
+        PT_Loader_Materials.Cf_252.heat(Cf.mMeltingPoint, Cf.mBoilingPoint);
 
         PT_Loader_Materials.Chlorocalcite.ores(CaCO3, LiCl, NaCl, PT_Loader_Materials.Chlorocalcite);
         PT_Loader_Materials.Molysite.ores(Sodalite, FeCl2, FeCl3, NaCl, PT_Loader_Materials.Molysite);
@@ -209,6 +232,7 @@ public final class PolyTekk_Main extends gregapi.api.Abstract_Mod {
         PT_Loader_Materials.Euphemium.ores(PT_Loader_Materials.Solinium, PT_Loader_Materials.Schrabidium, Nq_522, Nq_528, Nq);
         PT_Loader_Materials.Tiberium.ores(PT_Loader_Materials.Tiberium, Nq, Nq, Nq_528, Nq_522, OREMATS.Tantalite, OREMATS.Coltan);
 
+        PT_Loader_Materials.Volcanic.aspects(TC.IGNIS, 6, TC.VITREUS, 2, TC.VINCULUM, 2);
         PT_Loader_Materials.Tiberium.aspects(TC.RADIO, 4).aspects(TC.VITREUS, 2);
         PT_Loader_Materials.Australium.aspects_met_rad(2, 4).aspects(TC.LUCRUM, 2);
         PT_Loader_Materials.Schrabidium.aspects_met_rad(1, 5).aspects(TC.PERMUTATIO, 2).aspects(TC.POTENTIA, 1);
@@ -229,6 +253,8 @@ public final class PolyTekk_Main extends gregapi.api.Abstract_Mod {
         PT_Loader_Materials.Pb_209.setRGBa(179, 138, 148,255);
         PT_Loader_Materials.Bk_247.setRGBa(206, 202, 205,255);
         PT_Loader_Materials.Es_253.setRGBa(193, 198, 186,255);
+        PT_Loader_Materials.Cf_251.setRGBa(129, 129, 173,255);
+        PT_Loader_Materials.Cf_252.setRGBa(129, 129, 173,255);
 
         PT_Loader_Materials.StoneMoho.setRGBa(89, 64, 48,255);
         PT_Loader_Materials.StoneEve.setRGBa(75, 65, 130,255);
@@ -252,17 +278,23 @@ public final class PolyTekk_Main extends gregapi.api.Abstract_Mod {
         PT_Loader_Materials.Schrabidium.put(gregapi.data.TD.ItemGenerator.G_INGOT_MACHINE_ORES, TD.Processing.EXTRUDER);
         PT_Loader_Materials.Solinium.put(gregapi.data.TD.ItemGenerator.G_INGOT_MACHINE_ORES);
         PT_Loader_Materials.Euphemium.put(gregapi.data.TD.ItemGenerator.G_INGOT_MACHINE_ORES, TD.Properties.MAZEBREAKER);
-        PT_Loader_Materials.Pb_209.put(gregapi.data.TD.ItemGenerator.G_INGOT_MACHINE_ORES);
-        PT_Loader_Materials.Bk_247.put(gregapi.data.TD.ItemGenerator.G_INGOT_MACHINE_ORES);
-        PT_Loader_Materials.Es_253.put(gregapi.data.TD.ItemGenerator.G_INGOT_MACHINE_ORES);
+        PT_Loader_Materials.Pb_209.put(gregapi.data.TD.ItemGenerator.G_INGOT);
+        PT_Loader_Materials.Bk_247.put(gregapi.data.TD.ItemGenerator.G_INGOT);
+        PT_Loader_Materials.Es_253.put(gregapi.data.TD.ItemGenerator.G_INGOT);
+        PT_Loader_Materials.Cf_251.put(gregapi.data.TD.ItemGenerator.G_INGOT);
+        PT_Loader_Materials.Cf_252.put(gregapi.data.TD.ItemGenerator.G_INGOT);
         PT_Loader_Materials.Tengam.put(gregapi.data.TD.ItemGenerator.G_INGOT_MACHINE_ORES, TD.Properties.MAGNETIC_PASSIVE);
-        PT_Loader_Materials.Volcanic.put(TD.ItemGenerator.G_GEM_ORES, TD.Properties.BURNING, TD.Properties.MAZEBREAKER, TD.Properties.UNBURNABLE);
-        PT_Loader_Materials.Tiberium.put(TD.ItemGenerator.G_GEM_ORES, TD.Processing.CRYSTALLISABLE);
+        PT_Loader_Materials.Volcanic.put(TD.ItemGenerator.G_GEM_ORES, TD.Properties.BURNING, TD.Properties.MAZEBREAKER, TD.Properties.UNBURNABLE, TD.Processing.CRYSTALLISABLE);
+        PT_Loader_Materials.Tiberium.put(TD.ItemGenerator.G_GEM_ORES, TD.Properties.CRYSTAL, TD.Properties.GLOWING, TD.Processing.CRYSTALLISABLE);
 
         PT_Loader_Materials.Australium.qual(3, 6.0, 40_960, 3);
         PT_Loader_Materials.Volcanic.qual(3, 11.0, 1028, 5);
         PT_Loader_Materials.Schrabidium.qual(3, 15.0, 2048, 6);
         PT_Loader_Materials.Euphemium.qual(3, 19.0, 4096, 8);
+
+        PT_Loader_Materials.Euphemium.addEnchantmentForDamage(Enchantment.sharpness, 20);
+        PT_Loader_Materials.Euphemium.addEnchantmentForAmmo(Enchantment.power, 30);
+        PT_Loader_Materials.Euphemium.addEnchantmentForTools(Enchantment.fortune, 20);
 
         PT_Loader_Materials.Tiberium.setOriginalMod(MD.GT5U);
         PT_Loader_Materials.Tengam.setOriginalMod(MD.GT5U);
